@@ -50,12 +50,35 @@ const LoginContainer = styled.div`
 `;
 
 const LoginCard = styled.div`
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      #ff6b6b,
+      #ee5a24,
+      #fd79a8,
+      #fdcb6e,
+      #74b9ff
+    );
+    border-radius: 20px 20px 0 0;
+  }
 `;
 
 const Title = styled.h1`
