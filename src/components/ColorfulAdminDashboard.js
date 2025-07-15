@@ -433,47 +433,54 @@ export default function ColorfulAdminDashboard() {
   };
 
   return (
-    <DashboardContainer>
-      <Sidebar>
-        <Logo>
-          <h2>🔫 Gun Store</h2>
-          <p>Admin Dashboard</p>
-        </Logo>
+    <>
+      <DashboardContainer>
+        <Sidebar>
+          <Logo>
+            <h2>🔫 Gun Store</h2>
+            <p>Admin Dashboard</p>
+          </Logo>
 
-        <NavMenu>
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.id}>
-                <NavItem
-                  active={activeTab === item.id}
-                  onClick={() => setActiveTab(item.id)}
-                >
-                  <span>{item.icon}</span>
-                  {item.label}
-                </NavItem>
-              </li>
+          <NavMenu>
+            <ul>
+              {menuItems.map((item) => (
+                <li key={item.id}>
+                  <NavItem
+                    active={activeTab === item.id}
+                    onClick={() => setActiveTab(item.id)}
+                  >
+                    <span>{item.icon}</span>
+                    {item.label}
+                  </NavItem>
+                </li>
+              ))}
+            </ul>
+          </NavMenu>
+        </Sidebar>
+
+        <MainContent>
+          <Header>
+            <HeaderTitle>{getActiveTabTitle()}</HeaderTitle>
+            <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
+          </Header>
+
+          <StatsGrid>
+            {getStats().map((stat, index) => (
+              <StatCard
+                key={index}
+                color={stat.color}
+                colorDark={stat.colorDark}
+              >
+                <StatNumber>{stat.number}</StatNumber>
+                <StatLabel>{stat.label}</StatLabel>
+              </StatCard>
             ))}
-          </ul>
-        </NavMenu>
-      </Sidebar>
+          </StatsGrid>
 
-      <MainContent>
-        <Header>
-          <HeaderTitle>{getActiveTabTitle()}</HeaderTitle>
-          <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
-        </Header>
-
-        <StatsGrid>
-          {getStats().map((stat, index) => (
-            <StatCard key={index} color={stat.color} colorDark={stat.colorDark}>
-              <StatNumber>{stat.number}</StatNumber>
-              <StatLabel>{stat.label}</StatLabel>
-            </StatCard>
-          ))}
-        </StatsGrid>
-
-        <ContentArea>{renderContent()}</ContentArea>
-      </MainContent>
-    </DashboardContainer>
+          <ContentArea>{renderContent()}</ContentArea>
+        </MainContent>
+      </DashboardContainer>
+      <NotificationSystem />
+    </>
   );
 }
