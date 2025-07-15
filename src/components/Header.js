@@ -145,7 +145,8 @@ const MainText = styled.span`
   background-clip: text;
   animation: gradientShift 3s ease-in-out infinite;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+  line-height: 1;
 
   @keyframes gradientShift {
     0%,
