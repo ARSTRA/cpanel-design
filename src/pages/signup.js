@@ -320,7 +320,7 @@ function SignupContent() {
         formData.firstName &&
         formData.lastName
       ) {
-        setSuccess("Account created successfully! Welcome to Gun Store Pro.");
+        setSuccess("Account created successfully! Welcome to Gun-k Pro.");
         // Add user to context
         dispatch({
           type: "ADD_USER",
