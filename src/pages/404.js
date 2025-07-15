@@ -81,4 +81,4 @@ const NotFoundPage = () => {
 
 export default NotFoundPage;
 
-export const Head = () => <title>Page Not Found | Gun Store Pro</title>;
+export const Head = () => <title>Page Not Found | Gun-k Pro</title>;
