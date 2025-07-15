@@ -353,7 +353,7 @@ function SignupContent() {
   return (
     <SignupContainer>
       <SignupCard>
-        <Title>🔫 Join Gun Store Pro</Title>
+        <Title>🔫 Join Gun-k Pro</Title>
         <Subtitle>Create your account to access our firearms catalog</Subtitle>
 
         <LegalNotice>
