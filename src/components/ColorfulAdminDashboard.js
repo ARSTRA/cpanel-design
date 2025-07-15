@@ -437,7 +437,7 @@ export default function ColorfulAdminDashboard() {
       <DashboardContainer>
         <Sidebar>
           <Logo>
-            <h2>🔫 Gun Store</h2>
+            <h2>🎯 Gun-k</h2>
             <p>Admin Dashboard</p>
           </Logo>
 
