@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link, navigate } from "gatsby";
 import { useApp } from "../context/AppContext";
 
 const HeaderContainer = styled.header`
@@ -32,7 +33,7 @@ const NavigationBar = styled.div`
   }
 `;
 
-const Logo = styled.div`
+const Logo = styled(Link)`
   display: flex;
   align-items: center;
   gap: 15px;
@@ -40,6 +41,12 @@ const Logo = styled.div`
   font-weight: 700;
   color: white;
   text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #3498db;
+    transform: scale(1.05);
+  }
 
   span {
     font-size: 32px;
@@ -61,18 +68,45 @@ const Navigation = styled.nav`
     flex-direction: column;
     padding: 20px;
     gap: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: white;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
   cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  position: relative;
 
   &:hover {
     color: #3498db;
+    background: rgba(52, 152, 219, 0.1);
+    transform: translateY(-2px);
+  }
+
+  &.active {
+    color: #3498db;
+    background: rgba(52, 152, 219, 0.2);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  &:hover::after {
+    width: 80%;
   }
 `;
 
@@ -83,6 +117,12 @@ const SearchContainer = styled.div`
   border-radius: 25px;
   padding: 8px 15px;
   max-width: 300px;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+  }
 
   @media (max-width: 768px) {
     max-width: 200px;
@@ -105,34 +145,71 @@ const SearchInput = styled.input`
   }
 `;
 
+const SearchButton = styled.button`
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #3498db;
+    transform: scale(1.1);
+  }
+`;
+
 const ActionButtons = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 
 const AdminButton = styled.button`
-  background: #e74c3c;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
+  padding: 12px 24px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 
   &:hover {
-    background: #c0392b;
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 16px;
+    font-size: 12px;
   }
 `;
 
 const MenuToggle = styled.button`
   display: none;
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
 
   @media (max-width: 768px) {
     display: block;
@@ -146,52 +223,114 @@ export default function Header() {
 
   const handleAdminClick = () => {
     if (state.isAdminAuthenticated) {
-      // If already authenticated, go to dashboard
-      window.location.href = "/admin";
+      navigate("/admin");
     } else {
-      // Show login
-      dispatch({ type: "SHOW_ADMIN_LOGIN" });
+      navigate("/admin");
     }
   };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchTerm.trim()) {
+      // For now, navigate to home page with search term
+      // In a real app, you'd implement search functionality
+      navigate(`/?search=${encodeURIComponent(searchTerm)}`);
+    }
+  };
+
+  const handleLogoClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  const handleNavClick = () => {
+    setIsMenuOpen(false);
+  };
+
+  // Get current page to highlight active nav item
+  const currentPath =
+    typeof window !== "undefined" ? window.location.pathname : "/";
 
   return (
     <HeaderContainer>
       <TopBar>
         {state.siteSettings.headerText} | Licensed FFL Dealer | Call:{" "}
-        {state.siteSettings.contactInfo.phone}
+        <a
+          href={`tel:${state.siteSettings.contactInfo.phone}`}
+          style={{ color: "#3498db", textDecoration: "none" }}
+        >
+          {state.siteSettings.contactInfo.phone}
+        </a>
       </TopBar>
 
       <NavigationBar>
-        <Logo>
+        <Logo to="/" onClick={handleLogoClick}>
           <span>🔫</span>
           {state.siteSettings.siteName}
         </Logo>
 
         <Navigation isOpen={isMenuOpen}>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/handguns">Handguns</NavLink>
-          <NavLink href="/rifles">Rifles</NavLink>
-          <NavLink href="/shotguns">Shotguns</NavLink>
-          <NavLink href="/accessories">Accessories</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
+          <NavLink
+            to="/"
+            onClick={handleNavClick}
+            className={currentPath === "/" ? "active" : ""}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/handguns"
+            onClick={handleNavClick}
+            className={currentPath === "/handguns" ? "active" : ""}
+          >
+            Handguns
+          </NavLink>
+          <NavLink
+            to="/rifles"
+            onClick={handleNavClick}
+            className={currentPath === "/rifles" ? "active" : ""}
+          >
+            Rifles
+          </NavLink>
+          <NavLink
+            to="/shotguns"
+            onClick={handleNavClick}
+            className={currentPath === "/shotguns" ? "active" : ""}
+          >
+            Shotguns
+          </NavLink>
+          <NavLink
+            to="/accessories"
+            onClick={handleNavClick}
+            className={currentPath === "/accessories" ? "active" : ""}
+          >
+            Accessories
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={handleNavClick}
+            className={currentPath === "/contact" ? "active" : ""}
+          >
+            Contact
+          </NavLink>
         </Navigation>
 
         <ActionButtons>
-          <SearchContainer>
+          <SearchContainer as="form" onSubmit={handleSearch}>
             <SearchInput
               type="text"
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <span style={{ marginLeft: "10px" }}>🔍</span>
+            <SearchButton type="submit">🔍</SearchButton>
           </SearchContainer>
 
           <AdminButton onClick={handleAdminClick}>
             {state.isAdminAuthenticated ? "Dashboard" : "Admin"}
           </AdminButton>
 
-          <MenuToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>☰</MenuToggle>
+          <MenuToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? "✕" : "☰"}
+          </MenuToggle>
         </ActionButtons>
       </NavigationBar>
     </HeaderContainer>
