@@ -126,6 +126,7 @@ const SearchContainer = styled.div`
 
   @media (max-width: 768px) {
     max-width: 200px;
+    display: none; /* Hide search on mobile to make room for auth buttons */
   }
 `;
 
@@ -163,35 +164,87 @@ const SearchButton = styled.button`
 const ActionButtons = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 
   @media (max-width: 768px) {
-    gap: 10px;
+    gap: 8px;
   }
 `;
 
-const AdminButton = styled.button`
-  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+const AuthButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: 768px) {
+    gap: 8px;
+  }
+`;
+
+const LoginButton = styled(Link)`
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
+  text-decoration: none;
   border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
+  padding: 10px 20px;
+  border-radius: 20px;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  display: inline-block;
 
   &:hover {
-    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    background: linear-gradient(135deg, #2980b9 0%, #1f4e79 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    color: white;
   }
 
   @media (max-width: 768px) {
-    padding: 10px 16px;
+    padding: 8px 16px;
     font-size: 12px;
+  }
+`;
+
+const SignupButton = styled(Link)`
+  background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+
+  &:hover {
+    background: linear-gradient(135deg, #229954 0%, #1e8449 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+`;
+
+const AdminLink = styled(Link)`
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #e74c3c;
   }
 `;
 
@@ -217,17 +270,9 @@ const MenuToggle = styled.button`
 `;
 
 export default function Header() {
-  const { state, dispatch } = useApp();
+  const { state } = useApp();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-
-  const handleAdminClick = () => {
-    if (state.isAdminAuthenticated) {
-      navigate("/admin");
-    } else {
-      navigate("/admin");
-    }
-  };
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -324,9 +369,14 @@ export default function Header() {
             <SearchButton type="submit">🔍</SearchButton>
           </SearchContainer>
 
-          <AdminButton onClick={handleAdminClick}>
-            {state.isAdminAuthenticated ? "Dashboard" : "Admin"}
-          </AdminButton>
+          <AuthButtonsContainer>
+            <LoginButton to="/login">Login</LoginButton>
+            <SignupButton to="/signup">Sign Up</SignupButton>
+          </AuthButtonsContainer>
+
+          <AdminLink to="/admin" title="Admin Access">
+            ⚙️
+          </AdminLink>
 
           <MenuToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? "✕" : "☰"}
