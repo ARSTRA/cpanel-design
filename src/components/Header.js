@@ -113,15 +113,28 @@ const NavLink = styled(Link)`
 const SearchContainer = styled.div`
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(116, 185, 255, 0.2),
+    rgba(253, 121, 168, 0.2)
+  );
   border-radius: 25px;
   padding: 8px 15px;
   max-width: 300px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(116, 185, 255, 0.2);
 
   &:focus-within {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.02);
+    background: linear-gradient(
+      135deg,
+      rgba(116, 185, 255, 0.3),
+      rgba(253, 121, 168, 0.3)
+    );
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(116, 185, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
   }
 
   @media (max-width: 768px) {
