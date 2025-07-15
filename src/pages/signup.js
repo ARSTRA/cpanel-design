@@ -528,4 +528,4 @@ const SignupPage = () => {
 
 export default SignupPage;
 
-export const Head = () => <title>Sign Up | Gun Store Pro</title>;
+export const Head = () => <title>Sign Up | Gun-k Pro</title>;
