@@ -356,31 +356,6 @@ export default function Header() {
           >
             Contact
           </NavLink>
-
-          {/* Mobile Auth Buttons */}
-          <div
-            style={{
-              display: "flex",
-              gap: "10px",
-              marginTop: "20px",
-              "@media (min-width: 769px)": { display: "none" },
-            }}
-          >
-            <LoginButton
-              to="/login"
-              onClick={handleNavClick}
-              style={{ flex: 1 }}
-            >
-              Login
-            </LoginButton>
-            <SignupButton
-              to="/signup"
-              onClick={handleNavClick}
-              style={{ flex: 1 }}
-            >
-              Sign Up
-            </SignupButton>
-          </div>
         </Navigation>
 
         <ActionButtons>
