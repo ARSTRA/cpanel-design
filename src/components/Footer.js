@@ -139,22 +139,22 @@ export default function Footer() {
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="/handguns">Handguns</a>
+              <Link to="/handguns">Handguns</Link>
             </li>
             <li>
-              <a href="/rifles">Rifles</a>
+              <Link to="/rifles">Rifles</Link>
             </li>
             <li>
-              <a href="/shotguns">Shotguns</a>
+              <Link to="/shotguns">Shotguns</Link>
             </li>
             <li>
-              <a href="/accessories">Accessories</a>
+              <Link to="/accessories">Accessories</Link>
             </li>
             <li>
-              <a href="/contact">Contact Us</a>
+              <Link to="/contact">Contact Us</Link>
             </li>
           </ul>
         </FooterSection>
