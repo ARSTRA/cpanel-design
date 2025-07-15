@@ -276,4 +276,4 @@ const LoginPage = () => {
 
 export default LoginPage;
 
-export const Head = () => <title>Login | Gun Store Pro</title>;
+export const Head = () => <title>Login | Gun-k Pro</title>;
