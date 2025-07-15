@@ -42,22 +42,22 @@ const HeroSubtitle = styled.p`
 `;
 
 const CTAButton = styled.button`
-  background: #e74c3c;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
   color: white;
   border: none;
   padding: 18px 36px;
   font-size: 18px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 25px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
 
   &:hover {
-    background: #c0392b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
   }
 `;
 
@@ -171,7 +171,7 @@ const ProductDescription = styled.p`
 `;
 
 const ProductButton = styled.button`
-  background: #3498db;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
   color: white;
   border: none;
   padding: 12px 24px;
@@ -179,10 +179,11 @@ const ProductButton = styled.button`
   cursor: pointer;
   font-weight: 600;
   width: 100%;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 
   &:hover {
-    background: #2980b9;
+    background: linear-gradient(135deg, #2980b9 0%, #1f4e79 100%);
+    transform: translateY(-2px);
   }
 `;
 
@@ -197,17 +198,21 @@ const CategoriesGrid = styled.div`
   gap: 30px;
 `;
 
-const CategoryCard = styled.div`
+const CategoryCard = styled(Link)`
   background: white;
   border-radius: 12px;
   overflow: hidden;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
   }
 `;
 
@@ -219,6 +224,28 @@ const CategoryImage = styled.div`
   justify-content: center;
   font-size: 48px;
   color: white;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  ${CategoryCard}:hover &::after {
+    transform: translateX(100%);
+  }
 `;
 
 const CategoryName = styled.h3`
@@ -226,6 +253,7 @@ const CategoryName = styled.h3`
   margin: 0;
   color: #2c3e50;
   font-size: 18px;
+  font-weight: 600;
 `;
 
 export default function HomePage() {
@@ -236,11 +264,26 @@ export default function HomePage() {
   );
 
   const categories = [
-    { name: "Handguns", icon: "🔫", path: "/handguns" },
-    { name: "Rifles", icon: "🔫", path: "/rifles" },
-    { name: "Shotguns", icon: "🔫", path: "/shotguns" },
-    { name: "Accessories", icon: "🔧", path: "/accessories" },
+    { name: "Handguns", icon: "🔫", path: "/handguns", color: "#e74c3c" },
+    { name: "Rifles", icon: "🔫", path: "/rifles", color: "#3498db" },
+    { name: "Shotguns", icon: "🔫", path: "/shotguns", color: "#f39c12" },
+    { name: "Accessories", icon: "🔧", path: "/accessories", color: "#9b59b6" },
   ];
+
+  const handleBrowseClick = () => {
+    // Scroll to categories section
+    const element = document.getElementById("categories-section");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleProductInquiry = (product) => {
+    const subject = `Inquiry about ${product.name}`;
+    const body = `Hi,\n\nI'm interested in learning more about the ${product.name} (Price: $${product.price}).\n\nPlease provide more details.\n\nThank you!`;
+    const mailtoLink = `mailto:${state.siteSettings.contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(mailtoLink);
+  };
 
   return (
     <>
@@ -248,7 +291,9 @@ export default function HomePage() {
         <HeroContent>
           <HeroTitle>Welcome to {state.siteSettings.siteName}</HeroTitle>
           <HeroSubtitle>{state.siteSettings.headerText}</HeroSubtitle>
-          <CTAButton>Browse Our Inventory</CTAButton>
+          <CTAButton onClick={handleBrowseClick}>
+            Browse Our Inventory
+          </CTAButton>
         </HeroContent>
       </HeroSection>
 
@@ -322,7 +367,9 @@ export default function HomePage() {
                   <ProductName>{product.name}</ProductName>
                   <ProductPrice>${product.price}</ProductPrice>
                   <ProductDescription>{product.description}</ProductDescription>
-                  <ProductButton>View Details</ProductButton>
+                  <ProductButton onClick={() => handleProductInquiry(product)}>
+                    Inquire Now
+                  </ProductButton>
                 </ProductInfo>
               </ProductCard>
             ))}
@@ -330,13 +377,19 @@ export default function HomePage() {
         </Container>
       </ProductsSection>
 
-      <CategorySection>
+      <CategorySection id="categories-section">
         <Container>
           <SectionTitle>Shop by Category</SectionTitle>
           <CategoriesGrid>
             {categories.map((category) => (
-              <CategoryCard key={category.name}>
-                <CategoryImage>{category.icon}</CategoryImage>
+              <CategoryCard key={category.name} to={category.path}>
+                <CategoryImage
+                  style={{
+                    background: `linear-gradient(135deg, ${category.color} 0%, ${category.color}dd 100%)`,
+                  }}
+                >
+                  {category.icon}
+                </CategoryImage>
                 <CategoryName>{category.name}</CategoryName>
               </CategoryCard>
             ))}
