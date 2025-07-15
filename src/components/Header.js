@@ -36,20 +36,52 @@ const NavigationBar = styled.div`
 const Logo = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 15px;
-  font-size: 24px;
-  font-weight: 700;
+  gap: 12px;
+  font-size: 28px;
+  font-weight: 900;
   color: white;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
 
   &:hover {
-    color: #3498db;
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 107, 0.2),
+      rgba(116, 185, 255, 0.2)
+    );
   }
 
-  span {
-    font-size: 32px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+
+  &:hover::before {
+    left: 100%;
   }
 `;
 
