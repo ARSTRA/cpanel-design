@@ -515,7 +515,7 @@ export default function Header() {
       <NavigationBar>
         <Logo to="/" onClick={handleLogoClick}>
           <LogoIcon>
-            <IconSvg viewBox="0 0 50 50" width="40" height="40">
+            <IconSvg viewBox="0 0 50 50" width="24" height="24">
               <defs>
                 <linearGradient
                   id="gunGradient"
