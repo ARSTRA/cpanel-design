@@ -129,7 +129,7 @@ const LogoText = styled.div`
 `;
 
 const MainText = styled.span`
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 900;
   background: linear-gradient(
     135deg,
