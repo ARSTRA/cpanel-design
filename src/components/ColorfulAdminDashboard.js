@@ -6,6 +6,7 @@ import OrderManagement from "./admin/OrderManagement";
 import UserManagement from "./admin/UserManagement";
 import MessageManagement from "./admin/MessageManagement";
 import SiteSettings from "./admin/SiteSettings";
+import NotificationSystem from "./ColorfulNotification";
 
 const float = keyframes`
   0% { transform: translateY(0px) rotate(0deg); }
