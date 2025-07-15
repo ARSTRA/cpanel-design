@@ -85,6 +85,96 @@ const Logo = styled(Link)`
   }
 `;
 
+const LogoIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+
+  ${Logo}:hover & {
+    transform: rotate(360deg) scale(1.1);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 107, 0.3),
+      rgba(116, 185, 255, 0.3)
+    );
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+`;
+
+const IconSvg = styled.svg`
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+
+  ${Logo}:hover & {
+    filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.4));
+  }
+`;
+
+const LogoText = styled.div`
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+`;
+
+const MainText = styled.span`
+  font-size: 28px;
+  font-weight: 900;
+  background: linear-gradient(
+    135deg,
+    #ff6b6b 0%,
+    #74b9ff 25%,
+    #fd79a8 50%,
+    #fdcb6e 75%,
+    #00b894 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+
+  @keyframes gradientShift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  ${Logo}:hover & {
+    animation-duration: 0.5s;
+  }
+`;
+
+const SubText = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: -2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  ${Logo}:hover & {
+    color: #fdcb6e;
+  }
+`;
+
 const Navigation = styled.nav`
   display: flex;
   align-items: center;
