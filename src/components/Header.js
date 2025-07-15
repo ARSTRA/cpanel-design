@@ -36,15 +36,15 @@ const NavigationBar = styled.div`
 const Logo = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 28px;
+  gap: 8px;
+  font-size: 20px;
   font-weight: 900;
   color: white;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  padding: 8px 16px;
-  border-radius: 20px;
+  padding: 6px 12px;
+  border-radius: 15px;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.1),
@@ -53,10 +53,11 @@ const Logo = styled(Link)`
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
+  height: 50px;
 
   &:hover {
-    transform: scale(1.08) rotate(-2deg);
-    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
+    transform: scale(1.05) rotate(-1deg);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
     background: linear-gradient(
       135deg,
       rgba(255, 107, 107, 0.2),
