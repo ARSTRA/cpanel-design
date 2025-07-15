@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "My Gatsby Site",
+    title: "Gun Store Pro",
+    description: "Professional firearms and accessories store",
   },
-  plugins: [],
+  plugins: ["gatsby-plugin-styled-components"],
 };
