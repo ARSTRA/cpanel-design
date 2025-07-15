@@ -160,17 +160,21 @@ const SearchInput = styled.input`
 `;
 
 const SearchButton = styled.button`
-  background: none;
+  background: linear-gradient(135deg, #74b9ff 0%, #fd79a8 100%);
   border: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: white;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px 8px;
   margin-left: 8px;
-  transition: all 0.3s ease;
+  border-radius: 50%;
+  transition: all 0.4s ease;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(116, 185, 255, 0.3);
 
   &:hover {
-    color: #3498db;
-    transform: scale(1.1);
+    background: linear-gradient(135deg, #fd79a8 0%, #74b9ff 100%);
+    transform: scale(1.2) rotate(15deg);
+    box-shadow: 0 4px 15px rgba(253, 121, 168, 0.5);
   }
 `;
 
