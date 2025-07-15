@@ -423,13 +423,32 @@ const SignupButton = styled(Link)`
 `;
 
 const AdminLink = styled(Link)`
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: 12px;
-  transition: all 0.3s ease;
+  font-size: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 10px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05)
+  );
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    color: #e74c3c;
+    color: #fdcb6e;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    transform: rotate(180deg) scale(1.15);
+    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+    border-color: rgba(255, 255, 255, 0.5);
   }
 `;
 
