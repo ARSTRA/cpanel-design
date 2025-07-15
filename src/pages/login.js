@@ -206,8 +206,8 @@ function LoginContent() {
   return (
     <LoginContainer>
       <LoginCard>
-        <Title>🔫 Welcome Back</Title>
-        <Subtitle>Sign in to your Gun Store Pro account</Subtitle>
+        <Title>🎯 Welcome Back</Title>
+        <Subtitle>Sign in to your Gun-k Pro account</Subtitle>
 
         <DemoCredentials>
           <strong>Demo Account:</strong>
