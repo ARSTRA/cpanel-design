@@ -86,7 +86,7 @@ const initialState = {
 
   // Site Settings
   siteSettings: {
-    siteName: "Gun Store Pro",
+    siteName: "Gun-k",
     bankDetails: {
       bankName: "First National Bank",
       accountNumber: "****-****-1234",
