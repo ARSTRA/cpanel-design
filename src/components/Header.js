@@ -164,7 +164,7 @@ const MainText = styled.span`
 `;
 
 const SubText = styled.span`
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
