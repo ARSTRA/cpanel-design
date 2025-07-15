@@ -9,6 +9,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "gatsby": "^5.14.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
 }
