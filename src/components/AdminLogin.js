@@ -87,6 +87,10 @@ const Title = styled.h1`
   color: #333;
   margin-bottom: 30px;
   font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 `;
 
 const Form = styled.form`
