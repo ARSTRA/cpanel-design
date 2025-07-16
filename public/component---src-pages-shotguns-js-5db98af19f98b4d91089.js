@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcode=self.webpackChunkcode||[]).push([[284],{5988:function(e,t,c){c.r(t);var l=c(6540),n=c(580),u=c(3722),a=c(4254);t.default=()=>l.createElement(n.D,null,l.createElement(u.A,null,l.createElement(a.A,{category:"shotguns"})))}}]);
+//# sourceMappingURL=component---src-pages-shotguns-js-5db98af19f98b4d91089.js.map
