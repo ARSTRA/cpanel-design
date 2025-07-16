@@ -232,12 +232,17 @@ const ViewButton = styled.button`
 const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: ${(props) =>
-    props.viewMode === "grid" ? "repeat(auto-fit, minmax(380px, 1fr))" : "1fr"};
+    props.viewMode === "grid" ? "repeat(auto-fit, minmax(350px, 1fr))" : "1fr"};
   gap: 30px;
   animation: ${fadeIn} 1s ease-out 0.4s both;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 15px;
   }
 `;
 
