@@ -598,6 +598,10 @@ export default function HandgunCollection() {
     window.open(mailtoLink);
   };
 
+  const handleViewDetails = (productId) => {
+    navigate(`/handgun-detail?id=${productId}`);
+  };
+
   const renderStars = (rating) => {
     const fullStars = Math.floor(rating);
     const halfStar = rating % 1 >= 0.5;
