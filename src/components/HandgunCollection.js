@@ -61,6 +61,18 @@ const HeroSection = styled.div`
   border-radius: 30px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   animation: ${fadeIn} 1s ease-out;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+    padding: 40px 15px;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 30px;
+    padding: 30px 10px;
+    border-radius: 15px;
+  }
 `;
 
 const MainTitle = styled.h1`
