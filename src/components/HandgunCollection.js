@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+import { navigate } from "gatsby";
 import { useApp } from "../context/AppContext";
 
 const fadeIn = keyframes`
