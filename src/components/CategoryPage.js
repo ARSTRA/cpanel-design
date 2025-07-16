@@ -122,7 +122,7 @@ const StockBadge = styled.div`
   position: absolute;
   top: 15px;
   right: 15px;
-  background: ${(props) => (props.inStock ? "#27ae60" : "#e74c3c")};
+  background: ${(props) => (props.$inStock ? "#27ae60" : "#e74c3c")};
   color: white;
   padding: 6px 12px;
   border-radius: 20px;
