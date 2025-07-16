@@ -770,7 +770,11 @@ export default function HandgunCollection() {
                   <ProductHeader>
                     <div>
                       <Manufacturer>{product.manufacturer}</Manufacturer>
-                      <ProductName>{product.name}</ProductName>
+                      <ProductName
+                        onClick={() => handleViewDetails(product.id)}
+                      >
+                        {product.name}
+                      </ProductName>
                     </div>
                   </ProductHeader>
 
