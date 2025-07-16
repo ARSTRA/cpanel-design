@@ -192,6 +192,26 @@ const SuccessMessage = styled.div`
   line-height: 1.5;
 `;
 
+const SuccessButton = styled(Link)`
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #229954 0%, #27ae60 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    color: white;
+  }
+`;
+
 const InfoBox = styled.div`
   background: #e8f4fd;
   border: 1px solid #bee5eb;
