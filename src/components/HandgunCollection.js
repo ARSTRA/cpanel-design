@@ -397,6 +397,12 @@ const ProductName = styled.h3`
   font-size: 22px;
   font-weight: 800;
   line-height: 1.2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #667eea;
+  }
 `;
 
 const Manufacturer = styled.div`
