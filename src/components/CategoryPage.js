@@ -286,8 +286,9 @@ export default function CategoryPage({ category = "handguns" }) {
 
         <FiltersSection>
           <FilterGroup>
-            <label>Search</label>
+            <label htmlFor="category-search">Search</label>
             <SearchInput
+              id="category-search"
               type="text"
               placeholder="Search products..."
               value={searchTerm}
@@ -296,8 +297,9 @@ export default function CategoryPage({ category = "handguns" }) {
           </FilterGroup>
 
           <FilterGroup>
-            <label>Filter</label>
+            <label htmlFor="category-filter">Filter</label>
             <Select
+              id="category-filter"
               value={filterBy}
               onChange={(e) => setFilterBy(e.target.value)}
             >
@@ -308,8 +310,12 @@ export default function CategoryPage({ category = "handguns" }) {
           </FilterGroup>
 
           <FilterGroup>
-            <label>Sort By</label>
-            <Select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <label htmlFor="category-sort">Sort By</label>
+            <Select
+              id="category-sort"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+            >
               <option value="name">Name A-Z</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
