@@ -735,7 +735,10 @@ export default function HandgunCollection() {
           <ProductsGrid viewMode={viewMode}>
             {sortedProducts.map((product) => (
               <ProductCard key={product.id} viewMode={viewMode}>
-                <ProductImageContainer viewMode={viewMode}>
+                <ProductImageContainer
+                  viewMode={viewMode}
+                  onClick={() => handleViewDetails(product.id)}
+                >
                   {product.images &&
                   product.images[0] !== "/api/placeholder/400/300" ? (
                     <ProductImage src={product.images[0]} alt={product.name} />
