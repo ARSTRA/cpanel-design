@@ -154,6 +154,54 @@ const DemoCredentials = styled.div`
   }
 `;
 
+const BackButton = styled(Link)`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  z-index: 2;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+`;
+
+const LogoIcon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.2),
+    rgba(116, 185, 255, 0.2)
+  );
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 107, 107, 0.3);
+`;
+
+const IconSvg = styled.svg`
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+`;
+
 export default function AdminLogin() {
   const { dispatch } = useApp();
   const [credentials, setCredentials] = useState({
