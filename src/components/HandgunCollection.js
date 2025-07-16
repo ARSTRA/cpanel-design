@@ -287,6 +287,12 @@ const ProductImageContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
 `;
 
 const ProductImage = styled.img`
