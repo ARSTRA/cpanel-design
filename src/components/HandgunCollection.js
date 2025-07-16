@@ -744,13 +744,13 @@ export default function HandgunCollection() {
           </ResultsCount>
           <ViewToggle>
             <ViewButton
-              active={viewMode === "grid"}
+              $active={viewMode === "grid"}
               onClick={() => setViewMode("grid")}
             >
               Grid
             </ViewButton>
             <ViewButton
-              active={viewMode === "list"}
+              $active={viewMode === "list"}
               onClick={() => setViewMode("list")}
             >
               List
@@ -767,11 +767,11 @@ export default function HandgunCollection() {
             </p>
           </EmptyState>
         ) : (
-          <ProductsGrid viewMode={viewMode}>
+          <ProductsGrid $viewMode={viewMode}>
             {sortedProducts.map((product) => (
-              <ProductCard key={product.id} viewMode={viewMode}>
+              <ProductCard key={product.id} $viewMode={viewMode}>
                 <ProductImageContainer
-                  viewMode={viewMode}
+                  $viewMode={viewMode}
                   onClick={() => handleViewDetails(product.id)}
                 >
                   {product.images &&
