@@ -306,7 +306,7 @@ const StockStatus = styled.div`
   font-weight: 700;
   font-size: 1.1rem;
   background: ${(props) =>
-    props.inStock
+    props.$inStock
       ? "linear-gradient(135deg, #00f2fe, #4facfe)"
       : "linear-gradient(135deg, #ff0844, #f5576c)"};
   color: white;
@@ -728,7 +728,7 @@ const ShotgunDetail = ({ shotgunId }) => {
                   )}
                 </PriceContainer>
                 <StockInfo>
-                  <StockStatus inStock={shotgun.inStock}>
+                  <StockStatus $inStock={shotgun.inStock}>
                     {shotgun.inStock
                       ? `${shotgun.stock} Available`
                       : "Out of Stock"}
