@@ -833,7 +833,7 @@ const RifleCollection = () => {
                           </OriginalPrice>
                         )}
                       </PriceContainer>
-                      <StockStatus inStock={rifle.inStock}>
+                      <StockStatus $inStock={rifle.inStock}>
                         {rifle.inStock
                           ? `${rifle.stock} In Stock`
                           : "Out of Stock"}
