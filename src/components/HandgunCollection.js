@@ -247,8 +247,8 @@ const ViewButton = styled.button`
   border: none;
   border-radius: 10px;
   background: ${(props) =>
-    props.active ? "rgba(255, 255, 255, 0.9)" : "transparent"};
-  color: ${(props) => (props.active ? "#2c3e50" : "rgba(255, 255, 255, 0.8)")};
+    props.$active ? "rgba(255, 255, 255, 0.9)" : "transparent"};
+  color: ${(props) => (props.$active ? "#2c3e50" : "rgba(255, 255, 255, 0.8)")};
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -257,7 +257,9 @@ const ViewButton = styled.button`
 const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: ${(props) =>
-    props.viewMode === "grid" ? "repeat(auto-fit, minmax(350px, 1fr))" : "1fr"};
+    props.$viewMode === "grid"
+      ? "repeat(auto-fit, minmax(350px, 1fr))"
+      : "1fr"};
   gap: 30px;
   animation: ${fadeIn} 1s ease-out 0.4s both;
 
@@ -280,7 +282,7 @@ const ProductCard = styled.div`
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.5);
   position: relative;
-  display: ${(props) => (props.viewMode === "list" ? "flex" : "block")};
+  display: ${(props) => (props.$viewMode === "list" ? "flex" : "block")};
 
   &:hover {
     transform: translateY(-10px) scale(1.02);
@@ -310,8 +312,8 @@ const ProductCard = styled.div`
 
 const ProductImageContainer = styled.div`
   position: relative;
-  width: ${(props) => (props.viewMode === "list" ? "300px" : "100%")};
-  height: ${(props) => (props.viewMode === "list" ? "200px" : "280px")};
+  width: ${(props) => (props.$viewMode === "list" ? "300px" : "100%")};
+  height: ${(props) => (props.$viewMode === "list" ? "200px" : "280px")};
   overflow: hidden;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
