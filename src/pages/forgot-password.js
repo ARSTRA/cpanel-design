@@ -437,7 +437,16 @@ function ForgotPasswordContent() {
         </Form>
 
         {error && <ErrorMessage>{error}</ErrorMessage>}
-        {success && <SuccessMessage>{success}</SuccessMessage>}
+        {success && (
+          <SuccessMessage>
+            {success}
+            {resetMethod === "phone" && !loading && (
+              <SuccessButton to="/reset-password">
+                📱 Enter Verification Code
+              </SuccessButton>
+            )}
+          </SuccessMessage>
+        )}
 
         <SecurityFeatures>
           <h4>🛡️ Security Features</h4>
