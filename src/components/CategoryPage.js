@@ -336,7 +336,7 @@ export default function CategoryPage({ category = "handguns" }) {
               <ProductCard key={product.id}>
                 <ProductImage>
                   🔫
-                  <StockBadge inStock={product.stock > 0}>
+                  <StockBadge $inStock={product.stock > 0}>
                     {product.stock > 0 ? "In Stock" : "Out of Stock"}
                   </StockBadge>
                 </ProductImage>
