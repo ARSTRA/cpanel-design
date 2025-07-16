@@ -232,8 +232,57 @@ export default function AdminLogin() {
 
   return (
     <LoginContainer>
+      <BackButton to="/">← Back to Site</BackButton>
       <LoginCard>
-        <Title>🔫 Gun Store Admin</Title>
+        <Title>
+          <LogoIcon>
+            <IconSvg viewBox="0 0 50 50" width="24" height="24">
+              <defs>
+                <linearGradient
+                  id="gunGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#ff6b6b" />
+                  <stop offset="25%" stopColor="#74b9ff" />
+                  <stop offset="50%" stopColor="#fd79a8" />
+                  <stop offset="75%" stopColor="#fdcb6e" />
+                  <stop offset="100%" stopColor="#00b894" />
+                </linearGradient>
+                <linearGradient
+                  id="kGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop offset="0%" stopColor="#00b894" />
+                  <stop offset="50%" stopColor="#74b9ff" />
+                  <stop offset="100%" stopColor="#fd79a8" />
+                </linearGradient>
+              </defs>
+
+              {/* Stylized Gun Shape */}
+              <path
+                d="M10 20 L35 20 L40 15 L45 15 L45 25 L40 25 L35 20 L35 30 L30 30 L30 25 L15 25 L15 30 L10 30 Z"
+                fill="url(#gunGradient)"
+                stroke="rgba(255,255,255,0.3)"
+                strokeWidth="1"
+              />
+
+              {/* Letter K integrated */}
+              <path
+                d="M8 10 L8 35 M8 22 L20 10 M8 22 L20 35"
+                stroke="url(#kGradient)"
+                strokeWidth="3"
+                strokeLinecap="round"
+              />
+            </IconSvg>
+          </LogoIcon>
+          Gun-k Admin
+        </Title>
 
         <DemoCredentials>
           <strong>Demo Credentials:</strong>
