@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 import { useApp } from "../context/AppContext";
 
 const LoginContainer = styled.div`
