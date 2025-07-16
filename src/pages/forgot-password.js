@@ -306,15 +306,22 @@ function ForgotPasswordContent() {
         );
       } else {
         setSuccess(
-          `A verification code has been sent via SMS to ${formData.phone}. Enter the code on the next page to reset your password. The code expires in 15 minutes.`,
+          `A verification code has been sent via SMS to ${formData.phone}. Click the button below to enter your code and reset your password. The code expires in 15 minutes.`,
         );
+
+        // For SMS, redirect to reset password page after delay
+        setTimeout(() => {
+          navigate("/reset-password");
+        }, 3000);
       }
       setLoading(false);
 
-      // Redirect after success message
-      setTimeout(() => {
-        navigate("/login");
-      }, 4000);
+      // For email, redirect to login after longer delay
+      if (resetMethod === "email") {
+        setTimeout(() => {
+          navigate("/login");
+        }, 5000);
+      }
     }, 2000);
   };
 
