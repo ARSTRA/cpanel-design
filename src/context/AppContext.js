@@ -7,17 +7,21 @@ const initialState = {
   isAdminAuthenticated: false,
   currentUser: null,
 
-    // Products
+  // Products
   products: [
     {
       id: 1,
       name: "Glock 19 Gen 5",
-      description: "The most versatile and reliable compact pistol for concealed carry, home defense, and duty use. Features enhanced ergonomics and improved accuracy.",
+      description:
+        "The most versatile and reliable compact pistol for concealed carry, home defense, and duty use. Features enhanced ergonomics and improved accuracy.",
       price: 549.99,
       originalPrice: 599.99,
       category: "handguns",
       stock: 15,
-      images: ["https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "Glock",
@@ -34,29 +38,33 @@ const initialState = {
         "Improved grip texture",
         "Ambidextrous slide stop lever",
         "Flared magazine well",
-        "No finger grooves"
+        "No finger grooves",
       ],
       specifications: {
         frameSize: "Compact",
         triggerPull: "5.5 lbs",
         safetyFeatures: ["Trigger Safety", "Firing Pin Safety", "Drop Safety"],
         magazines: "Ships with 3 magazines",
-        warranty: "Limited Lifetime Warranty"
+        warranty: "Limited Lifetime Warranty",
       },
       inStock: true,
       onSale: true,
       rating: 4.8,
-      reviews: 247
-        },
+      reviews: 247,
+    },
     {
       id: 11,
       name: "Sig Sauer P320",
-      description: "Modular striker-fired pistol system adopted by the U.S. Military. Ultimate in reliability and versatility.",
+      description:
+        "Modular striker-fired pistol system adopted by the U.S. Military. Ultimate in reliability and versatility.",
       price: 629.99,
       originalPrice: 699.99,
       category: "handguns",
       stock: 12,
-      images: ["https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "Sig Sauer",
@@ -73,28 +81,32 @@ const initialState = {
         "Enhanced trigger with crisp break",
         "Accessory rail for lights/lasers",
         "Removable fire control unit",
-        "Tool-free disassembly"
+        "Tool-free disassembly",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "5.5-6.5 lbs",
         safetyFeatures: ["Striker Safety", "Disconnect Safety"],
         magazines: "Ships with 2 magazines",
-        warranty: "Lifetime Warranty"
+        warranty: "Lifetime Warranty",
       },
       inStock: true,
       onSale: true,
       rating: 4.7,
-      reviews: 189
+      reviews: 189,
     },
     {
       id: 12,
       name: "Smith & Wesson M&P Shield Plus",
-      description: "Ultra-compact concealed carry pistol with increased capacity. Perfect balance of size and shootability.",
+      description:
+        "Ultra-compact concealed carry pistol with increased capacity. Perfect balance of size and shootability.",
       price: 499.99,
       category: "handguns",
       stock: 20,
-      images: ["https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Smith & Wesson",
@@ -111,29 +123,37 @@ const initialState = {
         "Aggressive grip texture",
         "Low profile carry sights",
         "Enhanced magazine release",
-        "Optics ready version available"
+        "Optics ready version available",
       ],
       specifications: {
         frameSize: "Sub-Compact",
         triggerPull: "6.5 lbs",
-        safetyFeatures: ["Trigger Safety", "Firing Pin Safety", "Magazine Safety"],
+        safetyFeatures: [
+          "Trigger Safety",
+          "Firing Pin Safety",
+          "Magazine Safety",
+        ],
         magazines: "Ships with 2 magazines",
-        warranty: "Limited Lifetime Warranty"
+        warranty: "Limited Lifetime Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.6,
-      reviews: 156
+      reviews: 156,
     },
     {
       id: 13,
       name: "Springfield XD-M Elite",
-      description: "Competition-grade pistol with match barrel and enhanced ergonomics. Precision meets performance.",
+      description:
+        "Competition-grade pistol with match barrel and enhanced ergonomics. Precision meets performance.",
       price: 749.99,
       originalPrice: 829.99,
       category: "handguns",
       stock: 8,
-      images: ["https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "Springfield Armory",
@@ -150,28 +170,32 @@ const initialState = {
         "Enhanced grip texturing",
         "Ambidextrous magazine release",
         "Striker status indicator",
-        "Loaded chamber indicator"
+        "Loaded chamber indicator",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "5.5-7.7 lbs",
         safetyFeatures: ["Grip Safety", "Trigger Safety", "Firing Pin Safety"],
         magazines: "Ships with 3 magazines",
-        warranty: "Limited Lifetime Warranty"
+        warranty: "Limited Lifetime Warranty",
       },
       inStock: true,
       onSale: true,
       rating: 4.5,
-      reviews: 98
+      reviews: 98,
     },
     {
       id: 14,
       name: "Walther PDP",
-      description: "Performance Duty Pistol engineered for superior ergonomics and accuracy. The evolution of excellence.",
+      description:
+        "Performance Duty Pistol engineered for superior ergonomics and accuracy. The evolution of excellence.",
       price: 679.99,
       category: "handguns",
       stock: 10,
-      images: ["https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Walther",
@@ -188,28 +212,32 @@ const initialState = {
         "SuperTerrain Slide Serrations",
         "Optics-ready slide",
         "Ambidextrous slide stop",
-        "Enhanced Performance Duty Texture"
+        "Enhanced Performance Duty Texture",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "5.6 lbs",
         safetyFeatures: ["Trigger Safety", "Firing Pin Safety", "Drop Safety"],
         magazines: "Ships with 2 magazines",
-        warranty: "Limited Lifetime Warranty"
+        warranty: "Limited Lifetime Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.7,
-      reviews: 73
+      reviews: 73,
     },
     {
       id: 15,
       name: "Ruger Security-9",
-      description: "Affordable, reliable striker-fired pistol perfect for new shooters and budget-conscious buyers.",
+      description:
+        "Affordable, reliable striker-fired pistol perfect for new shooters and budget-conscious buyers.",
       price: 379.99,
       category: "handguns",
       stock: 25,
-      images: ["https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Ruger",
@@ -226,29 +254,37 @@ const initialState = {
         "Ergonomic grip frame",
         "Safety paddle magazine release",
         "Genuine Novak LoMount Carry sight",
-        "Picatinny rail"
+        "Picatinny rail",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "6.0 lbs",
-        safetyFeatures: ["Trigger Safety", "Manual Safety", "Magazine Disconnect"],
+        safetyFeatures: [
+          "Trigger Safety",
+          "Manual Safety",
+          "Magazine Disconnect",
+        ],
         magazines: "Ships with 2 magazines",
-        warranty: "Limited Warranty"
+        warranty: "Limited Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.3,
-      reviews: 142
+      reviews: 142,
     },
     {
       id: 16,
       name: "HK VP9",
-      description: "German-engineered striker-fired pistol with customizable grip and exceptional accuracy.",
+      description:
+        "German-engineered striker-fired pistol with customizable grip and exceptional accuracy.",
       price: 799.99,
       originalPrice: 899.99,
       category: "handguns",
       stock: 6,
-      images: ["https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "Heckler & Koch",
@@ -265,28 +301,32 @@ const initialState = {
         "HK Light Strike ignition system",
         "Ambidextrous controls",
         "Cold hammer-forged barrel",
-        "No external safety"
+        "No external safety",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "5.4 lbs",
         safetyFeatures: ["Drop Safety", "Firing Pin Safety"],
         magazines: "Ships with 3 magazines",
-        warranty: "HK Limited Warranty"
+        warranty: "HK Limited Warranty",
       },
       inStock: true,
       onSale: true,
       rating: 4.8,
-      reviews: 201
-        },
+      reviews: 201,
+    },
     {
       id: 17,
       name: "CZ P-10C",
-      description: "Czech-made striker-fired pistol with exceptional trigger and unmatched reliability.",
+      description:
+        "Czech-made striker-fired pistol with exceptional trigger and unmatched reliability.",
       price: 599.99,
       category: "handguns",
       stock: 14,
-      images: ["https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop", "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"],
+      images: [
+        "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "CZ-USA",
@@ -303,29 +343,33 @@ const initialState = {
         "Interchangeable backstraps",
         "Fiber-reinforced polymer frame",
         "Reversible magazine release",
-        "Superior ergonomics"
+        "Superior ergonomics",
       ],
       specifications: {
         frameSize: "Compact",
         triggerPull: "4.5-5.0 lbs",
         safetyFeatures: ["Firing Pin Safety", "Trigger Safety"],
         magazines: "Ships with 2 magazines",
-        warranty: "5 Year Warranty"
+        warranty: "5 Year Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.6,
-      reviews: 167
+      reviews: 167,
     },
     {
       id: 18,
       name: "Beretta 92FS",
-      description: "Classic full-size pistol used by military and law enforcement worldwide. Proven reliability and accuracy.",
+      description:
+        "Classic full-size pistol used by military and law enforcement worldwide. Proven reliability and accuracy.",
       price: 679.99,
       originalPrice: 749.99,
       category: "handguns",
       stock: 9,
-      images: ["https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "Beretta",
@@ -342,28 +386,32 @@ const initialState = {
         "Chrome-lined barrel",
         "Ambidextrous safety",
         "Reversible magazine release",
-        "Combat trigger guard"
+        "Combat trigger guard",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "12 lbs DA / 4.5 lbs SA",
         safetyFeatures: ["Manual Safety", "Firing Pin Block"],
         magazines: "Ships with 2 magazines",
-        warranty: "Limited Warranty"
+        warranty: "Limited Warranty",
       },
       inStock: true,
       onSale: true,
       rating: 4.7,
-      reviews: 312
+      reviews: 312,
     },
     {
       id: 19,
       name: "Kimber Ultra Carry II",
-      description: "Premium 1911-style compact pistol with enhanced features for concealed carry.",
+      description:
+        "Premium 1911-style compact pistol with enhanced features for concealed carry.",
       price: 899.99,
       category: "handguns",
       stock: 5,
-      images: ["https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Kimber",
@@ -380,28 +428,32 @@ const initialState = {
         "Match grade barrel",
         "Full-length guide rod",
         "High-ride beavertail",
-        "Carry melt treatment"
+        "Carry melt treatment",
       ],
       specifications: {
         frameSize: "Compact",
         triggerPull: "4-5 lbs",
         safetyFeatures: ["Manual Thumb Safety", "Grip Safety"],
         magazines: "Ships with 2 magazines",
-        warranty: "Kimber Limited Warranty"
+        warranty: "Kimber Limited Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.4,
-      reviews: 87
+      reviews: 87,
     },
     {
       id: 20,
       name: "Taurus G3C",
-      description: "Affordable and reliable striker-fired compact pistol perfect for concealed carry and home defense.",
+      description:
+        "Affordable and reliable striker-fired compact pistol perfect for concealed carry and home defense.",
       price: 299.99,
       category: "handguns",
       stock: 22,
-      images: ["https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Taurus",
@@ -418,29 +470,33 @@ const initialState = {
         "Manual safety",
         "Memory pads",
         "Restrike capability",
-        "Loaded chamber indicator"
+        "Loaded chamber indicator",
       ],
       specifications: {
         frameSize: "Compact",
         triggerPull: "6.0 lbs",
         safetyFeatures: ["Manual Safety", "Trigger Safety", "Firing Pin Block"],
         magazines: "Ships with 2 magazines",
-        warranty: "Limited Lifetime Warranty"
+        warranty: "Limited Lifetime Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.2,
-      reviews: 198
+      reviews: 198,
     },
     {
       id: 21,
       name: "FN 509 Tactical",
-      description: "Optics-ready tactical pistol with suppressor-ready threaded barrel. Built for professionals.",
+      description:
+        "Optics-ready tactical pistol with suppressor-ready threaded barrel. Built for professionals.",
       price: 899.99,
       originalPrice: 999.99,
       category: "handguns",
       stock: 7,
-      images: ["https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "FN America",
@@ -457,28 +513,32 @@ const initialState = {
         "Threaded barrel",
         "Enhanced grip texture",
         "Ambidextrous controls",
-        "Low-profile slide stop"
+        "Low-profile slide stop",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "5.5-7.7 lbs",
         safetyFeatures: ["Trigger Safety", "Firing Pin Safety"],
         magazines: "Ships with 3 magazines (24rd)",
-        warranty: "FN Limited Warranty"
+        warranty: "FN Limited Warranty",
       },
       inStock: true,
       onSale: true,
       rating: 4.6,
-      reviews: 143
+      reviews: 143,
     },
     {
       id: 22,
       name: "Desert Eagle .50 AE",
-      description: "Iconic large-caliber semi-automatic pistol. The ultimate in stopping power and prestige.",
+      description:
+        "Iconic large-caliber semi-automatic pistol. The ultimate in stopping power and prestige.",
       price: 1899.99,
       category: "handguns",
       stock: 3,
-      images: ["https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: true,
       displayLocation: ["home", "featured", "handguns"],
       manufacturer: "Magnum Research",
@@ -495,28 +555,32 @@ const initialState = {
         "Rotating bolt system",
         "Polygonal rifling",
         "Weaver rail system",
-        "Iconic design"
+        "Iconic design",
       ],
       specifications: {
         frameSize: "Large Frame",
         triggerPull: "4.0 lbs",
         safetyFeatures: ["Manual Safety", "Firing Pin Safety"],
         magazines: "Ships with 1 magazine",
-        warranty: "Limited Warranty"
+        warranty: "Limited Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.3,
-      reviews: 76
+      reviews: 76,
     },
     {
       id: 23,
       name: "Canik TP9SFx",
-      description: "Competition-ready striker-fired pistol with superior ergonomics and match-grade trigger.",
+      description:
+        "Competition-ready striker-fired pistol with superior ergonomics and match-grade trigger.",
       price: 459.99,
       category: "handguns",
       stock: 16,
-      images: ["https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Canik",
@@ -533,28 +597,32 @@ const initialState = {
         "Optics-ready slide",
         "Interchangeable backstraps",
         "Extended magazine release",
-        "Flared magazine well"
+        "Flared magazine well",
       ],
       specifications: {
         frameSize: "Full Size",
         triggerPull: "3.5-4.0 lbs",
         safetyFeatures: ["Trigger Safety", "Firing Pin Safety", "Drop Safety"],
         magazines: "Ships with 2 magazines (20rd)",
-        warranty: "Limited Warranty"
+        warranty: "Limited Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.7,
-      reviews: 224
+      reviews: 224,
     },
     {
       id: 24,
       name: "Mossberg MC2c",
-      description: "Compact carry pistol designed for everyday carry with enhanced grip texture and reliable performance.",
+      description:
+        "Compact carry pistol designed for everyday carry with enhanced grip texture and reliable performance.",
       price: 449.99,
       category: "handguns",
       stock: 11,
-      images: ["https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format", "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format"],
+      images: [
+        "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop&auto=format",
+        "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop&auto=format",
+      ],
       featured: false,
       displayLocation: ["handguns"],
       manufacturer: "Mossberg",
@@ -571,25 +639,30 @@ const initialState = {
         "Flat-faced trigger",
         "Cross-bolt safety",
         "SIG optics compatibility",
-        "Enhanced slide serrations"
+        "Enhanced slide serrations",
       ],
       specifications: {
         frameSize: "Compact",
         triggerPull: "5.5-6.5 lbs",
-        safetyFeatures: ["Cross-Bolt Safety", "Trigger Safety", "Firing Pin Block"],
+        safetyFeatures: [
+          "Cross-Bolt Safety",
+          "Trigger Safety",
+          "Firing Pin Block",
+        ],
         magazines: "Ships with 2 magazines",
-        warranty: "Limited Warranty"
+        warranty: "Limited Warranty",
       },
       inStock: true,
       onSale: false,
       rating: 4.1,
-      reviews: 64
+      reviews: 64,
     },
-        // RIFLES COLLECTION
+    // RIFLES COLLECTION
     {
       id: 2,
       name: "Smith & Wesson M&P15 Sport II",
-      description: "America's most popular modern sporting rifle. Reliable, accurate, and versatile for hunting, competition, and recreational shooting.",
+      description:
+        "America's most popular modern sporting rifle. Reliable, accurate, and versatile for hunting, competition, and recreational shooting.",
       price: 899.99,
       originalPrice: 999.99,
       category: "rifles",
@@ -631,7 +704,8 @@ const initialState = {
     {
       id: 17,
       name: "Ruger 10/22 Carbine",
-      description: "America's favorite .22 rifle. Perfect for beginners, training, and small game hunting with legendary reliability.",
+      description:
+        "America's favorite .22 rifle. Perfect for beginners, training, and small game hunting with legendary reliability.",
       price: 349.99,
       category: "rifles",
       stock: 15,
@@ -672,7 +746,8 @@ const initialState = {
     {
       id: 18,
       name: "Remington 700 SPS",
-      description: "The most trusted bolt-action rifle platform for hunting and precision shooting. Legendary accuracy since 1962.",
+      description:
+        "The most trusted bolt-action rifle platform for hunting and precision shooting. Legendary accuracy since 1962.",
       price: 649.99,
       originalPrice: 729.99,
       category: "rifles",
@@ -714,8 +789,9 @@ const initialState = {
     {
       id: 19,
       name: "Winchester Model 70 Featherweight",
-      description: "The rifleman's rifle. Classic American design with modern manufacturing for hunting excellence.",
-      price: 1,049.99,
+      description:
+        "The rifleman's rifle. Classic American design with modern manufacturing for hunting excellence.",
+      price: 1049.99,
       category: "rifles",
       stock: 4,
       images: [
@@ -755,7 +831,8 @@ const initialState = {
     {
       id: 20,
       name: "Marlin Model 336 Lever Action",
-      description: "Classic American lever-action rifle perfect for deer hunting and brush country. Fast follow-up shots with reliability.",
+      description:
+        "Classic American lever-action rifle perfect for deer hunting and brush country. Fast follow-up shots with reliability.",
       price: 599.99,
       originalPrice: 649.99,
       category: "rifles",
@@ -797,7 +874,8 @@ const initialState = {
     {
       id: 21,
       name: "Savage Arms 110 Hunter",
-      description: "Precision rifle engineered for accuracy with user-adjustable AccuTrigger and button-rifled barrel.",
+      description:
+        "Precision rifle engineered for accuracy with user-adjustable AccuTrigger and button-rifled barrel.",
       price: 449.99,
       category: "rifles",
       stock: 12,
@@ -838,7 +916,8 @@ const initialState = {
     {
       id: 22,
       name: "Henry Big Boy Steel",
-      description: "Modern lever-action with steel receiver and side loading gate. Perfect blend of tradition and innovation.",
+      description:
+        "Modern lever-action with steel receiver and side loading gate. Perfect blend of tradition and innovation.",
       price: 899.99,
       originalPrice: 979.99,
       category: "rifles",
@@ -880,7 +959,8 @@ const initialState = {
     {
       id: 23,
       name: "Tikka T3x Hunter",
-      description: "Finnish precision engineering meets hunting performance. Exceptional accuracy in a lightweight package.",
+      description:
+        "Finnish precision engineering meets hunting performance. Exceptional accuracy in a lightweight package.",
       price: 749.99,
       category: "rifles",
       stock: 5,
@@ -921,7 +1001,8 @@ const initialState = {
     {
       id: 24,
       name: "Mossberg Patriot Predator",
-      description: "Purpose-built hunting rifle with threaded barrel and camo finish. Designed for predator and varmint hunting.",
+      description:
+        "Purpose-built hunting rifle with threaded barrel and camo finish. Designed for predator and varmint hunting.",
       price: 449.99,
       originalPrice: 499.99,
       category: "rifles",
@@ -963,7 +1044,8 @@ const initialState = {
     {
       id: 25,
       name: "Bergara B-14 Hunter",
-      description: "Spanish precision manufacturing meets American hunting traditions. Sub-MOA accuracy guarantee.",
+      description:
+        "Spanish precision manufacturing meets American hunting traditions. Sub-MOA accuracy guarantee.",
       price: 849.99,
       category: "rifles",
       stock: 6,
@@ -1004,7 +1086,8 @@ const initialState = {
     {
       id: 26,
       name: "CZ 455 American",
-      description: "Czech precision in .22 LR. Adjustable trigger and interchangeable barrel system for versatility.",
+      description:
+        "Czech precision in .22 LR. Adjustable trigger and interchangeable barrel system for versatility.",
       price: 459.99,
       category: "rifles",
       stock: 11,
@@ -1045,7 +1128,8 @@ const initialState = {
     {
       id: 27,
       name: "Weatherby Vanguard Series 2",
-      description: "Sub-MOA accuracy guarantee with hand-lapped barrel. Premium hunting rifle with Monte Carlo stock.",
+      description:
+        "Sub-MOA accuracy guarantee with hand-lapped barrel. Premium hunting rifle with Monte Carlo stock.",
       price: 649.99,
       originalPrice: 699.99,
       category: "rifles",
