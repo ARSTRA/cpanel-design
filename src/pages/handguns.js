@@ -1,13 +1,13 @@
 import React from "react";
 import { AppProvider } from "../context/AppContext";
 import Layout from "../components/Layout";
-import CategoryPage from "../components/CategoryPage";
+import HandgunCollection from "../components/HandgunCollection";
 
 const HandgunsPage = () => {
   return (
     <AppProvider>
       <Layout>
-        <CategoryPage category="handguns" />
+        <HandgunCollection />
       </Layout>
     </AppProvider>
   );
