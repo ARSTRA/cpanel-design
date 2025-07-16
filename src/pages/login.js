@@ -255,8 +255,31 @@ function LoginContent() {
             Don't have an account?{" "}
             <StyledLink to="/signup">Sign up here</StyledLink>
           </p>
-          <p>
-            <StyledLink to="/forgot-password">Forgot your password?</StyledLink>
+          <p style={{ marginTop: "15px" }}>
+            <StyledLink
+              to="/forgot-password"
+              style={{
+                fontSize: "15px",
+                fontWeight: "600",
+                color: "#e74c3c",
+                textDecoration: "none",
+                padding: "8px 12px",
+                borderRadius: "6px",
+                border: "1px solid #e74c3c",
+                display: "inline-block",
+                transition: "all 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.background = "#e74c3c";
+                e.target.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.background = "transparent";
+                e.target.style.color = "#e74c3c";
+              }}
+            >
+              🔐 Forgot your password?
+            </StyledLink>
           </p>
         </LinksContainer>
       </LoginCard>
