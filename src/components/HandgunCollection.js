@@ -665,8 +665,9 @@ export default function HandgunCollection() {
         <FiltersSection>
           <FiltersGrid>
             <FilterGroup>
-              <label>Search Handguns</label>
+              <label htmlFor="search-handguns">Search Handguns</label>
               <SearchInput
+                id="search-handguns"
                 type="text"
                 placeholder="Search by name, manufacturer, caliber..."
                 value={searchTerm}
@@ -675,8 +676,9 @@ export default function HandgunCollection() {
             </FilterGroup>
 
             <FilterGroup>
-              <label>Filter By</label>
+              <label htmlFor="filter-by">Filter By</label>
               <Select
+                id="filter-by"
                 value={filterBy}
                 onChange={(e) => setFilterBy(e.target.value)}
               >
@@ -688,8 +690,9 @@ export default function HandgunCollection() {
             </FilterGroup>
 
             <FilterGroup>
-              <label>Sort By</label>
+              <label htmlFor="sort-by">Sort By</label>
               <Select
+                id="sort-by"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
