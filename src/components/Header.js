@@ -598,10 +598,6 @@ export default function Header() {
             <SignupButton to="/signup">Sign Up</SignupButton>
           </AuthButtonsContainer>
 
-          <AdminLink to="/admin" title="Admin Access">
-            ⚙️
-          </AdminLink>
-
           <MenuToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? "✕" : "☰"}
           </MenuToggle>
