@@ -187,7 +187,7 @@ function LoginContent() {
         setSuccess("Login successful! Welcome back.");
         // In a real app, you'd handle authentication here
         setTimeout(() => {
-          navigate("/");
+          navigate("/dashboard");
         }, 1500);
       } else {
         setError("Please fill in all fields");
