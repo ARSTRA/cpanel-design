@@ -161,9 +161,9 @@ const ImageBadges = styled.div`
 
 const Badge = styled.div`
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff9a9e, #fecfef)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #a8edea, #fed6e3)"
         : "linear-gradient(135deg, #667eea, #764ba2)"};
   color: white;
