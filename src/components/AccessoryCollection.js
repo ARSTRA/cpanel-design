@@ -495,9 +495,9 @@ const ProductBadge = styled.div`
   top: 25px;
   right: 25px;
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff9a9e, #fecfef)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #a8edea, #fed6e3)"
         : "linear-gradient(135deg, #667eea, #764ba2)"};
   color: white;
@@ -947,13 +947,13 @@ const AccessoryCollection = () => {
                       }}
                     />
                     {accessory.onSale && (
-                      <ProductBadge type="sale">Sale</ProductBadge>
+                      <ProductBadge $type="sale">Sale</ProductBadge>
                     )}
                     {accessory.featured && !accessory.onSale && (
-                      <ProductBadge type="featured">Featured</ProductBadge>
+                      <ProductBadge $type="featured">Featured</ProductBadge>
                     )}
                     {!accessory.inStock && (
-                      <ProductBadge type="stock">Out of Stock</ProductBadge>
+                      <ProductBadge $type="stock">Out of Stock</ProductBadge>
                     )}
                   </ProductImageContainer>
 
