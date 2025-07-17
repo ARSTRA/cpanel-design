@@ -400,6 +400,7 @@ const ContactInfo = styled.div`
 
 const LegalPage = () => {
   const [activeSection, setActiveSection] = useState("privacy");
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   // Handle URL hash navigation
   useEffect(() => {
@@ -411,8 +412,22 @@ const LegalPage = () => {
       ) {
         setActiveSection(hash);
       }
+
+      // Show scroll to top button when scrolling
+      const handleScroll = () => {
+        setShowScrollTop(window.pageYOffset > 300);
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
     }
   }, []);
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   const sections = [
     {
