@@ -469,7 +469,9 @@ export default function Header() {
 
   // Get current page to highlight active nav item
   const currentPath =
-    typeof window !== "undefined" ? window.location.pathname : "/";
+    typeof window !== "undefined"
+      ? window.location.pathname.replace(/\/$/, "") || "/"
+      : "/";
 
   return (
     <HeaderContainer>
