@@ -788,13 +788,13 @@ const RifleCollection = () => {
                       }}
                     />
                     {rifle.onSale && (
-                      <ProductBadge type="sale">Sale</ProductBadge>
+                      <ProductBadge $type="sale">Sale</ProductBadge>
                     )}
                     {rifle.featured && !rifle.onSale && (
-                      <ProductBadge type="featured">Featured</ProductBadge>
+                      <ProductBadge $type="featured">Featured</ProductBadge>
                     )}
                     {!rifle.inStock && (
-                      <ProductBadge type="stock">Out of Stock</ProductBadge>
+                      <ProductBadge $type="stock">Out of Stock</ProductBadge>
                     )}
                   </ProductImageContainer>
 
