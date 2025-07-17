@@ -707,7 +707,7 @@ export default function HomePage() {
     }
   };
 
-  const handleProductInquiry = (product) => {
+  const handleProductPurchase = (product) => {
     navigate(
       `/contact?product=${encodeURIComponent(product.name)}&category=${product.category}`,
     );
@@ -814,7 +814,7 @@ export default function HomePage() {
                       View Details
                     </ProductButton>
                     <SecondaryButton
-                      onClick={() => handleProductInquiry(product)}
+                      onClick={() => handleProductPurchase(product)}
                     >
                       Buy Now
                     </SecondaryButton>
