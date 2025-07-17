@@ -97,10 +97,10 @@ const NavItem = styled.button`
   width: 100%;
   padding: 15px 20px;
   background: ${(props) =>
-    props.active ? "rgba(52, 152, 219, 0.2)" : "transparent"};
+    props.$active ? "rgba(52, 152, 219, 0.2)" : "transparent"};
   border: none;
   border-left: 4px solid
-    ${(props) => (props.active ? "#3498db" : "transparent")};
+    ${(props) => (props.$active ? "#3498db" : "transparent")};
   color: white;
   text-align: left;
   cursor: pointer;
@@ -206,7 +206,7 @@ export default function AdminDashboard() {
             {menuItems.map((item) => (
               <li key={item.id}>
                 <NavItem
-                  active={activeTab === item.id}
+                  $active={activeTab === item.id}
                   onClick={() => setActiveTab(item.id)}
                 >
                   <span>{item.icon}</span>
