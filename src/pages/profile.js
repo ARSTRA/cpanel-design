@@ -366,11 +366,11 @@ function ProfilePage() {
   );
 }
 
-const ProfilePage = () => {
+const ProfilePageWrapper = () => {
   return (
     <AppProvider>
       <Layout>
-        <ProfileContent />
+        <ProfilePage />
       </Layout>
     </AppProvider>
   );
