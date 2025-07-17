@@ -11,3 +11,5 @@ const RiflesPage = () => {
 };
 
 export default RiflesPage;
+
+export const Head = () => <title>Rifles | Gun-k Pro</title>;
