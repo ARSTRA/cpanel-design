@@ -510,7 +510,7 @@ export default function Header() {
   };
 
   // Prevent body scroll when mobile menu is open
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof document !== "undefined") {
       if (isMenuOpen) {
         document.body.style.overflow = "hidden";
