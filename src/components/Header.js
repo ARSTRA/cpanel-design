@@ -190,7 +190,7 @@ const Navigation = styled.nav`
   align-items: center;
   gap: 30px;
 
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     display: ${(props) => (props.isOpen ? "flex" : "none")};
     position: absolute;
     top: 100%;
@@ -272,7 +272,7 @@ const SearchContainer = styled.div`
     border-color: rgba(255, 255, 255, 0.5);
   }
 
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     max-width: 200px;
     order: 3;
     width: 100%;
@@ -506,22 +506,22 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  const handleNavClick = () => {
+    const handleNavClick = () => {
     setIsMenuOpen(false);
   };
 
   // Prevent body scroll when mobile menu is open
   React.useEffect(() => {
-    if (typeof document !== "undefined") {
+    if (typeof document !== 'undefined') {
       if (isMenuOpen) {
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = 'hidden';
       } else {
-        document.body.style.overflow = "unset";
+        document.body.style.overflow = 'unset';
       }
     }
     return () => {
-      if (typeof document !== "undefined") {
-        document.body.style.overflow = "unset";
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = 'unset';
       }
     };
   }, [isMenuOpen]);
@@ -532,9 +532,11 @@ export default function Header() {
       ? window.location.pathname.replace(/\/$/, "") || "/"
       : "/";
 
-  return (
-    <HeaderContainer>
-      <TopBar>
+    return (
+    <>
+      <MobileMenuBackdrop isOpen={isMenuOpen} onClick={() => setIsMenuOpen(false)} />
+      <HeaderContainer>
+        <TopBar>
         {state.siteSettings.headerText} | Licensed FFL Dealer | Call:{" "}
         <a
           href={`tel:${state.siteSettings.contactInfo.phone}`}
@@ -644,7 +646,7 @@ export default function Header() {
         </Navigation>
 
         <ActionButtons>
-          <SearchContainer as="form" onSubmit={handleSearch} role="search">
+                    <SearchContainer as="form" onSubmit={handleSearch} role="search">
             <SearchInput
               type="text"
               placeholder="Search products..."
@@ -652,9 +654,7 @@ export default function Header() {
               onChange={(e) => setSearchTerm(e.target.value)}
               aria-label="Search products"
             />
-            <SearchButton type="submit" aria-label="Submit search">
-              🔍
-            </SearchButton>
+            <SearchButton type="submit" aria-label="Submit search">🔍</SearchButton>
           </SearchContainer>
 
           <AuthButtonsContainer>
@@ -662,7 +662,7 @@ export default function Header() {
             <SignupButton to="/signup">Sign Up</SignupButton>
           </AuthButtonsContainer>
 
-          <MenuToggle
+                    <MenuToggle
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMenuOpen}
