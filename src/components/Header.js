@@ -28,9 +28,16 @@ const NavigationBar = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  position: relative;
 
   @media (max-width: 768px) {
     padding: 0 15px;
+    flex-wrap: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 10px;
+    height: 60px;
   }
 `;
 
