@@ -983,6 +983,10 @@ const LegalPage = () => {
             </p>
           </ContactInfo>
         </Container>
+
+        <ScrollToTopButton show={showScrollTop} onClick={scrollToTop}>
+          ⬆️
+        </ScrollToTopButton>
       </LegalContainer>
     </Layout>
   );
