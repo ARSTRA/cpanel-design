@@ -14,3 +14,5 @@ const AccessoryDetailPage = ({ location }) => {
 };
 
 export default AccessoryDetailPage;
+
+export const Head = () => <title>Accessory Details | Gun-k Pro</title>;
