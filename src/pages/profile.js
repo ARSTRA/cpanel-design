@@ -185,7 +185,7 @@ const StatCard = styled.div`
   }
 `;
 
-function ProfileContent() {
+function ProfilePage() {
   const [formData, setFormData] = useState({
     firstName: "John",
     lastName: "Doe",
