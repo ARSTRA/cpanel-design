@@ -1,0 +1,210 @@
+[
+  {
+    "id": 1,
+    "name": "Glock 19 Gen 5",
+    "description": "The most versatile and reliable compact pistol for concealed carry, home defense, and duty use. Features enhanced ergonomics and improved accuracy.",
+    "price": 549.99,
+    "originalPrice": 599.99,
+    "category": "handguns",
+    "stock": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["home", "featured", "handguns"],
+    "manufacturer": "Glock",
+    "caliber": "9mm Luger",
+    "capacity": "15+1",
+    "barrelLength": "4.02 inches",
+    "overallLength": "7.36 inches",
+    "weight": "23.65 oz",
+    "action": "Safe Action",
+    "finish": "Polymer Frame / Steel Slide",
+    "sights": "Glock Night Sights",
+    "features": [
+      "Enhanced trigger with smoother pull",
+      "Improved grip texture",
+      "Ambidextrous slide stop lever",
+      "Flared magazine well",
+      "No finger grooves"
+    ],
+    "specifications": {
+      "frameSize": "Compact",
+      "triggerPull": "5.5 lbs",
+      "safetyFeatures": ["Trigger Safety", "Firing Pin Safety", "Drop Safety"],
+      "magazines": "Ships with 3 magazines",
+      "warranty": "Limited Lifetime Warranty"
+    },
+    "inStock": true,
+    "onSale": true,
+    "rating": 4.8,
+    "reviews": 247
+  },
+  {
+    "id": 11,
+    "name": "Sig Sauer P320",
+    "description": "Modular striker-fired pistol system adopted by the U.S. Military. Ultimate in reliability and versatility.",
+    "price": 629.99,
+    "originalPrice": 699.99,
+    "category": "handguns",
+    "stock": 12,
+    "images": [
+      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["home", "featured", "handguns"],
+    "manufacturer": "Sig Sauer",
+    "caliber": "9mm Luger",
+    "capacity": "17+1",
+    "barrelLength": "4.7 inches",
+    "overallLength": "8.0 inches",
+    "weight": "29.4 oz",
+    "action": "Striker Fired",
+    "finish": "Nitron Stainless Steel",
+    "sights": "SIGLITE Night Sights",
+    "features": [
+      "Modular design allows caliber changes",
+      "Enhanced trigger with crisp break",
+      "Accessory rail for lights/lasers",
+      "Removable fire control unit",
+      "Tool-free disassembly"
+    ],
+    "specifications": {
+      "frameSize": "Full Size",
+      "triggerPull": "5.5-6.5 lbs",
+      "safetyFeatures": ["Striker Safety", "Disconnect Safety"],
+      "magazines": "Ships with 2 magazines",
+      "warranty": "Lifetime Warranty"
+    },
+    "inStock": true,
+    "onSale": true,
+    "rating": 4.7,
+    "reviews": 189
+  },
+  {
+    "id": 2,
+    "name": "Smith & Wesson M&P15 Sport II",
+    "description": "America's most popular modern sporting rifle. Reliable, accurate, and versatile for hunting, competition, and recreational shooting.",
+    "price": 899.99,
+    "originalPrice": 999.99,
+    "category": "rifles",
+    "stock": 8,
+    "images": [
+      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["home", "featured", "rifles"],
+    "manufacturer": "Smith & Wesson",
+    "caliber": "5.56 NATO/.223 Remington",
+    "capacity": "30 rounds (10-round compliant available)",
+    "barrelLength": "16 inches",
+    "overallLength": "32-35 inches",
+    "weight": "6.5 lbs",
+    "action": "Semi-Automatic",
+    "finish": "Matte Black Armornite",
+    "sights": "Adjustable A2 Post Front / Dual Aperture Rear",
+    "features": [
+      "Chromed firing pin",
+      "Forward assist",
+      "Dust cover",
+      "Picatinny rail",
+      "6-position telescoping stock"
+    ],
+    "specifications": {
+      "frameSize": "Standard",
+      "triggerPull": "6.5 lbs",
+      "safetyFeatures": ["Manual Safety", "Half-Cock Notch"],
+      "magazines": "Ships with 1 magazine",
+      "warranty": "Limited Lifetime Warranty"
+    },
+    "inStock": true,
+    "onSale": true,
+    "rating": 4.7,
+    "reviews": 342
+  },
+  {
+    "id": 28,
+    "name": "Remington 870 Express",
+    "description": "America's most popular pump-action shotgun. Legendary reliability for hunting, home defense, and sport shooting with over 11 million sold worldwide.",
+    "price": 449.99,
+    "originalPrice": 499.99,
+    "category": "shotguns",
+    "stock": 12,
+    "images": [
+      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["home", "featured", "shotguns"],
+    "manufacturer": "Remington",
+    "gauge": "12 Gauge",
+    "capacity": "4+1",
+    "barrelLength": "28 inches",
+    "overallLength": "48.5 inches",
+    "weight": "7.25 lbs",
+    "action": "Pump-Action",
+    "finish": "Matte Black",
+    "chokes": "Modified Rem Choke",
+    "features": [
+      "Twin action bars for smooth operation",
+      "Cross-bolt safety",
+      "Interchangeable Rem Choke system",
+      "Hardwood stock and forend",
+      "Steel receiver"
+    ],
+    "specifications": {
+      "chamberLength": "3 inches",
+      "triggerPull": "6.0-8.0 lbs",
+      "safetyFeatures": ["Cross-Bolt Safety", "Loading Gate"],
+      "magazines": "Tubular magazine",
+      "warranty": "Limited Warranty"
+    },
+    "inStock": true,
+    "onSale": true,
+    "rating": 4.7,
+    "reviews": 389
+  },
+  {
+    "id": 3,
+    "name": "Vortex Viper PST Gen II 1-6x24",
+    "description": "Professional tactical scope with first focal plane reticle and crystal-clear glass. Perfect for precision shooting and tactical applications with exceptional light transmission.",
+    "price": 699.99,
+    "originalPrice": 799.99,
+    "category": "accessories",
+    "stock": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["home", "featured", "accessories"],
+    "manufacturer": "Vortex",
+    "type": "Variable Power Scope",
+    "magnification": "1-6x24mm",
+    "reticle": "EBR-4 MOA",
+    "tubeSize": "30mm",
+    "length": "10.5 inches",
+    "weight": "21.2 oz",
+    "features": [
+      "First focal plane reticle",
+      "XD lens elements",
+      "XR fully multi-coated",
+      "Capped low-profile turrets",
+      "Single-piece tube construction"
+    ],
+    "specifications": {
+      "eyeRelief": "3.5 inches",
+      "fieldOfView": "116-19.2 feet@100 yards",
+      "clickValue": "1/4 MOA",
+      "waterproof": "IPX7 rated",
+      "warranty": "VIP Lifetime Warranty"
+    },
+    "inStock": true,
+    "onSale": true,
+    "rating": 4.8,
+    "reviews": 234
+  }
+]
