@@ -468,6 +468,23 @@ const MenuToggle = styled.button`
 
   @media (max-width: 768px) {
     display: block;
+    z-index: 1001;
+  }
+`;
+
+const MobileMenuBackdrop = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.isOpen ? "block" : "none")};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    backdrop-filter: blur(2px);
   }
 `;
 
