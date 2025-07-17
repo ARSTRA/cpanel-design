@@ -11,3 +11,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export const Head = () => <title>Contact Us | Gun-k Pro</title>;
