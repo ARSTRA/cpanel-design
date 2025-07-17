@@ -398,6 +398,40 @@ const ContactInfo = styled.div`
   }
 `;
 
+const ScrollToTopButton = styled.button`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #f093fb, #667eea);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: ${(props) => (props.show ? "flex" : "none")};
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: linear-gradient(135deg, #667eea, #f093fb);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(240, 147, 251, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+`;
+
 const LegalPage = () => {
   const [activeSection, setActiveSection] = useState("privacy");
   const [showScrollTop, setShowScrollTop] = useState(false);
