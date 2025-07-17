@@ -387,6 +387,11 @@ const LoginButton = styled(Link)`
     padding: 10px 18px;
     font-size: 12px;
   }
+
+  @media (max-width: 480px) {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
 `;
 
 const SignupButton = styled(Link)`
@@ -437,6 +442,11 @@ const SignupButton = styled(Link)`
   @media (max-width: 768px) {
     padding: 10px 18px;
     font-size: 12px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 14px;
+    font-size: 11px;
   }
 `;
 
