@@ -189,11 +189,14 @@ const Navigation = styled.nav`
     top: 100%;
     left: 0;
     right: 0;
-    background: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
   }
 `;
 
