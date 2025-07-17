@@ -816,7 +816,7 @@ export default function HomePage() {
                     <SecondaryButton
                       onClick={() => handleProductInquiry(product)}
                     >
-                      Inquire Now
+                      Buy Now
                     </SecondaryButton>
                   </ProductButtons>
                 </ProductInfo>
