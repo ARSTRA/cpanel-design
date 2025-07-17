@@ -612,7 +612,11 @@ export default function Header() {
             <SignupButton to="/signup">Sign Up</SignupButton>
           </AuthButtonsContainer>
 
-          <MenuToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <MenuToggle
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+          >
             {isMenuOpen ? "✕" : "☰"}
           </MenuToggle>
         </ActionButtons>
