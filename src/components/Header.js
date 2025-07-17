@@ -580,6 +580,18 @@ export default function Header() {
           >
             Contact
           </NavLink>
+          <NavLink
+            to="/dashboard"
+            onClick={handleNavClick}
+            className={currentPath === "/dashboard" ? "active" : ""}
+            style={{
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              color: "white",
+              fontWeight: "700",
+            }}
+          >
+            🎯 Dashboard
+          </NavLink>
         </Navigation>
 
         <ActionButtons>
