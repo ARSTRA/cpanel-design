@@ -315,6 +315,8 @@ const ActionButtons = styled.div`
 
   @media (max-width: 768px) {
     gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
