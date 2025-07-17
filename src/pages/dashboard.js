@@ -340,7 +340,12 @@ function DashboardContent() {
               >
                 💬 Support
               </ActionButton>
-              <ActionButton variant="profile">👤 Profile</ActionButton>
+              <ActionButton
+                variant="profile"
+                onClick={() => (window.location.href = "/profile")}
+              >
+                👤 Profile
+              </ActionButton>
               <CartIcon
                 itemCount={totalItems}
                 onClick={() => setIsCartOpen(true)}
