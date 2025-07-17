@@ -775,7 +775,7 @@ const ShotgunCollection = () => {
     navigate(`/shotgun-detail?id=${shotgun.id}`);
   };
 
-  const handleInquire = (shotgun) => {
+  const handleBuyNow = (shotgun) => {
     navigate(
       `/contact?product=${encodeURIComponent(shotgun.name)}&category=shotguns`,
     );
@@ -972,7 +972,7 @@ const ShotgunCollection = () => {
                       <InquireButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(shotgun);
+                          handleBuyNow(shotgun);
                         }}
                       >
                         Buy Now
