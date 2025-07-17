@@ -453,9 +453,8 @@ export default function Header() {
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchTerm.trim()) {
-      // For now, navigate to home page with search term
-      // In a real app, you'd implement search functionality
-      navigate(`/?search=${encodeURIComponent(searchTerm)}`);
+      navigate(`/search?search=${encodeURIComponent(searchTerm)}`);
+      setSearchTerm(""); // Clear search input after search
     }
   };
 
