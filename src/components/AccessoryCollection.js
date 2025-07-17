@@ -823,7 +823,7 @@ const AccessoryCollection = () => {
     navigate(`/accessory-detail?id=${accessory.id}`);
   };
 
-  const handleInquire = (accessory) => {
+  const handleBuyNow = (accessory) => {
     navigate(
       `/contact?product=${encodeURIComponent(accessory.name)}&category=accessories`,
     );
@@ -1029,7 +1029,7 @@ const AccessoryCollection = () => {
                       <InquireButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(accessory);
+                          handleBuyNow(accessory);
                         }}
                       >
                         Buy Now
