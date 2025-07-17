@@ -264,7 +264,9 @@ const SearchContainer = styled.div`
 
   @media (max-width: 768px) {
     max-width: 200px;
-    display: none; /* Hide search on mobile to make room for auth buttons */
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
   }
 `;
 
