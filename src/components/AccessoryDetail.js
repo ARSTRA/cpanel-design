@@ -764,19 +764,19 @@ const AccessoryDetail = ({ accessoryId }) => {
           <TabContainer>
             <TabHeaders>
               <TabHeader
-                active={activeTab === "specifications"}
+                $active={activeTab === "specifications"}
                 onClick={() => setActiveTab("specifications")}
               >
                 Specifications
               </TabHeader>
               <TabHeader
-                active={activeTab === "features"}
+                $active={activeTab === "features"}
                 onClick={() => setActiveTab("features")}
               >
                 Features
               </TabHeader>
               <TabHeader
-                active={activeTab === "warranty"}
+                $active={activeTab === "warranty"}
                 onClick={() => setActiveTab("warranty")}
               >
                 Warranty
