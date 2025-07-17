@@ -183,19 +183,19 @@ export default function Footer() {
           <h3>Legal & Policies</h3>
           <ul>
             <li>
-              <a href="/privacy">Privacy Policy</a>
+              <Link to="/legal">Privacy Policy</Link>
             </li>
             <li>
-              <a href="/terms">Terms of Service</a>
+              <Link to="/legal">Terms of Service</Link>
             </li>
             <li>
-              <a href="/shipping">Shipping Policy</a>
+              <Link to="/legal">Shipping Policy</Link>
             </li>
             <li>
-              <a href="/returns">Return Policy</a>
+              <Link to="/legal">Return Policy</Link>
             </li>
             <li>
-              <a href="/ffl">FFL Transfer</a>
+              <Link to="/legal">FFL Transfer</Link>
             </li>
           </ul>
         </FooterSection>
