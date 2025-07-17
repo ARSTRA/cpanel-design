@@ -401,6 +401,19 @@ const ContactInfo = styled.div`
 const LegalPage = () => {
   const [activeSection, setActiveSection] = useState("privacy");
 
+  // Handle URL hash navigation
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const hash = window.location.hash.replace("#", "");
+      if (
+        hash &&
+        ["privacy", "terms", "shipping", "returns", "ffl"].includes(hash)
+      ) {
+        setActiveSection(hash);
+      }
+    }
+  }, []);
+
   const sections = [
     {
       id: "privacy",
