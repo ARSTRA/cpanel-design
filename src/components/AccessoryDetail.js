@@ -706,9 +706,11 @@ const AccessoryDetail = ({ accessoryId }) => {
                 }}
               />
               <ImageBadges>
-                {accessory.onSale && <Badge type="sale">On Sale</Badge>}
-                {accessory.featured && <Badge type="featured">Featured</Badge>}
-                {!accessory.inStock && <Badge type="stock">Out of Stock</Badge>}
+                {accessory.onSale && <Badge $type="sale">On Sale</Badge>}
+                {accessory.featured && <Badge $type="featured">Featured</Badge>}
+                {!accessory.inStock && (
+                  <Badge $type="stock">Out of Stock</Badge>
+                )}
               </ImageBadges>
             </ImageSection>
 
