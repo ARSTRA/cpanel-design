@@ -376,6 +376,6 @@ const ProfilePageWrapper = () => {
   );
 };
 
-export default ProfilePage;
+export default ProfilePageWrapper;
 
 export const Head = () => <title>Profile | Gun-k Pro</title>;
