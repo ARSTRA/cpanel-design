@@ -7,7 +7,7 @@ const initialState = {
   isAdminAuthenticated: false,
   currentUser: null,
 
-  // Products
+  // Comprehensive Firearms Collection
   products: [
     {
       id: 1,
