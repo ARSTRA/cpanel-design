@@ -362,11 +362,11 @@ const TabHeader = styled.button`
   flex: 1;
   padding: 18px 25px;
   background: ${(props) =>
-    props.active ? "rgba(240, 147, 251, 0.4)" : "transparent"};
+    props.$active ? "rgba(240, 147, 251, 0.4)" : "transparent"};
   border: ${(props) =>
-    props.active ? "2px solid #f093fb" : "2px solid transparent"};
+    props.$active ? "2px solid #f093fb" : "2px solid transparent"};
   border-radius: 15px;
-  color: ${(props) => (props.active ? "#fff" : "rgba(255, 255, 255, 0.7)")};
+  color: ${(props) => (props.$active ? "#fff" : "rgba(255, 255, 255, 0.7)")};
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
@@ -761,19 +761,19 @@ const ShotgunDetail = ({ shotgunId }) => {
           <TabContainer>
             <TabHeaders>
               <TabHeader
-                active={activeTab === "specifications"}
+                $active={activeTab === "specifications"}
                 onClick={() => setActiveTab("specifications")}
               >
                 Specifications
               </TabHeader>
               <TabHeader
-                active={activeTab === "features"}
+                $active={activeTab === "features"}
                 onClick={() => setActiveTab("features")}
               >
                 Features
               </TabHeader>
               <TabHeader
-                active={activeTab === "warranty"}
+                $active={activeTab === "warranty"}
                 onClick={() => setActiveTab("warranty")}
               >
                 Warranty
