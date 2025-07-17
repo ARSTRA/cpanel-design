@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link, navigate } from "gatsby";
 import styled from "styled-components";
 import { AppProvider, useApp } from "../context/AppContext";
 import Layout from "../components/Layout";
