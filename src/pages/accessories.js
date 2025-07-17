@@ -11,3 +11,5 @@ const AccessoriesPage = () => {
 };
 
 export default AccessoriesPage;
+
+export const Head = () => <title>Accessories | Gun-k Pro</title>;
