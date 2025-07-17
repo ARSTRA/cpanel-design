@@ -476,6 +476,22 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  // Prevent body scroll when mobile menu is open
+  React.useEffect(() => {
+    if (typeof document !== "undefined") {
+      if (isMenuOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "unset";
+      }
+    }
+    return () => {
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = "unset";
+      }
+    };
+  }, [isMenuOpen]);
+
   // Get current page to highlight active nav item
   const currentPath =
     typeof window !== "undefined"
