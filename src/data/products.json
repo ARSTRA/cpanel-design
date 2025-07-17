@@ -168,6 +168,89 @@
     "reviews": 389
   },
   {
+    "id": 29,
+    "name": "Mossberg 500",
+    "description": "Versatile and dependable pump-action shotgun with dual extractors and positive steel-to-steel lockup. Perfect for hunting and tactical applications.",
+    "price": 399.99,
+    "category": "shotguns",
+    "stock": 15,
+    "images": [
+      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["home", "featured", "shotguns"],
+    "manufacturer": "Mossberg",
+    "gauge": "12 Gauge",
+    "capacity": "5+1",
+    "barrelLength": "28 inches",
+    "overallLength": "48 inches",
+    "weight": "7.5 lbs",
+    "action": "Pump-Action",
+    "finish": "Blue",
+    "chokes": "Accu-Choke (Modified)",
+    "features": [
+      "Dual extractors",
+      "Positive steel-to-steel lockup",
+      "Top-mounted safety",
+      "Ambidextrous design",
+      "Easy takedown"
+    ],
+    "specifications": {
+      "chamberLength": "3 inches",
+      "triggerPull": "5.5-7.5 lbs",
+      "safetyFeatures": ["Top-Mounted Safety", "Trigger Disconnect"],
+      "magazines": "Tubular magazine",
+      "warranty": "Limited Warranty"
+    },
+    "inStock": true,
+    "onSale": false,
+    "rating": 4.6,
+    "reviews": 267
+  },
+  {
+    "id": 30,
+    "name": "Benelli Super Black Eagle 3",
+    "description": "Premium semi-automatic shotgun with comfort tech technology and inertia-driven system. The ultimate waterfowl and upland game gun.",
+    "price": 1699.99,
+    "originalPrice": 1799.99,
+    "category": "shotguns",
+    "stock": 6,
+    "images": [
+      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop",
+      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+    ],
+    "featured": true,
+    "displayLocation": ["shotguns"],
+    "manufacturer": "Benelli",
+    "gauge": "12 Gauge",
+    "capacity": "3+1",
+    "barrelLength": "28 inches",
+    "overallLength": "49.6 inches",
+    "weight": "7.0 lbs",
+    "action": "Semi-Automatic",
+    "finish": "Black Synthetic",
+    "chokes": "Crio Chokes (IC, M, F)",
+    "features": [
+      "ComforTech stock technology",
+      "Inertia Driven system",
+      "Easy loading system",
+      "Red bar front sight",
+      "Crio barrel treatment"
+    ],
+    "specifications": {
+      "chamberLength": "3.5 inches",
+      "triggerPull": "4.5-6.0 lbs",
+      "safetyFeatures": ["Cross-Bolt Safety", "Loading Gate Safety"],
+      "magazines": "Tubular magazine",
+      "warranty": "5-Year Warranty"
+    },
+    "inStock": true,
+    "onSale": true,
+    "rating": 4.9,
+    "reviews": 156
+  },
+  {
     "id": 3,
     "name": "Vortex Viper PST Gen II 1-6x24",
     "description": "Professional tactical scope with first focal plane reticle and crystal-clear glass. Perfect for precision shooting and tactical applications with exceptional light transmission.",
