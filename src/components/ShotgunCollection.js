@@ -458,9 +458,9 @@ const ProductBadge = styled.div`
   top: 20px;
   right: 20px;
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff0844, #ff6b6b)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #f093fb, #667eea)"
         : "linear-gradient(135deg, #4facfe, #00f2fe)"};
   color: white;
@@ -775,7 +775,7 @@ const ShotgunCollection = () => {
     navigate(`/shotgun-detail?id=${shotgun.id}`);
   };
 
-  const handleInquire = (shotgun) => {
+  const handleBuyNow = (shotgun) => {
     navigate(
       `/contact?product=${encodeURIComponent(shotgun.name)}&category=shotguns`,
     );
@@ -790,7 +790,7 @@ const ShotgunCollection = () => {
   const inStockCount = shotguns.filter((s) => s.inStock).length;
   const avgRating =
     shotguns.reduce((sum, s) => sum + (s.rating || 0), 0) / shotguns.length;
-  const featuredCount = shotguns.filter((s) => s.featured).length;
+
   const avgPrice =
     shotguns.reduce((sum, s) => sum + s.price, 0) / shotguns.length;
 
@@ -897,13 +897,13 @@ const ShotgunCollection = () => {
                       }}
                     />
                     {shotgun.onSale && (
-                      <ProductBadge type="sale">Sale</ProductBadge>
+                      <ProductBadge $type="sale">Sale</ProductBadge>
                     )}
                     {shotgun.featured && !shotgun.onSale && (
-                      <ProductBadge type="featured">Featured</ProductBadge>
+                      <ProductBadge $type="featured">Featured</ProductBadge>
                     )}
                     {!shotgun.inStock && (
-                      <ProductBadge type="stock">Out of Stock</ProductBadge>
+                      <ProductBadge $type="stock">Out of Stock</ProductBadge>
                     )}
                   </ProductImageContainer>
 
@@ -972,10 +972,10 @@ const ShotgunCollection = () => {
                       <InquireButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(shotgun);
+                          handleBuyNow(shotgun);
                         }}
                       >
-                        Inquire Now
+                        Buy Now
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>

@@ -18,14 +18,6 @@ const rotate = keyframes`
   to { transform: rotate(360deg); }
 `;
 
-const rainbow = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
-
 const AccessoryContainer = styled.div`
   padding: 0;
   min-height: 100vh;
@@ -495,9 +487,9 @@ const ProductBadge = styled.div`
   top: 25px;
   right: 25px;
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff9a9e, #fecfef)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #a8edea, #fed6e3)"
         : "linear-gradient(135deg, #667eea, #764ba2)"};
   color: white;
@@ -823,7 +815,7 @@ const AccessoryCollection = () => {
     navigate(`/accessory-detail?id=${accessory.id}`);
   };
 
-  const handleInquire = (accessory) => {
+  const handleBuyNow = (accessory) => {
     navigate(
       `/contact?product=${encodeURIComponent(accessory.name)}&category=accessories`,
     );
@@ -839,7 +831,7 @@ const AccessoryCollection = () => {
   const avgRating =
     accessories.reduce((sum, a) => sum + (a.rating || 0), 0) /
     accessories.length;
-  const featuredCount = accessories.filter((a) => a.featured).length;
+
   const avgPrice =
     accessories.reduce((sum, a) => sum + a.price, 0) / accessories.length;
 
@@ -947,13 +939,13 @@ const AccessoryCollection = () => {
                       }}
                     />
                     {accessory.onSale && (
-                      <ProductBadge type="sale">Sale</ProductBadge>
+                      <ProductBadge $type="sale">Sale</ProductBadge>
                     )}
                     {accessory.featured && !accessory.onSale && (
-                      <ProductBadge type="featured">Featured</ProductBadge>
+                      <ProductBadge $type="featured">Featured</ProductBadge>
                     )}
                     {!accessory.inStock && (
-                      <ProductBadge type="stock">Out of Stock</ProductBadge>
+                      <ProductBadge $type="stock">Out of Stock</ProductBadge>
                     )}
                   </ProductImageContainer>
 
@@ -1029,10 +1021,10 @@ const AccessoryCollection = () => {
                       <InquireButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(accessory);
+                          handleBuyNow(accessory);
                         }}
                       >
-                        Inquire Now
+                        Buy Now
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>

@@ -13,14 +13,6 @@ const float = keyframes`
   50% { transform: translateY(-12px); }
 `;
 
-const rainbow = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
-
 const DetailContainer = styled.div`
   min-height: 100vh;
   background: linear-gradient(
@@ -161,9 +153,9 @@ const ImageBadges = styled.div`
 
 const Badge = styled.div`
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff9a9e, #fecfef)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #a8edea, #fed6e3)"
         : "linear-gradient(135deg, #667eea, #764ba2)"};
   color: white;
@@ -363,11 +355,11 @@ const TabHeader = styled.button`
   flex: 1;
   padding: 20px 30px;
   background: ${(props) =>
-    props.active ? "rgba(255, 154, 158, 0.5)" : "transparent"};
+    props.$active ? "rgba(255, 154, 158, 0.5)" : "transparent"};
   border: ${(props) =>
-    props.active ? "3px solid #ff9a9e" : "3px solid transparent"};
+    props.$active ? "3px solid #ff9a9e" : "3px solid transparent"};
   border-radius: 20px;
-  color: ${(props) => (props.active ? "#fff" : "rgba(255, 255, 255, 0.8)")};
+  color: ${(props) => (props.$active ? "#fff" : "rgba(255, 255, 255, 0.8)")};
   font-weight: 800;
   font-size: 1.2rem;
   cursor: pointer;
@@ -706,9 +698,11 @@ const AccessoryDetail = ({ accessoryId }) => {
                 }}
               />
               <ImageBadges>
-                {accessory.onSale && <Badge type="sale">On Sale</Badge>}
-                {accessory.featured && <Badge type="featured">Featured</Badge>}
-                {!accessory.inStock && <Badge type="stock">Out of Stock</Badge>}
+                {accessory.onSale && <Badge $type="sale">On Sale</Badge>}
+                {accessory.featured && <Badge $type="featured">Featured</Badge>}
+                {!accessory.inStock && (
+                  <Badge $type="stock">Out of Stock</Badge>
+                )}
               </ImageBadges>
             </ImageSection>
 
@@ -764,19 +758,19 @@ const AccessoryDetail = ({ accessoryId }) => {
           <TabContainer>
             <TabHeaders>
               <TabHeader
-                active={activeTab === "specifications"}
+                $active={activeTab === "specifications"}
                 onClick={() => setActiveTab("specifications")}
               >
                 Specifications
               </TabHeader>
               <TabHeader
-                active={activeTab === "features"}
+                $active={activeTab === "features"}
                 onClick={() => setActiveTab("features")}
               >
                 Features
               </TabHeader>
               <TabHeader
-                active={activeTab === "warranty"}
+                $active={activeTab === "warranty"}
                 onClick={() => setActiveTab("warranty")}
               >
                 Warranty

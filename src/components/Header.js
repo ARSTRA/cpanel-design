@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
 import { useApp } from "../context/AppContext";
@@ -27,9 +27,16 @@ const NavigationBar = styled.div`
   align-items: center;
   justify-content: space-between;
   height: 70px;
+  position: relative;
 
   @media (max-width: 768px) {
     padding: 0 15px;
+    flex-wrap: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 10px;
+    height: 60px;
   }
 `;
 
@@ -183,16 +190,19 @@ const Navigation = styled.nav`
   gap: 30px;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.isOpen ? "flex" : "none")};
+    display: ${(props) => (props.$isOpen ? "flex" : "none")};
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 999;
   }
 `;
 
@@ -263,7 +273,9 @@ const SearchContainer = styled.div`
 
   @media (max-width: 768px) {
     max-width: 200px;
-    display: none; /* Hide search on mobile to make room for auth buttons */
+    order: 3;
+    width: 100%;
+    margin-top: 15px;
   }
 `;
 
@@ -309,6 +321,8 @@ const ActionButtons = styled.div`
 
   @media (max-width: 768px) {
     gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
@@ -319,6 +333,7 @@ const AuthButtonsContainer = styled.div`
 
   @media (max-width: 768px) {
     gap: 8px;
+    order: 1;
   }
 `;
 
@@ -371,6 +386,11 @@ const LoginButton = styled(Link)`
     padding: 10px 18px;
     font-size: 12px;
   }
+
+  @media (max-width: 480px) {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
 `;
 
 const SignupButton = styled(Link)`
@@ -422,6 +442,11 @@ const SignupButton = styled(Link)`
     padding: 10px 18px;
     font-size: 12px;
   }
+
+  @media (max-width: 480px) {
+    padding: 8px 14px;
+    font-size: 11px;
+  }
 `;
 
 const MenuToggle = styled.button`
@@ -442,6 +467,23 @@ const MenuToggle = styled.button`
 
   @media (max-width: 768px) {
     display: block;
+    z-index: 1001;
+  }
+`;
+
+const MobileMenuBackdrop = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.$isOpen ? "block" : "none")};
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    backdrop-filter: blur(2px);
   }
 `;
 
@@ -467,142 +509,173 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      if (isMenuOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "unset";
+      }
+    }
+    return () => {
+      if (typeof document !== "undefined") {
+        document.body.style.overflow = "unset";
+      }
+    };
+  }, [isMenuOpen]);
+
   // Get current page to highlight active nav item
   const currentPath =
-    typeof window !== "undefined" ? window.location.pathname : "/";
+    typeof window !== "undefined"
+      ? window.location.pathname.replace(/\/$/, "") || "/"
+      : "/";
 
   return (
-    <HeaderContainer>
-      <TopBar>
-        {state.siteSettings.headerText} | Licensed FFL Dealer | Call:{" "}
-        <a
-          href={`tel:${state.siteSettings.contactInfo.phone}`}
-          style={{ color: "#3498db", textDecoration: "none" }}
-        >
-          {state.siteSettings.contactInfo.phone}
-        </a>
-      </TopBar>
+    <>
+      <MobileMenuBackdrop
+        $isOpen={isMenuOpen}
+        onClick={() => setIsMenuOpen(false)}
+      />
+      <HeaderContainer>
+        <TopBar>
+          {state.siteSettings.headerText} | Licensed FFL Dealer | Call:{" "}
+          <a
+            href={`tel:${state.siteSettings.contactInfo.phone}`}
+            style={{ color: "#3498db", textDecoration: "none" }}
+          >
+            {state.siteSettings.contactInfo.phone}
+          </a>
+        </TopBar>
 
-      <NavigationBar>
-        <Logo to="/" onClick={handleLogoClick}>
-          <LogoIcon>
-            <IconSvg viewBox="0 0 50 50" width="24" height="24">
-              <defs>
-                <linearGradient
-                  id="gunGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#ff6b6b" />
-                  <stop offset="25%" stopColor="#74b9ff" />
-                  <stop offset="50%" stopColor="#fd79a8" />
-                  <stop offset="75%" stopColor="#fdcb6e" />
-                  <stop offset="100%" stopColor="#00b894" />
-                </linearGradient>
-                <linearGradient
-                  id="kGradient"
-                  x1="0%"
-                  y1="0%"
-                  x2="100%"
-                  y2="100%"
-                >
-                  <stop offset="0%" stopColor="#00b894" />
-                  <stop offset="50%" stopColor="#74b9ff" />
-                  <stop offset="100%" stopColor="#fd79a8" />
-                </linearGradient>
-              </defs>
+        <NavigationBar>
+          <Logo to="/" onClick={handleLogoClick}>
+            <LogoIcon>
+              <IconSvg viewBox="0 0 50 50" width="24" height="24">
+                <defs>
+                  <linearGradient
+                    id="gunGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#ff6b6b" />
+                    <stop offset="25%" stopColor="#74b9ff" />
+                    <stop offset="50%" stopColor="#fd79a8" />
+                    <stop offset="75%" stopColor="#fdcb6e" />
+                    <stop offset="100%" stopColor="#00b894" />
+                  </linearGradient>
+                  <linearGradient
+                    id="kGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#00b894" />
+                    <stop offset="50%" stopColor="#74b9ff" />
+                    <stop offset="100%" stopColor="#fd79a8" />
+                  </linearGradient>
+                </defs>
 
-              {/* Stylized Gun Shape */}
-              <path
-                d="M10 20 L35 20 L40 15 L45 15 L45 25 L40 25 L35 20 L35 30 L30 30 L30 25 L15 25 L15 30 L10 30 Z"
-                fill="url(#gunGradient)"
-                stroke="rgba(255,255,255,0.3)"
-                strokeWidth="1"
+                {/* Stylized Gun Shape */}
+                <path
+                  d="M10 20 L35 20 L40 15 L45 15 L45 25 L40 25 L35 20 L35 30 L30 30 L30 25 L15 25 L15 30 L10 30 Z"
+                  fill="url(#gunGradient)"
+                  stroke="rgba(255,255,255,0.3)"
+                  strokeWidth="1"
+                />
+
+                {/* Letter K integrated */}
+                <path
+                  d="M8 10 L8 35 M8 22 L20 10 M8 22 L20 35"
+                  stroke="url(#kGradient)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
+              </IconSvg>
+            </LogoIcon>
+            <LogoText>
+              <MainText>Gun-k</MainText>
+              <SubText>Pro</SubText>
+            </LogoText>
+          </Logo>
+
+          <Navigation $isOpen={isMenuOpen}>
+            <NavLink
+              to="/"
+              onClick={handleNavClick}
+              className={currentPath === "/" ? "active" : ""}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/handguns"
+              onClick={handleNavClick}
+              className={currentPath === "/handguns" ? "active" : ""}
+            >
+              Handguns
+            </NavLink>
+            <NavLink
+              to="/rifles"
+              onClick={handleNavClick}
+              className={currentPath === "/rifles" ? "active" : ""}
+            >
+              Rifles
+            </NavLink>
+            <NavLink
+              to="/shotguns"
+              onClick={handleNavClick}
+              className={currentPath === "/shotguns" ? "active" : ""}
+            >
+              Shotguns
+            </NavLink>
+            <NavLink
+              to="/accessories"
+              onClick={handleNavClick}
+              className={currentPath === "/accessories" ? "active" : ""}
+            >
+              Accessories
+            </NavLink>
+            <NavLink
+              to="/contact"
+              onClick={handleNavClick}
+              className={currentPath === "/contact" ? "active" : ""}
+            >
+              Contact
+            </NavLink>
+          </Navigation>
+
+          <ActionButtons>
+            <SearchContainer as="form" onSubmit={handleSearch} role="search">
+              <SearchInput
+                type="text"
+                placeholder="Search products..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                aria-label="Search products"
               />
+              <SearchButton type="submit" aria-label="Submit search">
+                🔍
+              </SearchButton>
+            </SearchContainer>
 
-              {/* Letter K integrated */}
-              <path
-                d="M8 10 L8 35 M8 22 L20 10 M8 22 L20 35"
-                stroke="url(#kGradient)"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-            </IconSvg>
-          </LogoIcon>
-          <LogoText>
-            <MainText>Gun-k</MainText>
-            <SubText>Pro</SubText>
-          </LogoText>
-        </Logo>
+            <AuthButtonsContainer>
+              <LoginButton to="/login">Login</LoginButton>
+              <SignupButton to="/signup">Sign Up</SignupButton>
+            </AuthButtonsContainer>
 
-        <Navigation isOpen={isMenuOpen}>
-          <NavLink
-            to="/"
-            onClick={handleNavClick}
-            className={currentPath === "/" ? "active" : ""}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/handguns"
-            onClick={handleNavClick}
-            className={currentPath === "/handguns" ? "active" : ""}
-          >
-            Handguns
-          </NavLink>
-          <NavLink
-            to="/rifles"
-            onClick={handleNavClick}
-            className={currentPath === "/rifles" ? "active" : ""}
-          >
-            Rifles
-          </NavLink>
-          <NavLink
-            to="/shotguns"
-            onClick={handleNavClick}
-            className={currentPath === "/shotguns" ? "active" : ""}
-          >
-            Shotguns
-          </NavLink>
-          <NavLink
-            to="/accessories"
-            onClick={handleNavClick}
-            className={currentPath === "/accessories" ? "active" : ""}
-          >
-            Accessories
-          </NavLink>
-          <NavLink
-            to="/contact"
-            onClick={handleNavClick}
-            className={currentPath === "/contact" ? "active" : ""}
-          >
-            Contact
-          </NavLink>
-        </Navigation>
-
-        <ActionButtons>
-          <SearchContainer as="form" onSubmit={handleSearch}>
-            <SearchInput
-              type="text"
-              placeholder="Search products..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-            <SearchButton type="submit">🔍</SearchButton>
-          </SearchContainer>
-
-          <AuthButtonsContainer>
-            <LoginButton to="/login">Login</LoginButton>
-            <SignupButton to="/signup">Sign Up</SignupButton>
-          </AuthButtonsContainer>
-
-          <MenuToggle onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? "✕" : "☰"}
-          </MenuToggle>
-        </ActionButtons>
-      </NavigationBar>
-    </HeaderContainer>
+            <MenuToggle
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? "✕" : "���"}
+            </MenuToggle>
+          </ActionButtons>
+        </NavigationBar>
+      </HeaderContainer>
+    </>
   );
 }

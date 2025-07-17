@@ -8,11 +8,6 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const shimmer = keyframes`
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-`;
-
 const DetailContainer = styled.div`
   min-height: 100vh;
   background: linear-gradient(
@@ -153,9 +148,9 @@ const ImageBadges = styled.div`
 
 const Badge = styled.div`
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff6b6b, #ff8e8e)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #4ecdc4, #44a08d)"
         : "linear-gradient(135deg, #45b7d1, #3498db)"};
   color: white;
@@ -332,11 +327,11 @@ const TabHeader = styled.button`
   flex: 1;
   padding: 15px 20px;
   background: ${(props) =>
-    props.active ? "rgba(78, 205, 196, 0.3)" : "transparent"};
+    props.$active ? "rgba(78, 205, 196, 0.3)" : "transparent"};
   border: ${(props) =>
-    props.active ? "2px solid #4ecdc4" : "2px solid transparent"};
+    props.$active ? "2px solid #4ecdc4" : "2px solid transparent"};
   border-radius: 10px;
-  color: ${(props) => (props.active ? "#fff" : "rgba(255, 255, 255, 0.7)")};
+  color: ${(props) => (props.$active ? "#fff" : "rgba(255, 255, 255, 0.7)")};
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -655,9 +650,9 @@ const RifleDetail = ({ rifleId }) => {
                 }}
               />
               <ImageBadges>
-                {rifle.onSale && <Badge type="sale">On Sale</Badge>}
-                {rifle.featured && <Badge type="featured">Featured</Badge>}
-                {!rifle.inStock && <Badge type="stock">Out of Stock</Badge>}
+                {rifle.onSale && <Badge $type="sale">On Sale</Badge>}
+                {rifle.featured && <Badge $type="featured">Featured</Badge>}
+                {!rifle.inStock && <Badge $type="stock">Out of Stock</Badge>}
               </ImageBadges>
             </ImageSection>
 
@@ -712,19 +707,19 @@ const RifleDetail = ({ rifleId }) => {
           <TabContainer>
             <TabHeaders>
               <TabHeader
-                active={activeTab === "specifications"}
+                $active={activeTab === "specifications"}
                 onClick={() => setActiveTab("specifications")}
               >
                 Specifications
               </TabHeader>
               <TabHeader
-                active={activeTab === "features"}
+                $active={activeTab === "features"}
                 onClick={() => setActiveTab("features")}
               >
                 Features
               </TabHeader>
               <TabHeader
-                active={activeTab === "warranty"}
+                $active={activeTab === "warranty"}
                 onClick={() => setActiveTab("warranty")}
               >
                 Warranty

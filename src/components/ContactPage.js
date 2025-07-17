@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { useApp } from "../context/AppContext";
 
@@ -224,6 +224,14 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
+  const timeoutRefs = useRef([]);
+
+  // Cleanup timeouts on unmount
+  useEffect(() => {
+    return () => {
+      timeoutRefs.current.forEach((timeout) => clearTimeout(timeout));
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -259,10 +267,12 @@ export default function ContactPage() {
         message: "",
       });
 
-      setTimeout(() => setShowSuccess(false), 5000);
+      const successTimeout = setTimeout(() => setShowSuccess(false), 5000);
+      timeoutRefs.current.push(successTimeout);
     } catch (error) {
       setShowError(true);
-      setTimeout(() => setShowError(false), 5000);
+      const errorTimeout = setTimeout(() => setShowError(false), 5000);
+      timeoutRefs.current.push(errorTimeout);
     } finally {
       setIsSubmitting(false);
     }

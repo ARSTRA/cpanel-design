@@ -1,5 +1,4 @@
 import React from "react";
-import { AppProvider } from "../context/AppContext";
 import Layout from "../components/Layout";
 import AccessoryDetail from "../components/AccessoryDetail";
 
@@ -8,12 +7,12 @@ const AccessoryDetailPage = ({ location }) => {
   const accessoryId = searchParams.get("id");
 
   return (
-    <AppProvider>
-      <Layout>
-        <AccessoryDetail accessoryId={accessoryId} />
-      </Layout>
-    </AppProvider>
+    <Layout>
+      <AccessoryDetail accessoryId={accessoryId} />
+    </Layout>
   );
 };
 
 export default AccessoryDetailPage;
+
+export const Head = () => <title>Accessory Details | Gun-k Pro</title>;

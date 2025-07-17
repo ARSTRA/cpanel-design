@@ -1,22 +1,15 @@
 import React from "react";
-import { AppProvider } from "../context/AppContext";
 import Layout from "../components/Layout";
 import HomePage from "../components/HomePage";
 
-function AppContent() {
+const IndexPage = () => {
   return (
     <Layout>
       <HomePage />
     </Layout>
   );
-}
-
-const IndexPage = () => {
-  return (
-    <AppProvider>
-      <AppContent />
-    </AppProvider>
-  );
 };
 
 export default IndexPage;
+
+export const Head = () => <title>Gun-k Pro | Premier Firearms Dealer</title>;

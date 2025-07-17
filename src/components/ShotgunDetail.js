@@ -8,11 +8,6 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const shimmer = keyframes`
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-`;
-
 const float = keyframes`
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
@@ -170,9 +165,9 @@ const ImageBadges = styled.div`
 
 const Badge = styled.div`
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff0844, #f5576c)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #f093fb, #667eea)"
         : "linear-gradient(135deg, #4facfe, #00f2fe)"};
   color: white;
@@ -362,11 +357,11 @@ const TabHeader = styled.button`
   flex: 1;
   padding: 18px 25px;
   background: ${(props) =>
-    props.active ? "rgba(240, 147, 251, 0.4)" : "transparent"};
+    props.$active ? "rgba(240, 147, 251, 0.4)" : "transparent"};
   border: ${(props) =>
-    props.active ? "2px solid #f093fb" : "2px solid transparent"};
+    props.$active ? "2px solid #f093fb" : "2px solid transparent"};
   border-radius: 15px;
-  color: ${(props) => (props.active ? "#fff" : "rgba(255, 255, 255, 0.7)")};
+  color: ${(props) => (props.$active ? "#fff" : "rgba(255, 255, 255, 0.7)")};
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
@@ -704,9 +699,9 @@ const ShotgunDetail = ({ shotgunId }) => {
                 }}
               />
               <ImageBadges>
-                {shotgun.onSale && <Badge type="sale">On Sale</Badge>}
-                {shotgun.featured && <Badge type="featured">Featured</Badge>}
-                {!shotgun.inStock && <Badge type="stock">Out of Stock</Badge>}
+                {shotgun.onSale && <Badge $type="sale">On Sale</Badge>}
+                {shotgun.featured && <Badge $type="featured">Featured</Badge>}
+                {!shotgun.inStock && <Badge $type="stock">Out of Stock</Badge>}
               </ImageBadges>
             </ImageSection>
 
@@ -761,19 +756,19 @@ const ShotgunDetail = ({ shotgunId }) => {
           <TabContainer>
             <TabHeaders>
               <TabHeader
-                active={activeTab === "specifications"}
+                $active={activeTab === "specifications"}
                 onClick={() => setActiveTab("specifications")}
               >
                 Specifications
               </TabHeader>
               <TabHeader
-                active={activeTab === "features"}
+                $active={activeTab === "features"}
                 onClick={() => setActiveTab("features")}
               >
                 Features
               </TabHeader>
               <TabHeader
-                active={activeTab === "warranty"}
+                $active={activeTab === "warranty"}
                 onClick={() => setActiveTab("warranty")}
               >
                 Warranty

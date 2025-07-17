@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { useApp } from "../../context/AppContext";
 
@@ -120,12 +120,22 @@ export default function SiteSettings() {
   const { state, dispatch } = useApp();
   const [settings, setSettings] = useState(state.siteSettings);
   const [showSuccess, setShowSuccess] = useState(false);
+  const timeoutRef = useRef(null);
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({ type: "UPDATE_SITE_SETTINGS", payload: settings });
     setShowSuccess(true);
-    setTimeout(() => setShowSuccess(false), 3000);
+    timeoutRef.current = setTimeout(() => setShowSuccess(false), 3000);
   };
 
   const handleBankDetailsChange = (field, value) => {

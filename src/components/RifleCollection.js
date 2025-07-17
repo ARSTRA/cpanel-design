@@ -377,9 +377,9 @@ const ProductBadge = styled.div`
   top: 15px;
   right: 15px;
   background: ${(props) =>
-    props.type === "sale"
+    props.$type === "sale"
       ? "linear-gradient(135deg, #ff6b6b, #ff8e8e)"
-      : props.type === "featured"
+      : props.$type === "featured"
         ? "linear-gradient(135deg, #4ecdc4, #44a08d)"
         : "linear-gradient(135deg, #45b7d1, #3498db)"};
   color: white;
@@ -671,7 +671,7 @@ const RifleCollection = () => {
     navigate(`/rifle-detail?id=${rifle.id}`);
   };
 
-  const handleInquire = (rifle) => {
+  const handleBuyNow = (rifle) => {
     navigate(
       `/contact?product=${encodeURIComponent(rifle.name)}&category=rifles`,
     );
@@ -788,13 +788,13 @@ const RifleCollection = () => {
                       }}
                     />
                     {rifle.onSale && (
-                      <ProductBadge type="sale">Sale</ProductBadge>
+                      <ProductBadge $type="sale">Sale</ProductBadge>
                     )}
                     {rifle.featured && !rifle.onSale && (
-                      <ProductBadge type="featured">Featured</ProductBadge>
+                      <ProductBadge $type="featured">Featured</ProductBadge>
                     )}
                     {!rifle.inStock && (
-                      <ProductBadge type="stock">Out of Stock</ProductBadge>
+                      <ProductBadge $type="stock">Out of Stock</ProductBadge>
                     )}
                   </ProductImageContainer>
 
@@ -861,10 +861,10 @@ const RifleCollection = () => {
                       <InquireButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(rifle);
+                          handleBuyNow(rifle);
                         }}
                       >
-                        Inquire Now
+                        Buy Now
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>
