@@ -594,14 +594,17 @@ export default function Header() {
         </Navigation>
 
         <ActionButtons>
-          <SearchContainer as="form" onSubmit={handleSearch}>
+          <SearchContainer as="form" onSubmit={handleSearch} role="search">
             <SearchInput
               type="text"
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Search products"
             />
-            <SearchButton type="submit">🔍</SearchButton>
+            <SearchButton type="submit" aria-label="Submit search">
+              🔍
+            </SearchButton>
           </SearchContainer>
 
           <AuthButtonsContainer>
