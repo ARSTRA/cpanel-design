@@ -363,11 +363,11 @@ const TabHeader = styled.button`
   flex: 1;
   padding: 20px 30px;
   background: ${(props) =>
-    props.active ? "rgba(255, 154, 158, 0.5)" : "transparent"};
+    props.$active ? "rgba(255, 154, 158, 0.5)" : "transparent"};
   border: ${(props) =>
-    props.active ? "3px solid #ff9a9e" : "3px solid transparent"};
+    props.$active ? "3px solid #ff9a9e" : "3px solid transparent"};
   border-radius: 20px;
-  color: ${(props) => (props.active ? "#fff" : "rgba(255, 255, 255, 0.8)")};
+  color: ${(props) => (props.$active ? "#fff" : "rgba(255, 255, 255, 0.8)")};
   font-weight: 800;
   font-size: 1.2rem;
   cursor: pointer;
