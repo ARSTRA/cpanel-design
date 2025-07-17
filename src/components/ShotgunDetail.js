@@ -704,9 +704,9 @@ const ShotgunDetail = ({ shotgunId }) => {
                 }}
               />
               <ImageBadges>
-                {shotgun.onSale && <Badge type="sale">On Sale</Badge>}
-                {shotgun.featured && <Badge type="featured">Featured</Badge>}
-                {!shotgun.inStock && <Badge type="stock">Out of Stock</Badge>}
+                {shotgun.onSale && <Badge $type="sale">On Sale</Badge>}
+                {shotgun.featured && <Badge $type="featured">Featured</Badge>}
+                {!shotgun.inStock && <Badge $type="stock">Out of Stock</Badge>}
               </ImageBadges>
             </ImageSection>
 
