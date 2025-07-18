@@ -329,8 +329,7 @@ function DashboardContent() {
             <UserInfo>
               <h1>👋 Welcome back, John!</h1>
               <p>
-                Discover amazing firearms and accessories from our premium
-                collection
+                Discover amazing firearms and ammo from our premium collection
               </p>
             </UserInfo>
             <ActionButtons>
