@@ -314,44 +314,47 @@ function SearchResults() {
   const [sortBy, setSortBy] = useState("relevance");
   const [searchQuery, setSearchQuery] = useState("");
 
-    const performSearch = useCallback((query) => {
-    const searchTerm = query.toLowerCase();
-    let results = state.products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(searchTerm) ||
-        product.description.toLowerCase().includes(searchTerm) ||
-        product.manufacturer.toLowerCase().includes(searchTerm) ||
-        product.caliber?.toLowerCase().includes(searchTerm) ||
-        product.category.toLowerCase().includes(searchTerm),
-    );
-
-    // Apply category filter
-    if (selectedCategory !== "all") {
-      results = results.filter(
-        (product) => product.category === selectedCategory,
+  const performSearch = useCallback(
+    (query) => {
+      const searchTerm = query.toLowerCase();
+      let results = state.products.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchTerm) ||
+          product.description.toLowerCase().includes(searchTerm) ||
+          product.manufacturer.toLowerCase().includes(searchTerm) ||
+          product.caliber?.toLowerCase().includes(searchTerm) ||
+          product.category.toLowerCase().includes(searchTerm),
       );
-    }
 
-    // Apply sorting
-    switch (sortBy) {
-      case "price-low":
-        results.sort((a, b) => a.price - b.price);
-        break;
-      case "price-high":
-        results.sort((a, b) => b.price - a.price);
-        break;
-      case "name":
-        results.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "rating":
-        results.sort((a, b) => (b.rating || 0) - (a.rating || 0));
-        break;
-      default: // relevance
-        break;
-    }
+      // Apply category filter
+      if (selectedCategory !== "all") {
+        results = results.filter(
+          (product) => product.category === selectedCategory,
+        );
+      }
 
-    setFilteredProducts(results);
-    };
+      // Apply sorting
+      switch (sortBy) {
+        case "price-low":
+          results.sort((a, b) => a.price - b.price);
+          break;
+        case "price-high":
+          results.sort((a, b) => b.price - a.price);
+          break;
+        case "name":
+          results.sort((a, b) => a.name.localeCompare(b.name));
+          break;
+        case "rating":
+          results.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+          break;
+        default: // relevance
+          break;
+      }
+
+      setFilteredProducts(results);
+    },
+    [state.products, selectedCategory, sortBy],
+  );
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
