@@ -286,10 +286,20 @@ const CategoryName = styled.h3`
 
 export default function HomePage() {
   const { state } = useApp();
+  const [showTestimonials, setShowTestimonials] = useState(false);
 
   const featuredProducts = state.products.filter(
     (product) => product.featured && product.displayLocation.includes("home"),
   );
+
+  // Auto-show testimonials popup after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowTestimonials(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const categories = [
     {
