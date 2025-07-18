@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
 import { useApp } from "../context/AppContext";
+import TestimonialsPopup from "./TestimonialsPopup";
 
 const HeroSection = styled.section`
   background:
