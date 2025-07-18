@@ -188,6 +188,26 @@ const CredentialsContainer = styled.div`
   margin-bottom: 20px;
 `;
 
+const AccountTypeIndicator = styled.div`
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background: ${(props) =>
+    props.type === "admin"
+      ? "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"
+      : props.type === "user"
+        ? "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)"
+        : "transparent"};
+  opacity: ${(props) => (props.type ? 1 : 0)};
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+`;
+
 function LoginContent() {
   const { dispatch } = useApp();
   const [formData, setFormData] = useState({
@@ -197,6 +217,7 @@ function LoginContent() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const [accountType, setAccountType] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
