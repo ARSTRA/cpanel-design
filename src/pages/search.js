@@ -354,10 +354,20 @@ function SearchResults() {
   };
 
   useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const query = params.get("search") || "";
+    setSearchQuery(query);
+
+    if (query) {
+      performSearch(query);
+    }
+  }, [location.search, state.products]);
+
+  useEffect(() => {
     if (searchQuery) {
       performSearch(searchQuery);
     }
-  }, [selectedCategory, sortBy]);
+  }, [selectedCategory, sortBy, searchQuery]);
 
   const categories = [
     { id: "all", name: "All Categories", icon: "🔥" },
