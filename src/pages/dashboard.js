@@ -381,7 +381,13 @@ function DashboardContent() {
                       <ProductDescription>
                         {product.description}
                       </ProductDescription>
-                      <div style={{ display: "flex", gap: "10px" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: "10px",
+                          marginBottom: "10px",
+                        }}
+                      >
                         <AddToCartButton
                           onClick={() => addToCart(product)}
                           style={{ flex: 1 }}
@@ -399,6 +405,18 @@ function DashboardContent() {
                           💳 Buy Now
                         </AddToCartButton>
                       </div>
+                      <AddToCartButton
+                        onClick={() =>
+                          (window.location.href = `/product?id=${product.id}`)
+                        }
+                        style={{
+                          width: "100%",
+                          background:
+                            "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                        }}
+                      >
+                        🔍 View Details
+                      </AddToCartButton>
                     </ProductInfo>
                   </ProductCard>
                 ))}
