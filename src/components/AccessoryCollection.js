@@ -1044,7 +1044,7 @@ const AccessoryCollection = () => {
               <EmptyTitle>No Ammo Found</EmptyTitle>
               <EmptyText>
                 Try adjusting your search criteria or filters to find the
-                accessories you're looking for.
+                ammunition you're looking for.
               </EmptyText>
             </EmptyState>
           )}
