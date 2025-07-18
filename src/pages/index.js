@@ -1,5 +1,5 @@
 import React from "react";
-import { AppProvider } from "../context/AppContext.test";
+import { AppProvider } from "../context/AppContext";
 import Layout from "../components/Layout";
 import HomePage from "../components/HomePage";
 
