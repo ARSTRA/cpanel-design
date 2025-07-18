@@ -379,7 +379,7 @@ export default function CategoryPage({ category = "handguns" }) {
                       className="primary"
                       onClick={() => handleInquiry(product)}
                     >
-                      Inquire
+                      Buy
                     </ActionButton>
                     <ActionButton className="secondary">Details</ActionButton>
                   </ActionButtons>
