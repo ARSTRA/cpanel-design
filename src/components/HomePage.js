@@ -139,6 +139,7 @@ const ProductCard = styled.div`
 const ProductImage = styled.div`
   height: 250px;
   background: url(${(props) => props.image}) center/cover;
+  background-color: #ecf0f1;
   display: flex;
   align-items: center;
   justify-content: center;
