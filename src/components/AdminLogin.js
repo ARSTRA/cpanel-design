@@ -482,10 +482,12 @@ export default function AdminLogin() {
         setSuccess("Login successful! Redirecting...");
 
         // Handle remember me
-        if (rememberMe) {
-          localStorage.setItem("adminUsername", credentials.username);
-        } else {
-          localStorage.removeItem("adminUsername");
+        if (typeof window !== "undefined") {
+          if (rememberMe) {
+            localStorage.setItem("adminUsername", credentials.username);
+          } else {
+            localStorage.removeItem("adminUsername");
+          }
         }
 
         // Delay before dispatching to show success message
