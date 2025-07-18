@@ -8,8 +8,8 @@ const initialState = {
   isAdminAuthenticated: false,
   currentUser: null,
 
-      // Comprehensive Firearms Collection
-  products: expandedProducts.concat([
+        // Comprehensive Firearms Collection
+  products: expandedProducts,
     {
       id: 1,
       name: "Glock 19 Gen 5",
