@@ -526,7 +526,7 @@ function SearchResults() {
           <NoResults>
             <div className="icon">🔫</div>
             <h3>Start your search</h3>
-            <p>Enter keywords to find firearms, accessories, and ammunition</p>
+            <p>Enter keywords to find firearms, ammo, and ammunition</p>
           </NoResults>
         )}
       </SearchContent>
