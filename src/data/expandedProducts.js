@@ -197,7 +197,7 @@ export const expandedProducts = [
     category: "handguns",
     stock: 12,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
     ],
     featured: false,
@@ -290,7 +290,7 @@ export const expandedProducts = [
     category: "rifles",
     stock: 25,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
@@ -429,7 +429,7 @@ export const expandedProducts = [
     category: "shotguns",
     stock: 18,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
@@ -520,7 +520,7 @@ export const expandedProducts = [
     category: "accessories",
     stock: 22,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
@@ -566,7 +566,7 @@ export const expandedProducts = [
     category: "handguns",
     stock: 14,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
     ],
     featured: true,
@@ -707,7 +707,7 @@ export const expandedProducts = [
     category: "rifles",
     stock: 7,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
@@ -846,7 +846,7 @@ export const expandedProducts = [
     category: "accessories",
     stock: 500,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: false,
@@ -936,7 +936,7 @@ export const expandedProducts = [
     category: "accessories",
     stock: 18,
     images: [
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
