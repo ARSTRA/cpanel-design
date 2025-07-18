@@ -62,6 +62,39 @@ const CTAButton = styled.button`
   }
 `;
 
+const TestimonialsButton = styled.button`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(240, 147, 251, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+`;
+
 const FeaturesSection = styled.section`
   padding: 80px 20px;
   background: #f8f9fa;
