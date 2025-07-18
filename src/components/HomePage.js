@@ -312,7 +312,7 @@ export default function HomePage() {
         "https://images.pexels.com/photos/6204731/pexels-photo-6204731.jpeg",
     },
     {
-      name: "Accessories",
+      name: "Ammo",
       path: "/accessories",
       color: "#9b59b6",
       image:
