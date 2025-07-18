@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useApp } from "../context/AppContext";
 import Header from "./Header";
 import Footer from "./Footer";
+import ErrorBoundary from "./ErrorBoundary";
 
 const LayoutContainer = styled.div`
   min-height: 100vh;
