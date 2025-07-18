@@ -850,11 +850,11 @@ const AccessoryCollection = () => {
           <Title>Premium Ammunition</Title>
           <Subtitle>
             Enhance your shooting experience with our comprehensive collection
-            of premium firearm accessories. From precision optics and tactical
-            lights to ergonomic stocks and professional-grade cases, we offer
-            the finest accessories from trusted manufacturers like Vortex,
-            Aimpoint, Surefire, Magpul, and Trijicon. Whether you're upgrading
-            for competition, hunting, or tactical applications, find the perfect
+            of premium ammunition. From precision rounds and tactical loads to
+            specialty cartridges and professional-grade ammunition, we offer the
+            finest accessories from trusted manufacturers like Vortex, Aimpoint,
+            Surefire, Magpul, and Trijicon. Whether you're upgrading for
+            competition, hunting, or tactical applications, find the perfect
             accessories to maximize your firearm's potential and performance.
           </Subtitle>
           <StatsGrid>
