@@ -177,7 +177,9 @@ const SubText = styled.span`
   }
 `;
 
-const Navigation = styled.nav`
+const Navigation = styled.nav.withConfig({
+  shouldForwardProp: (prop) => prop !== "isOpen",
+})`
   display: flex;
   align-items: center;
   gap: 30px;
