@@ -225,7 +225,8 @@ const testimonials = [
     id: 1,
     name: "Marcus Rodriguez",
     location: "Texas",
-    avatar: "MR",
+    avatar:
+      "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
     rating: 5,
     category: "Delivery",
     text: "Outstanding delivery service! My order arrived within 2 days, perfectly packaged and exactly as described. Gun-k Pro's shipping process is top-notch and very professional.",
@@ -234,7 +235,8 @@ const testimonials = [
     id: 2,
     name: "Sarah Johnson",
     location: "Florida",
-    avatar: "SJ",
+    avatar:
+      "https://images.pexels.com/photos/33002840/pexels-photo-33002840.jpeg",
     rating: 5,
     category: "Records",
     text: "Impressed with their record keeping. All my purchase history is meticulously maintained, and they handle all FFL transfers with complete transparency and professionalism.",
@@ -243,7 +245,8 @@ const testimonials = [
     id: 3,
     name: "David Chen",
     location: "California",
-    avatar: "DC",
+    avatar:
+      "https://images.pexels.com/photos/5082976/pexels-photo-5082976.jpeg",
     rating: 5,
     category: "Customer Service",
     text: "Exceptional customer service! The team is knowledgeable, responsive, and goes above and beyond to ensure customer satisfaction. Highly recommend Gun-k Pro.",
@@ -252,7 +255,8 @@ const testimonials = [
     id: 4,
     name: "Jennifer Miller",
     location: "Arizona",
-    avatar: "JM",
+    avatar:
+      "https://images.pexels.com/photos/17050921/pexels-photo-17050921.jpeg",
     rating: 5,
     category: "Product Quality",
     text: "The quality of firearms and ammunition is exactly as advertised. Every product I've purchased has exceeded expectations. Their quality control is outstanding.",
@@ -261,7 +265,8 @@ const testimonials = [
     id: 5,
     name: "Robert Thompson",
     location: "Nevada",
-    avatar: "RT",
+    avatar:
+      "https://images.pexels.com/photos/6230523/pexels-photo-6230523.jpeg",
     rating: 5,
     category: "Delivery",
     text: "Fast and secure delivery every time. Their packaging is professional and discreet. I've never had any issues with shipping or handling.",
@@ -270,7 +275,8 @@ const testimonials = [
     id: 6,
     name: "Lisa Anderson",
     location: "Georgia",
-    avatar: "LA",
+    avatar:
+      "https://images.pexels.com/photos/31660598/pexels-photo-31660598.jpeg",
     rating: 4,
     category: "Records",
     text: "Great attention to detail with documentation. All paperwork is handled professionally and they maintain excellent records for compliance purposes.",
