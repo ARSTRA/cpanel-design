@@ -43,7 +43,7 @@ const initialState = {
       id: 1,
       name: "Jane Smith",
       email: "jane@example.com",
-      subject: "Product Inquiry",
+      subject: "Purchase Request",
       message: "I'm interested in the Glock 19. Is it in stock?",
       date: "2023-12-01",
     },
