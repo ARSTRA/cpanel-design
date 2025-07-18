@@ -114,14 +114,14 @@ const TestimonialsGrid = styled.div`
 
 const TestimonialCard = styled.div`
   background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  border-left: 4px solid #667eea;
+  border-left: 3px solid #667eea;
 
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
   }
 `;
 
