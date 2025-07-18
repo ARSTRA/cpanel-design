@@ -1050,6 +1050,14 @@ const ModernAdminDashboard = () => {
               <span className="icon">📦</span>
               Inventory
             </MenuItem>
+
+            <MenuItem
+              active={activeSection === "analytics"}
+              onClick={() => setActiveSection("analytics")}
+            >
+              <span className="icon">📊</span>
+              Analytics
+            </MenuItem>
           </MenuSection>
 
           <MenuSection>
