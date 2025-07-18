@@ -531,7 +531,7 @@ const ModernAdminDashboard = () => {
     <StatsGrid>
       <StatCard color="#667eea" colorEnd="#764ba2">
         <div className="icon">📊</div>
-        <div className="value">1,247</div>
+        <div className="value">{state.products.length}</div>
         <div className="label">Total Products</div>
         <div className="change">+12% this month</div>
       </StatCard>
@@ -545,15 +545,15 @@ const ModernAdminDashboard = () => {
 
       <StatCard color="#fdcb6e" colorEnd="#e17055">
         <div className="icon">👥</div>
-        <div className="value">3,892</div>
+        <div className="value">{state.users.length}</div>
         <div className="label">Active Users</div>
         <div className="change">+15% this month</div>
       </StatCard>
 
       <StatCard color="#ff6b6b" colorEnd="#ee5a24">
         <div className="icon">📦</div>
-        <div className="value">156</div>
-        <div className="label">Pending Orders</div>
+        <div className="value">{state.orders.length}</div>
+        <div className="label">Total Orders</div>
         <div className="change">+3 today</div>
       </StatCard>
     </StatsGrid>
