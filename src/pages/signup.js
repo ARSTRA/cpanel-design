@@ -405,6 +405,18 @@ function SignupContent() {
         <Title>🔫 Join Gun-k Pro</Title>
         <Subtitle>Create your account to access our firearms catalog</Subtitle>
 
+        {productInfo && (
+          <ProductInfoDisplay>
+            <ProductTitle>
+              🛒 You're purchasing: {productInfo.name}
+            </ProductTitle>
+            <ProductPrice>${productInfo.price}</ProductPrice>
+            <ProductNote>
+              Complete your registration to proceed with this purchase
+            </ProductNote>
+          </ProductInfoDisplay>
+        )}
+
         <LegalNotice>
           <strong>⚠️ Legal Notice:</strong> By creating an account, you confirm
           that you are legally eligible to purchase firearms in your state and
