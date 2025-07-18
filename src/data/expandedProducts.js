@@ -290,8 +290,8 @@ export const expandedProducts = [
     category: "rifles",
     stock: 25,
     images: [
-      "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
-      "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
+      "https://images.pexels.com/photos/17023914/pexels-photo-17023914.jpeg",
+      "https://images.pexels.com/photos/6090829/pexels-photo-6090829.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
