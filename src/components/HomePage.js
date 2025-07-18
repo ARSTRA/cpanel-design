@@ -564,6 +564,13 @@ export default function HomePage() {
         isOpen={showTestimonials}
         onClose={() => setShowTestimonials(false)}
       />
+
+      <TestimonialsButton
+        onClick={() => setShowTestimonials(true)}
+        title="View Customer Reviews"
+      >
+        ⭐
+      </TestimonialsButton>
     </>
   );
 }
