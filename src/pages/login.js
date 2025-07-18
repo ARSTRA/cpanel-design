@@ -255,13 +255,23 @@ function LoginContent() {
         <Title>🎯 Welcome Back</Title>
         <Subtitle>Sign in to your Gun-k Pro account</Subtitle>
 
-        <DemoCredentials>
-          <strong>Demo Account:</strong>
-          <br />
-          Email: demo@gunstore.com
-          <br />
-          Password: demo123
-        </DemoCredentials>
+        <CredentialsContainer>
+          <DemoCredentials>
+            <strong>🎯 User Account:</strong>
+            <br />
+            Email: demo@gunstore.com
+            <br />
+            Password: demo123
+          </DemoCredentials>
+
+          <AdminCredentials>
+            <strong>👑 Admin Access:</strong>
+            <br />
+            Email: admin@gunstore.com
+            <br />
+            Password: admin123
+          </AdminCredentials>
+        </CredentialsContainer>
 
         <Form onSubmit={handleSubmit}>
           <FormGroup>
