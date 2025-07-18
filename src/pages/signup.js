@@ -233,6 +233,27 @@ function SignupContent() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
+  const [productInfo, setProductInfo] = useState(null);
+
+  // Extract product info from URL params
+  React.useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const productName = params.get("product");
+      const productPrice = params.get("price");
+      const productId = params.get("id");
+      const category = params.get("category");
+
+      if (productName && productPrice) {
+        setProductInfo({
+          name: decodeURIComponent(productName),
+          price: productPrice,
+          id: productId,
+          category: category,
+        });
+      }
+    }
+  }, []);
 
   const states = [
     "Alabama",
