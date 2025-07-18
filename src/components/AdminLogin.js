@@ -245,7 +245,7 @@ const SuccessMessage = styled.div`
   gap: 5px;
 
   &::before {
-    content: "✅";
+    content: "���";
     font-size: 12px;
   }
 `;
@@ -396,7 +396,7 @@ const PasswordStrengthIndicator = styled.div`
 const StrengthBar = styled.div`
   height: 3px;
   flex: 1;
-  background: ${(props) => (props.active ? props.color : "#e1e5e9")};
+  background: ${(props) => (props.$active ? props.$color : "#e1e5e9")};
   border-radius: 2px;
   transition: all 0.3s ease;
 `;
