@@ -332,7 +332,7 @@ export default function TestimonialsPopup({ isOpen, onClose }) {
             {currentTestimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.id}>
                 <CustomerInfo>
-                  <CustomerAvatar>{testimonial.avatar}</CustomerAvatar>
+                  <CustomerAvatar image={testimonial.avatar} />
                   <CustomerDetails>
                     <CustomerName>{testimonial.name}</CustomerName>
                     <CustomerLocation>{testimonial.location}</CustomerLocation>
