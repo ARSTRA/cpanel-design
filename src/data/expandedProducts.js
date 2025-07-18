@@ -245,8 +245,8 @@ export const expandedProducts = [
     category: "rifles",
     stock: 8,
     images: [
-      "https://images.pexels.com/photos/17603058/pexels-photo-17603058.jpeg",
-      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
+      "https://images.pexels.com/photos/3706640/pexels-photo-3706640.jpeg",
+      "https://images.pexels.com/photos/6527773/pexels-photo-6527773.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
