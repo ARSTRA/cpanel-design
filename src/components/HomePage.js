@@ -5,8 +5,8 @@ import { useApp } from "../context/AppContext";
 
 const HeroSection = styled.section`
   background:
-    linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9)),
-    url("/api/placeholder/1200/600");
+    linear-gradient(135deg, rgba(44, 62, 80, 0.85), rgba(52, 73, 94, 0.85)),
+    url("https://images.pexels.com/photos/6562583/pexels-photo-6562583.jpeg");
   background-size: cover;
   background-position: center;
   padding: 120px 20px 80px;
