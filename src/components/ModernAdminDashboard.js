@@ -954,6 +954,8 @@ const ModernAdminDashboard = () => {
         return <FFLRequestManager />;
       case "inventory":
         return <InventoryManager />;
+      case "analytics":
+        return <AnalyticsDashboard />;
       default:
         return renderDashboardStats();
     }
