@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
+import { Link } from "gatsby";
+import { useApp } from "../context/AppContext";
+
 const glow = keyframes`
   0%, 100% {
     background-position: 0% 50%;
@@ -9,8 +12,6 @@ const glow = keyframes`
     background-position: 100% 50%;
   }
 `;
-import { Link } from "gatsby";
-import { useApp } from "../context/AppContext";
 
 const LoginContainer = styled.div`
   min-height: 100vh;
