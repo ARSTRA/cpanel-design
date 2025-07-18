@@ -107,7 +107,24 @@ const ProductCard = styled.div`
   }
 `;
 
-const ProductImage = styled.div`
+const ProductImageContainer = styled.div`
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+`;
+
+const ProductImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+
+const ProductImagePlaceholder = styled.div`
   height: 250px;
   background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
   display: flex;
@@ -115,7 +132,6 @@ const ProductImage = styled.div`
   justify-content: center;
   font-size: 64px;
   color: #7f8c8d;
-  position: relative;
 `;
 
 const StockBadge = styled.div`
