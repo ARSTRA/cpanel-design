@@ -195,8 +195,13 @@ const ProductInfo = styled.div`
 
 const ProductName = styled.h3`
   color: #2c3e50;
-  margin-bottom: 10px;
-  font-size: 18px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
 `;
 
 const ProductPrice = styled.div`
