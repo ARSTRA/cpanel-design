@@ -202,6 +202,34 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const ProductInfoDisplay = styled.div`
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+`;
+
+const ProductTitle = styled.h3`
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+`;
+
+const ProductPrice = styled.div`
+  font-size: 24px;
+  font-weight: 700;
+  margin: 10px 0;
+`;
+
+const ProductNote = styled.p`
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+`;
+
 const LegalNotice = styled.div`
   background: #fff8dc;
   border: 1px solid #ffd700;
