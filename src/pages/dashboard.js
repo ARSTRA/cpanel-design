@@ -285,7 +285,7 @@ function DashboardContent() {
     { id: "handguns", name: "Handguns", icon: "🔫" },
     { id: "rifles", name: "Rifles", icon: "🔫" },
     { id: "shotguns", name: "Shotguns", icon: "🔫" },
-    { id: "accessories", name: "Accessories", icon: "🔧" },
+    { id: "accessories", name: "Ammo", icon: "🔧" },
   ];
 
   const filteredProducts =
