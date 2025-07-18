@@ -333,7 +333,7 @@ export default function TestimonialsPopup({ isOpen, onClose }) {
 
                 <Rating>
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} filled={star <= testimonial.rating}>
+                    <Star key={star} $filled={star <= testimonial.rating}>
                       ⭐
                     </Star>
                   ))}
