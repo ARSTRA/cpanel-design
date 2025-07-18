@@ -511,7 +511,7 @@ export default function HandgunDetail({ productId }) {
   }
 
   const handleInquiry = () => {
-    const subject = `Detailed Inquiry about ${product.name}`;
+    const subject = `Purchase Request for ${product.name}`;
     const body = `Hi,\n\nI'm very interested in the ${product.name} by ${product.manufacturer}.\n\nProduct Details:\n- Price: $${product.price}\n- Caliber: ${product.caliber}\n- Capacity: ${product.capacity}\n- Stock: ${product.stock > 0 ? "In Stock" : "Out of Stock"}\n\nI would like to know more about:\n- Availability and delivery timeline\n- Required documentation and background check process\n- Payment options and financing\n- Included accessories and additional options\n- Transfer procedures\n\nPlease contact me at your earliest convenience.\n\nThank you!`;
     const mailtoLink = `mailto:${state.siteSettings.contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
