@@ -53,6 +53,12 @@ select {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed header */
+}
+
+/* Page transition smoothness */
+body {
+  transition: all 0.3s ease;
 }
 
 /* Focus styles for accessibility */
