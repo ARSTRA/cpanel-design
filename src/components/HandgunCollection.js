@@ -848,7 +848,7 @@ export default function HandgunCollection() {
                       className="primary"
                       onClick={() => handleInquiry(product)}
                     >
-                      Inquire Now
+                      Buy Now
                     </ActionButton>
                     <ActionButton
                       className="secondary"
