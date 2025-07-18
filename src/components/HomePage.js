@@ -435,13 +435,7 @@ export default function HomePage() {
           <CategoriesGrid>
             {categories.map((category) => (
               <CategoryCard key={category.name} to={category.path}>
-                <CategoryImage
-                  style={{
-                    background: `linear-gradient(135deg, ${category.color} 0%, ${category.color}dd 100%)`,
-                  }}
-                >
-                  {category.icon}
-                </CategoryImage>
+                <CategoryImage color={category.color} image={category.image} />
                 <CategoryName>{category.name}</CategoryName>
               </CategoryCard>
             ))}
