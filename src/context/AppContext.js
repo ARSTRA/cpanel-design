@@ -53,6 +53,8 @@ const initialState = {
   siteSettings: {
     siteName: "Gun-k Pro",
     headerText: "Professional Firearms & Ammo",
+    aboutUs:
+      "Your trusted firearms dealer providing quality firearms, ammunition, and accessories with professional service and competitive prices.",
     contactInfo: {
       phone: "(555) 123-GUNS",
       email: "info@gunkpro.com",
