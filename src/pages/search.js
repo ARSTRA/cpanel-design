@@ -314,7 +314,7 @@ function SearchResults() {
   const [sortBy, setSortBy] = useState("relevance");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const performSearch = (query) => {
+    const performSearch = useCallback((query) => {
     const searchTerm = query.toLowerCase();
     let results = state.products.filter(
       (product) =>
@@ -351,7 +351,7 @@ function SearchResults() {
     }
 
     setFilteredProducts(results);
-  };
+    };
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
