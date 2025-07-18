@@ -151,7 +151,7 @@ export default function Footer() {
               <Link to="/shotguns">Shotguns</Link>
             </li>
             <li>
-              <Link to="/accessories">Accessories</Link>
+              <Link to="/accessories">Ammo</Link>
             </li>
             <li>
               <Link to="/contact">Contact Us</Link>
