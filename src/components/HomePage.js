@@ -454,6 +454,11 @@ export default function HomePage() {
           </CategoriesGrid>
         </Container>
       </CategorySection>
+
+      <TestimonialsPopup
+        isOpen={showTestimonials}
+        onClose={() => setShowTestimonials(false)}
+      />
     </>
   );
 }
