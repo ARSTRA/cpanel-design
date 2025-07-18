@@ -448,6 +448,115 @@ function DashboardContent() {
 
             <Section style={{ padding: "20px" }}>
               <SectionTitle style={{ fontSize: "18px", marginBottom: "15px" }}>
+                🔫 Premium Ammunition
+              </SectionTitle>
+              <div
+                style={{
+                  fontSize: "14px",
+                  color: "#7f8c8d",
+                  marginBottom: "20px",
+                }}
+              >
+                <div
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                    color: "white",
+                    padding: "15px",
+                    borderRadius: "12px",
+                    marginBottom: "15px",
+                    textAlign: "center",
+                  }}
+                >
+                  <img
+                    src="https://images.pexels.com/photos/8247029/pexels-photo-8247029.jpeg"
+                    alt="Premium 9mm Ammunition"
+                    style={{
+                      width: "100%",
+                      height: "120px",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                      marginBottom: "10px",
+                    }}
+                  />
+                  <strong>Federal HST 9mm</strong>
+                  <br />
+                  <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                    $42.99
+                  </span>
+                  <br />
+                  <span style={{ fontSize: "12px", opacity: "0.9" }}>
+                    50 rounds - Law enforcement grade
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+                    color: "white",
+                    padding: "15px",
+                    borderRadius: "12px",
+                    marginBottom: "15px",
+                    textAlign: "center",
+                  }}
+                >
+                  <img
+                    src="https://images.pexels.com/photos/9170200/pexels-photo-9170200.jpeg"
+                    alt="Match Grade 308 Ammunition"
+                    style={{
+                      width: "100%",
+                      height: "120px",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                      marginBottom: "10px",
+                    }}
+                  />
+                  <strong>Hornady .308 ELD</strong>
+                  <br />
+                  <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                    $38.99
+                  </span>
+                  <br />
+                  <span style={{ fontSize: "12px", opacity: "0.9" }}>
+                    20 rounds - Match grade precision
+                  </span>
+                </div>
+
+                <div
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #00b894 0%, #00a085 100%)",
+                    color: "white",
+                    padding: "15px",
+                    borderRadius: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  <img
+                    src="https://images.pexels.com/photos/30871145/pexels-photo-30871145.jpeg"
+                    alt="12 Gauge Buckshot"
+                    style={{
+                      width: "100%",
+                      height: "120px",
+                      objectFit: "cover",
+                      borderRadius: "8px",
+                      marginBottom: "10px",
+                    }}
+                  />
+                  <strong>Winchester 00 Buck</strong>
+                  <br />
+                  <span style={{ fontSize: "18px", fontWeight: "bold" }}>
+                    $24.99
+                  </span>
+                  <br />
+                  <span style={{ fontSize: "12px", opacity: "0.9" }}>
+                    25 shells - Home defense
+                  </span>
+                </div>
+              </div>
+
+              <SectionTitle style={{ fontSize: "18px", marginBottom: "15px" }}>
                 🎯 Featured Deals
               </SectionTitle>
               <div style={{ fontSize: "14px", color: "#7f8c8d" }}>
