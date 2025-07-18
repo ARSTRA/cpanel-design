@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import { useApp } from "../context/AppContext";
 
 const HeroSection = styled.section`
