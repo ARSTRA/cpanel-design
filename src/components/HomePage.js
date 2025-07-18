@@ -189,7 +189,8 @@ const ProductImage = styled.div`
 `;
 
 const ProductInfo = styled.div`
-  padding: 25px;
+  padding: 30px;
+  position: relative;
 `;
 
 const ProductName = styled.h3`
