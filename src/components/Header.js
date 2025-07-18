@@ -536,7 +536,7 @@ export default function Header() {
           </LogoText>
         </Logo>
 
-        <Navigation isOpen={isMenuOpen}>
+        <Navigation $isOpen={isMenuOpen}>
           <NavLink
             to="/"
             onClick={handleNavClick}
