@@ -20,10 +20,12 @@ export default function Layout({ children }) {
   const { state } = useApp();
 
   return (
-    <LayoutContainer>
-      <Header />
-      <Main>{children}</Main>
-      <Footer />
-    </LayoutContainer>
+    <ErrorBoundary>
+      <LayoutContainer>
+        <Header />
+        <Main>{children}</Main>
+        <Footer />
+      </LayoutContainer>
+    </ErrorBoundary>
   );
 }
