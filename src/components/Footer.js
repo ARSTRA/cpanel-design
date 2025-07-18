@@ -212,14 +212,6 @@ export default function Footer() {
       <FooterBottom>
         <p>{state.siteSettings.footerText}</p>
         <p>© 2024 {state.siteSettings.siteName}. All rights reserved.</p>
-        <p style={{ opacity: 0.5, fontSize: "12px", marginTop: "10px" }}>
-          <Link
-            to="/admin"
-            style={{ color: "#7f8c8d", textDecoration: "none" }}
-          >
-            Admin Portal
-          </Link>
-        </p>
       </FooterBottom>
     </FooterContainer>
   );
