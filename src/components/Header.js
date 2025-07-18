@@ -460,6 +460,13 @@ export default function Header() {
 
   const handleLogoClick = () => {
     setIsMenuOpen(false);
+    // Smooth scroll to top when clicking logo to go home
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
   };
 
   const handleNavClick = () => {
