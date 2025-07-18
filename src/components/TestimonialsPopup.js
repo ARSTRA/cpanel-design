@@ -171,9 +171,10 @@ const Star = styled.span`
 
 const TestimonialText = styled.p`
   color: #34495e;
-  line-height: 1.6;
-  margin: 0 0 15px 0;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
   font-style: italic;
+  font-size: 14px;
 `;
 
 const TestimonialCategory = styled.span`
