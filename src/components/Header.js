@@ -570,7 +570,7 @@ export default function Header() {
             onClick={handleNavClick}
             className={currentPath === "/accessories" ? "active" : ""}
           >
-            Accessories
+            Ammo
           </NavLink>
           <NavLink
             to="/contact"
