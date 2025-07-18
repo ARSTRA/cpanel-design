@@ -284,7 +284,7 @@ const displayLocations = [
   { value: "handguns", label: "Handguns Page" },
   { value: "rifles", label: "Rifles Page" },
   { value: "shotguns", label: "Shotguns Page" },
-  { value: "accessories", label: "Accessories Page" },
+  { value: "accessories", label: "Ammo Page" },
   { value: "ammunition", label: "Ammunition Page" },
 ];
 
