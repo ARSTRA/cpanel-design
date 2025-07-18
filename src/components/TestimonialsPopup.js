@@ -161,7 +161,7 @@ const CustomerLocation = styled.p`
 const Rating = styled.div`
   display: flex;
   gap: 2px;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 `;
 
 const Star = styled.span`
