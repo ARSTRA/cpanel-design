@@ -164,7 +164,7 @@ const Rating = styled.div`
 `;
 
 const Star = styled.span`
-  color: ${(props) => (props.filled ? "#f39c12" : "#e1e8ed")};
+  color: ${(props) => (props.$filled ? "#f39c12" : "#e1e8ed")};
   font-size: 16px;
 `;
 
