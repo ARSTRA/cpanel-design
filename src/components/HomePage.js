@@ -209,15 +209,6 @@ const ProductPrice = styled.div`
   font-weight: 800;
   color: #27ae60;
   margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  &::before {
-    content: "$";
-    font-size: 20px;
-    color: #7f8c8d;
-  }
 `;
 
 const ProductDescription = styled.p`
