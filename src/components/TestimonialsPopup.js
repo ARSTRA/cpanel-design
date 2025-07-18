@@ -283,9 +283,7 @@ const stats = [
 ];
 
 export default function TestimonialsPopup({ isOpen, onClose }) {
-  const [currentTestimonials, setCurrentTestimonials] = useState(
-    testimonials.slice(0, 6),
-  );
+  const currentTestimonials = testimonials.slice(0, 6);
 
   useEffect(() => {
     const handleEscape = (e) => {
