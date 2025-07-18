@@ -238,7 +238,13 @@ const CategoryCard = styled(Link)`
 
 const CategoryImage = styled.div`
   height: 200px;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background:
+    linear-gradient(
+      135deg,
+      ${(props) => props.color + "99"} 0%,
+      ${(props) => props.color + "dd"} 100%
+    ),
+    url(${(props) => props.image}) center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
