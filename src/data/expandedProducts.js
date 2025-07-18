@@ -10,8 +10,8 @@ export const expandedProducts = [
     category: "handguns",
     stock: 15,
     images: [
-      "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
@@ -56,8 +56,8 @@ export const expandedProducts = [
     category: "handguns",
     stock: 22,
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/12311349/pexels-photo-12311349.jpeg",
+      "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
@@ -106,8 +106,8 @@ export const expandedProducts = [
     category: "handguns",
     stock: 18,
     images: [
-      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
+      "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
