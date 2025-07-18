@@ -1041,7 +1041,7 @@ const AccessoryCollection = () => {
             </ProductsGrid>
           ) : (
             <EmptyState>
-              <EmptyTitle>No Accessories Found</EmptyTitle>
+              <EmptyTitle>No Ammo Found</EmptyTitle>
               <EmptyText>
                 Try adjusting your search criteria or filters to find the
                 accessories you're looking for.
