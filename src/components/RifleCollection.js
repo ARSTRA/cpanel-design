@@ -671,7 +671,7 @@ const RifleCollection = () => {
     navigate(`/rifle-detail?id=${rifle.id}`);
   };
 
-  const handleInquire = (rifle) => {
+  const handleBuy = (rifle) => {
     navigate(
       `/contact?product=${encodeURIComponent(rifle.name)}&category=rifles`,
     );
@@ -861,7 +861,7 @@ const RifleCollection = () => {
                       <BuyButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(rifle);
+                          handleBuy(rifle);
                         }}
                       >
                         Buy Now
