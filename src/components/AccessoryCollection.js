@@ -839,7 +839,7 @@ const AccessoryCollection = () => {
   const avgRating =
     accessories.reduce((sum, a) => sum + (a.rating || 0), 0) /
     accessories.length;
-  const featuredCount = accessories.filter((a) => a.featured).length;
+
   const avgPrice =
     accessories.reduce((sum, a) => sum + a.price, 0) / accessories.length;
 
