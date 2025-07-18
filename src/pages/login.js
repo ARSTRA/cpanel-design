@@ -283,6 +283,13 @@ function LoginContent() {
   return (
     <LoginContainer>
       <LoginCard>
+        <AccountTypeIndicator type={accountType}>
+          {accountType === "admin"
+            ? "👑 ADMIN ACCESS"
+            : accountType === "user"
+              ? "🎯 USER ACCESS"
+              : ""}
+        </AccountTypeIndicator>
         <Title>🎯 Welcome Back</Title>
         <Subtitle>Sign in to your Gun-k Pro account</Subtitle>
 
