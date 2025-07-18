@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { useApp } from "../context/AppContext";
 import FFLRequestManager from "./FFLRequestManager";
+import InventoryManager from "./InventoryManager";
 
 const fadeIn = keyframes`
   from {
