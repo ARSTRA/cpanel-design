@@ -337,7 +337,15 @@ function LoginContent() {
           </FormGroup>
 
           <Button type="submit" disabled={loading}>
-            {loading ? "Signing In..." : "Sign In"}
+            {loading
+              ? accountType === "admin"
+                ? "Accessing Admin Panel..."
+                : "Signing In..."
+              : accountType === "admin"
+                ? "Access Admin Panel"
+                : accountType === "user"
+                  ? "Sign In to Dashboard"
+                  : "Sign In"}
           </Button>
         </Form>
 
