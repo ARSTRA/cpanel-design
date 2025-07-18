@@ -245,7 +245,7 @@ const SuccessMessage = styled.div`
   gap: 5px;
 
   &::before {
-    content: "���";
+    content: "✅";
     font-size: 12px;
   }
 `;
@@ -632,8 +632,8 @@ export default function AdminLogin() {
                 {[1, 2, 3, 4].map((level) => (
                   <StrengthBar
                     key={level}
-                    active={passwordStrength >= level}
-                    color={getPasswordStrengthColor(level)}
+                    $active={passwordStrength >= level}
+                    $color={getPasswordStrengthColor(level)}
                   />
                 ))}
               </PasswordStrengthIndicator>
