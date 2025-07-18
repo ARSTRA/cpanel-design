@@ -138,12 +138,32 @@ const ProductCard = styled.div`
 
 const ProductImage = styled.div`
   height: 250px;
-  background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+  background: url(${(props) => props.image}) center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 64px;
-  color: #7f8c8d;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: ${(props) =>
+      props.image
+        ? "transparent"
+        : "linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%)"};
+  }
+
+  &::after {
+    content: "${(props) => (props.image ? "" : "🔫")}";
+    font-size: 64px;
+    color: #7f8c8d;
+    z-index: 1;
+    position: relative;
+  }
 `;
 
 const ProductInfo = styled.div`
