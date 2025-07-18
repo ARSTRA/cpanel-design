@@ -656,7 +656,14 @@ const AccessoryDetail = ({ accessoryId }) => {
     return (
       <DetailContainer>
         <Container>
-          <BackButton onClick={() => navigate("/accessories")}>
+          <BackButton
+            onClick={() => {
+              navigate("/accessories");
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 100);
+            }}
+          >
             ← Back to Accessories
           </BackButton>
           <ProductSection>
@@ -913,7 +920,7 @@ const AccessoryDetail = ({ accessoryId }) => {
               <ContactValue>(555) 123-GUNS</ContactValue>
             </ContactItem>
             <ContactItem>
-              <ContactIcon>✉️</ContactIcon>
+              <ContactIcon>✉��</ContactIcon>
               <ContactLabel>Email</ContactLabel>
               <ContactValue>accessories@gun-k.com</ContactValue>
             </ContactItem>
