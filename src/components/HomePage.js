@@ -494,6 +494,22 @@ export default function HomePage() {
               </ProductCard>
             ))}
           </ProductsGrid>
+
+          <div style={{ textAlign: "center", marginTop: "40px" }}>
+            <Link to="/search" style={{ textDecoration: "none" }}>
+              <ProductButton
+                style={{
+                  maxWidth: "300px",
+                  background:
+                    "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+                  fontSize: "18px",
+                  padding: "20px 40px",
+                }}
+              >
+                View All Products
+              </ProductButton>
+            </Link>
+          </div>
         </Container>
       </ProductsSection>
 
