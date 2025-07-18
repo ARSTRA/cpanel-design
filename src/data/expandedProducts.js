@@ -466,7 +466,7 @@ export const expandedProducts = [
     upc: "015813501385",
   },
 
-  // ACCESSORIES COLLECTION
+  // AMMO COLLECTION
   {
     id: 40,
     name: "Vortex Viper PST Gen II 1-6x24",
