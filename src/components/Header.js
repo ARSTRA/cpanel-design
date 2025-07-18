@@ -183,7 +183,7 @@ const Navigation = styled.nav`
   gap: 30px;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.isOpen ? "flex" : "none")};
+    display: ${(props) => (props.$isOpen ? "flex" : "none")};
     position: absolute;
     top: 100%;
     left: 0;
