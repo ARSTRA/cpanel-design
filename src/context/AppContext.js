@@ -131,7 +131,9 @@ const appReducer = (state, action) => {
 
     case "LOGOUT_ADMIN":
       // Clear any stored admin credentials
-      localStorage.removeItem("adminUsername");
+      if (typeof window !== "undefined") {
+        localStorage.removeItem("adminUsername");
+      }
       return {
         ...state,
         isAdminAuthenticated: false,
