@@ -356,14 +356,16 @@ function SearchResults() {
   );
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const query = params.get("search") || "";
-    setSearchQuery(query);
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const query = params.get("search") || "";
+      setSearchQuery(query);
 
-    if (query) {
-      performSearch(query);
+      if (query) {
+        performSearch(query);
+      }
     }
-  }, [location.search, performSearch]);
+  }, [performSearch]);
 
   useEffect(() => {
     if (searchQuery) {
