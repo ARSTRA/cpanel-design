@@ -133,16 +133,12 @@ const CustomerInfo = styled.div`
 `;
 
 const CustomerAvatar = styled.div`
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
+  background: url(${(props) => props.image}) center/cover;
+  border: 2px solid #667eea;
+  flex-shrink: 0;
 `;
 
 const CustomerDetails = styled.div`
