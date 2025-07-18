@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const FooterContainer = styled.footer`
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
