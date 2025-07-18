@@ -637,7 +637,7 @@ export default function HandgunCollection() {
 
   const handleInquiry = (product) => {
     const subject = `Inquiry about ${product.name}`;
-    const body = `Hi,\n\nI'm interested in learning more about the ${product.name} (${product.manufacturer}) - $${product.price}.\n\nPlease provide more details including:\n- Availability\n- Background check requirements\n- Transfer process\n- Additional accessories\n\nThank you!`;
+    const body = `Hi,\n\nI'm interested in learning more about the ${product.name} (${product.manufacturer}) - $${product.price}.\n\nPlease provide more details including:\n- Availability\n- Background check requirements\n- Transfer process\n- Additional ammo\n\nThank you!`;
     const mailtoLink = `mailto:${state.siteSettings.contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
   };
