@@ -194,7 +194,7 @@ const PrivacyPolicyPage = () => {
                 This Privacy Policy explains how we collect, use, disclose, and
                 safeguard your information when you visit our website, make
                 purchases, or engage with our services related to firearms and
-                accessories retail.
+                ammo retail.
               </Content>
 
               <SectionTitle>1. Information We Collect</SectionTitle>
