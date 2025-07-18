@@ -128,8 +128,8 @@ const TestimonialCard = styled.div`
 const CustomerInfo = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 12px;
 `;
 
 const CustomerAvatar = styled.div`
