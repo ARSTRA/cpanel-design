@@ -658,7 +658,7 @@ const ViewDetailsButton = styled.button`
   }
 `;
 
-const InquireButton = styled.button`
+const BuyButton = styled.button`
   flex: 1;
   padding: 15px 25px;
   background: linear-gradient(135deg, #ff0844, #f5576c);
@@ -775,7 +775,7 @@ const ShotgunCollection = () => {
     navigate(`/shotgun-detail?id=${shotgun.id}`);
   };
 
-  const handleInquire = (shotgun) => {
+  const handleBuy = (shotgun) => {
     navigate(
       `/contact?product=${encodeURIComponent(shotgun.name)}&category=shotguns`,
     );
@@ -969,14 +969,14 @@ const ShotgunCollection = () => {
                       >
                         View Details
                       </ViewDetailsButton>
-                      <InquireButton
+                      <BuyButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(shotgun);
+                          handleBuy(shotgun);
                         }}
                       >
-                        Inquire Now
-                      </InquireButton>
+                        Buy Now
+                      </BuyButton>
                     </ActionButtons>
                   </ProductContent>
                 </ProductCard>
