@@ -329,8 +329,8 @@ export default function HomePage() {
   };
 
   const handleProductInquiry = (product) => {
-    const subject = `Inquiry about ${product.name}`;
-    const body = `Hi,\n\nI'm interested in learning more about the ${product.name} (Price: $${product.price}).\n\nPlease provide more details.\n\nThank you!`;
+    const subject = `Purchase ${product.name}`;
+    const body = `Hi,\n\nI would like to purchase the ${product.name} (Price: $${product.price}).\n\nPlease provide purchase details.\n\nThank you!`;
     const mailtoLink = `mailto:${state.siteSettings.contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.open(mailtoLink);
   };
