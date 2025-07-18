@@ -356,12 +356,16 @@ export default function CategoryPage({ category = "handguns" }) {
           <ProductsGrid>
             {sortedProducts.map((product) => (
               <ProductCard key={product.id}>
-                <ProductImage>
-                  🔫
+                <ProductImageContainer>
+                  {product.images && product.images[0] ? (
+                    <ProductImage src={product.images[0]} alt={product.name} />
+                  ) : (
+                    <ProductImagePlaceholder>🔫</ProductImagePlaceholder>
+                  )}
                   <StockBadge $inStock={product.stock > 0}>
                     {product.stock > 0 ? "In Stock" : "Out of Stock"}
                   </StockBadge>
-                </ProductImage>
+                </ProductImageContainer>
                 <ProductInfo>
                   <ProductName>{product.name}</ProductName>
                   <ProductPrice>${product.price}</ProductPrice>
