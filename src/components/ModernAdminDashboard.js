@@ -951,6 +951,8 @@ const ModernAdminDashboard = () => {
         return renderSettings();
       case "ffl":
         return <FFLRequestManager />;
+      case "inventory":
+        return <InventoryManager />;
       default:
         return renderDashboardStats();
     }
@@ -1000,7 +1002,7 @@ const ModernAdminDashboard = () => {
               active={activeSection === "dashboard"}
               onClick={() => setActiveSection("dashboard")}
             >
-              <span className="icon">��</span>
+              <span className="icon">📊</span>
               Dashboard
             </MenuItem>
 
