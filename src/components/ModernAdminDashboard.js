@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import { useApp } from "../context/AppContext";
 import FFLRequestManager from "./FFLRequestManager";
 import InventoryManager from "./InventoryManager";
+import AnalyticsDashboard from "./AnalyticsDashboard";
 
 const fadeIn = keyframes`
   from {
