@@ -498,7 +498,14 @@ function SearchResults() {
                   </PriceSection>
 
                   <ActionButtons>
-                    <ActionButton variant="primary">View Details</ActionButton>
+                    <ActionButton
+                      variant="primary"
+                      onClick={() =>
+                        (window.location.href = `/product?id=${product.id}`)
+                      }
+                    >
+                      View Details
+                    </ActionButton>
                     <ActionButton>Add to Cart</ActionButton>
                   </ActionButtons>
                 </ProductInfo>
