@@ -382,11 +382,13 @@ export default function HomePage() {
           <ProductsGrid>
             {featuredProducts.map((product) => (
               <ProductCard key={product.id}>
-                <ProductImage>🔫</ProductImage>
+                <ProductImage image={product.images && product.images[0]} />
                 <ProductInfo>
                   <ProductName>{product.name}</ProductName>
                   <ProductPrice>${product.price}</ProductPrice>
-                  <ProductDescription>{product.description}</ProductDescription>
+                  <ProductDescription>
+                    {product.description.substring(0, 120)}...
+                  </ProductDescription>
                   <ProductButton onClick={() => handleProductInquiry(product)}>
                     Inquire Now
                   </ProductButton>
