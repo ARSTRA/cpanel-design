@@ -364,13 +364,13 @@ function SearchResults() {
     if (query) {
       performSearch(query);
     }
-  }, [location.search, state.products]);
+  }, [location.search, performSearch]);
 
   useEffect(() => {
     if (searchQuery) {
       performSearch(searchQuery);
     }
-  }, [selectedCategory, sortBy, searchQuery]);
+  }, [searchQuery, performSearch]);
 
   const categories = [
     { id: "all", name: "All Categories", icon: "🔥" },
