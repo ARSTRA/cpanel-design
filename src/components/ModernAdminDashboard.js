@@ -647,7 +647,7 @@ const ModernAdminDashboard = () => {
         </FormGroup>
 
         <ActionButton variant="success">
-          <span>💾</span> Save Product
+          <span>��</span> Save Product
         </ActionButton>
       </FormSection>
 
@@ -823,27 +823,189 @@ const ModernAdminDashboard = () => {
 
       <FormSection>
         <SectionHeader>
-          <span>💳</span> Payment Settings
+          <span>💳</span> Payment Methods Configuration
         </SectionHeader>
 
-        <FormGroup>
-          <Label>Stripe Public Key</Label>
-          <Input type="text" placeholder="pk_live_..." />
-        </FormGroup>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "20px",
+            marginBottom: "20px",
+          }}
+        >
+          {/* Traditional Payment Methods */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+              color: "white",
+              padding: "20px",
+              borderRadius: "12px",
+            }}
+          >
+            <h4
+              style={{
+                margin: "0 0 15px 0",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              💳 Traditional Payments
+            </h4>
+            <FormGroup>
+              <Label style={{ color: "white" }}>Stripe Public Key</Label>
+              <Input type="text" placeholder="pk_live_..." />
+            </FormGroup>
+            <FormGroup>
+              <Label style={{ color: "white" }}>PayPal Client ID</Label>
+              <Input type="text" placeholder="PayPal client ID" />
+            </FormGroup>
+          </div>
+
+          {/* Cryptocurrency Payments */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+              color: "white",
+              padding: "20px",
+              borderRadius: "12px",
+            }}
+          >
+            <h4
+              style={{
+                margin: "0 0 15px 0",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              ₿ Cryptocurrency
+            </h4>
+            <FormGroup>
+              <Label style={{ color: "white" }}>Bitcoin Address</Label>
+              <Input
+                type="text"
+                placeholder="bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+              />
+              <small
+                style={{
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: "12px",
+                  marginTop: "5px",
+                  display: "block",
+                }}
+              >
+                Secure Bitcoin payments for international customers
+              </small>
+            </FormGroup>
+            <FormGroup>
+              <Label style={{ color: "white" }}>Ethereum Address</Label>
+              <Input
+                type="text"
+                placeholder="0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed"
+              />
+              <small
+                style={{
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: "12px",
+                  marginTop: "5px",
+                  display: "block",
+                }}
+              >
+                Accept ETH and ERC-20 tokens
+              </small>
+            </FormGroup>
+            <FormGroup>
+              <Label style={{ color: "white" }}>USDT TRC-20 Address</Label>
+              <Input
+                type="text"
+                placeholder="TMDKznuDWaZwfZHcSuPPiVHbYQ8HYZ3mPt"
+              />
+              <small
+                style={{
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: "12px",
+                  marginTop: "5px",
+                  display: "block",
+                }}
+              >
+                Tether USDT on Tron network
+              </small>
+            </FormGroup>
+          </div>
+
+          {/* Digital Payment Apps */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #00b894 0%, #00a085 100%)",
+              color: "white",
+              padding: "20px",
+              borderRadius: "12px",
+            }}
+          >
+            <h4
+              style={{
+                margin: "0 0 15px 0",
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              📱 Digital Payment Apps
+            </h4>
+            <FormGroup>
+              <Label style={{ color: "white" }}>PayPal Tag</Label>
+              <Input type="text" placeholder="@gunkpro" />
+              <small
+                style={{
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: "12px",
+                  marginTop: "5px",
+                  display: "block",
+                }}
+              >
+                Quick PayPal.Me payments
+              </small>
+            </FormGroup>
+            <FormGroup>
+              <Label style={{ color: "white" }}>CashApp Tag</Label>
+              <Input type="text" placeholder="$GunKPro" />
+              <small
+                style={{
+                  color: "rgba(255,255,255,0.8)",
+                  fontSize: "12px",
+                  marginTop: "5px",
+                  display: "block",
+                }}
+              >
+                Accept payments via Cash App
+              </small>
+            </FormGroup>
+          </div>
+        </div>
 
         <FormGroup>
-          <Label>PayPal Client ID</Label>
-          <Input type="text" placeholder="PayPal client ID" />
-        </FormGroup>
-
-        <FormGroup>
-          <Label>Tax Rate (%)</Label>
+          <Label>Sales Tax Rate (%)</Label>
           <Input type="number" placeholder="8.25" step="0.01" />
         </FormGroup>
 
-        <ActionButton variant="success">
-          <span>💾</span> Save Payment Settings
-        </ActionButton>
+        <FormGroup>
+          <Label>Federal Firearms License (FFL) Fee</Label>
+          <Input type="number" placeholder="25.00" step="0.01" />
+        </FormGroup>
+
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <ActionButton variant="success">
+            <span>💾</span> Save Payment Settings
+          </ActionButton>
+          <ActionButton variant="primary">
+            <span>🔄</span> Test Payment Methods
+          </ActionButton>
+          <ActionButton variant="warning">
+            <span>📊</span> View Payment Analytics
+          </ActionButton>
+        </div>
       </FormSection>
 
       <FormSection>
