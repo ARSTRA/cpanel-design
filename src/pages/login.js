@@ -165,6 +165,29 @@ const DemoCredentials = styled.div`
   }
 `;
 
+const AdminCredentials = styled.div`
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+
+  strong {
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+`;
+
+const CredentialsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+`;
+
 function LoginContent() {
   const { dispatch } = useApp();
   const [formData, setFormData] = useState({
