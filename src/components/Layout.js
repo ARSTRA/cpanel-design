@@ -17,8 +17,6 @@ const Main = styled.main`
 `;
 
 export default function Layout({ children }) {
-  const { state } = useApp();
-
   return (
     <ErrorBoundary>
       <LayoutContainer>
