@@ -329,11 +329,11 @@ export default function HomePage() {
     }
   };
 
-  const handleProductInquiry = (product) => {
-    const subject = `Purchase ${product.name}`;
-    const body = `Hi,\n\nI would like to purchase the ${product.name} (Price: $${product.price}).\n\nPlease provide purchase details.\n\nThank you!`;
-    const mailtoLink = `mailto:${state.siteSettings.contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoLink);
+  const handleProductPurchase = (product) => {
+    // Redirect to signup page with product info in query params
+    navigate(
+      `/signup?product=${encodeURIComponent(product.name)}&price=${product.price}&id=${product.id}`,
+    );
   };
 
   return (
