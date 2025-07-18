@@ -607,7 +607,14 @@ const RifleDetail = ({ rifleId }) => {
     return (
       <DetailContainer>
         <Container>
-          <BackButton onClick={() => navigate("/rifles")}>
+          <BackButton
+            onClick={() => {
+              navigate("/rifles");
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }, 100);
+            }}
+          >
             ← Back to Rifles
           </BackButton>
           <ProductSection>
@@ -639,7 +646,14 @@ const RifleDetail = ({ rifleId }) => {
   return (
     <DetailContainer>
       <Container>
-        <BackButton onClick={() => navigate("/rifles")}>
+        <BackButton
+          onClick={() => {
+            navigate("/rifles");
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 100);
+          }}
+        >
           ← Back to Rifles
         </BackButton>
 
