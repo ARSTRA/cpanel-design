@@ -246,7 +246,7 @@ export const expandedProducts = [
     stock: 8,
     images: [
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
@@ -337,7 +337,7 @@ export const expandedProducts = [
     stock: 6,
     images: [
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: false,
     displayLocation: ["rifles"],
@@ -385,7 +385,7 @@ export const expandedProducts = [
     stock: 12,
     images: [
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "shotguns"],
@@ -477,7 +477,7 @@ export const expandedProducts = [
     category: "accessories",
     stock: 15,
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
     ],
     featured: true,
@@ -612,7 +612,7 @@ export const expandedProducts = [
     category: "handguns",
     stock: 12,
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: false,
@@ -661,7 +661,7 @@ export const expandedProducts = [
     stock: 5,
     images: [
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: true,
     displayLocation: ["rifles"],
@@ -756,7 +756,7 @@ export const expandedProducts = [
     stock: 4,
     images: [
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: true,
     displayLocation: ["shotguns"],
@@ -802,7 +802,7 @@ export const expandedProducts = [
     category: "accessories",
     stock: 250,
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
     ],
     featured: true,
@@ -891,7 +891,7 @@ export const expandedProducts = [
     stock: 180,
     images: [
       "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
     ],
     featured: true,
     displayLocation: ["accessories"],
@@ -981,7 +981,7 @@ export const expandedProducts = [
     category: "accessories",
     stock: 8,
     images: [
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+      "https://images.pexels.com/photos/8717530/pexels-photo-8717530.jpeg",
       "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
     ],
     featured: true,
