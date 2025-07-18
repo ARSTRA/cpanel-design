@@ -86,7 +86,6 @@ const BrowseButton = styled.button`
 
 function ProductPage() {
   const { state } = useApp();
-  const location = useLocation();
   const [product, setProduct] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
