@@ -378,7 +378,7 @@ function SearchResults() {
     { id: "handguns", name: "Handguns", icon: "🔫" },
     { id: "rifles", name: "Rifles", icon: "🔫" },
     { id: "shotguns", name: "Shotguns", icon: "🔫" },
-    { id: "accessories", name: "Ammo", icon: "🔫" },
+    { id: "accessories", name: "Ammo", icon: "🔴" },
   ];
 
   const renderStars = (rating) => {
