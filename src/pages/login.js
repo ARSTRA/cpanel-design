@@ -264,10 +264,20 @@ function LoginContent() {
   };
 
   const handleChange = (e) => {
-    setFormData({
+    const newFormData = {
       ...formData,
       [e.target.name]: e.target.value,
-    });
+    };
+    setFormData(newFormData);
+
+    // Detect account type based on email
+    if (newFormData.email === "admin@gunstore.com") {
+      setAccountType("admin");
+    } else if (newFormData.email === "demo@gunstore.com") {
+      setAccountType("user");
+    } else {
+      setAccountType("");
+    }
   };
 
   return (
