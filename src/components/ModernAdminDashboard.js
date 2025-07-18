@@ -966,7 +966,7 @@ const ModernAdminDashboard = () => {
       case "settings":
         return "⚙️ Settings";
       default:
-        return "📊 Dashboard";
+        return "�� Dashboard";
     }
   };
 
@@ -1022,6 +1022,15 @@ const ModernAdminDashboard = () => {
             >
               <span className="icon">👥</span>
               Users
+            </MenuItem>
+
+            <MenuItem
+              active={activeSection === "ffl"}
+              onClick={() => setActiveSection("ffl")}
+            >
+              <span className="icon">🏪</span>
+              FFL Requests
+              <NotificationBadge>3</NotificationBadge>
             </MenuItem>
           </MenuSection>
 
