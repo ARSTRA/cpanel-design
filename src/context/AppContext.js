@@ -52,7 +52,7 @@ const initialState = {
   // Site Settings
   siteSettings: {
     siteName: "Gun-k Pro",
-    headerText: "Professional Firearms & Accessories",
+    headerText: "Professional Firearms & Ammo",
     contactInfo: {
       phone: "(555) 123-GUNS",
       email: "info@gunkpro.com",
