@@ -564,7 +564,7 @@ const ViewDetailsButton = styled.button`
   }
 `;
 
-const InquireButton = styled.button`
+const BuyButton = styled.button`
   flex: 1;
   padding: 12px 20px;
   background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
@@ -858,14 +858,14 @@ const RifleCollection = () => {
                       >
                         View Details
                       </ViewDetailsButton>
-                      <InquireButton
+                      <BuyButton
                         onClick={(e) => {
                           e.stopPropagation();
                           handleInquire(rifle);
                         }}
                       >
                         Buy Now
-                      </InquireButton>
+                      </BuyButton>
                     </ActionButtons>
                   </ProductContent>
                 </ProductCard>
