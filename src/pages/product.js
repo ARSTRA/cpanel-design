@@ -93,16 +93,18 @@ function ProductPage() {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const productId = params.get("id");
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get("id");
 
-    if (productId) {
-      const foundProduct = state.products.find(
-        (p) => p.id === parseInt(productId),
-      );
-      setProduct(foundProduct);
+      if (productId) {
+        const foundProduct = state.products.find(
+          (p) => p.id === parseInt(productId),
+        );
+        setProduct(foundProduct);
+      }
     }
-  }, [location.search, state.products]);
+  }, [state.products]);
 
   const addToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
