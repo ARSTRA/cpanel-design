@@ -432,10 +432,12 @@ export default function AdminLogin() {
 
   // Load remembered credentials on mount
   useEffect(() => {
-    const rememberedUsername = localStorage.getItem("adminUsername");
-    if (rememberedUsername) {
-      setCredentials((prev) => ({ ...prev, username: rememberedUsername }));
-      setRememberMe(true);
+    if (typeof window !== "undefined") {
+      const rememberedUsername = localStorage.getItem("adminUsername");
+      if (rememberedUsername) {
+        setCredentials((prev) => ({ ...prev, username: rememberedUsername }));
+        setRememberMe(true);
+      }
     }
   }, []);
 
