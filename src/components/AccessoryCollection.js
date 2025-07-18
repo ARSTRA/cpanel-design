@@ -847,7 +847,7 @@ const AccessoryCollection = () => {
     <AccessoryContainer>
       <Container>
         <HeroSection>
-          <Title>Premium Firearm Accessories</Title>
+          <Title>Premium Ammunition</Title>
           <Subtitle>
             Enhance your shooting experience with our comprehensive collection
             of premium firearm accessories. From precision optics and tactical
