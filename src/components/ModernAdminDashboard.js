@@ -647,7 +647,7 @@ const ModernAdminDashboard = () => {
         </FormGroup>
 
         <ActionButton variant="success">
-          <span>��</span> Save Product
+          <span>💾</span> Save Product
         </ActionButton>
       </FormSection>
 
@@ -1005,6 +1005,150 @@ const ModernAdminDashboard = () => {
           <ActionButton variant="warning">
             <span>📊</span> View Payment Analytics
           </ActionButton>
+        </div>
+
+        {/* Payment Methods Overview */}
+        <div
+          style={{
+            background: "linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%)",
+            padding: "25px",
+            borderRadius: "15px",
+            marginTop: "25px",
+          }}
+        >
+          <h3
+            style={{
+              margin: "0 0 20px 0",
+              color: "#2c3e50",
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            💰 Accepted Payment Methods
+          </h3>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: "15px",
+            }}
+          >
+            {/* Bitcoin */}
+            <div
+              style={{
+                background: "white",
+                padding: "15px",
+                borderRadius: "10px",
+                textAlign: "center",
+                border: "2px solid #f7931a",
+              }}
+            >
+              <div style={{ fontSize: "24px", marginBottom: "8px" }}>₿</div>
+              <strong style={{ color: "#f7931a" }}>Bitcoin</strong>
+              <p
+                style={{ fontSize: "12px", color: "#666", margin: "5px 0 0 0" }}
+              >
+                Secure, decentralized cryptocurrency
+              </p>
+            </div>
+
+            {/* Ethereum */}
+            <div
+              style={{
+                background: "white",
+                padding: "15px",
+                borderRadius: "10px",
+                textAlign: "center",
+                border: "2px solid #627eea",
+              }}
+            >
+              <div style={{ fontSize: "24px", marginBottom: "8px" }}>⧫</div>
+              <strong style={{ color: "#627eea" }}>Ethereum</strong>
+              <p
+                style={{ fontSize: "12px", color: "#666", margin: "5px 0 0 0" }}
+              >
+                Smart contract platform
+              </p>
+            </div>
+
+            {/* USDT */}
+            <div
+              style={{
+                background: "white",
+                padding: "15px",
+                borderRadius: "10px",
+                textAlign: "center",
+                border: "2px solid #26a17b",
+              }}
+            >
+              <div style={{ fontSize: "24px", marginBottom: "8px" }}>💎</div>
+              <strong style={{ color: "#26a17b" }}>USDT TRC-20</strong>
+              <p
+                style={{ fontSize: "12px", color: "#666", margin: "5px 0 0 0" }}
+              >
+                Stable coin on Tron network
+              </p>
+            </div>
+
+            {/* PayPal */}
+            <div
+              style={{
+                background: "white",
+                padding: "15px",
+                borderRadius: "10px",
+                textAlign: "center",
+                border: "2px solid #0070ba",
+              }}
+            >
+              <div style={{ fontSize: "24px", marginBottom: "8px" }}>💙</div>
+              <strong style={{ color: "#0070ba" }}>PayPal</strong>
+              <p
+                style={{ fontSize: "12px", color: "#666", margin: "5px 0 0 0" }}
+              >
+                Global digital payments
+              </p>
+            </div>
+
+            {/* CashApp */}
+            <div
+              style={{
+                background: "white",
+                padding: "15px",
+                borderRadius: "10px",
+                textAlign: "center",
+                border: "2px solid #00d632",
+              }}
+            >
+              <div style={{ fontSize: "24px", marginBottom: "8px" }}>💚</div>
+              <strong style={{ color: "#00d632" }}>CashApp</strong>
+              <p
+                style={{ fontSize: "12px", color: "#666", margin: "5px 0 0 0" }}
+              >
+                Instant peer-to-peer payments
+              </p>
+            </div>
+
+            {/* Credit Cards */}
+            <div
+              style={{
+                background: "white",
+                padding: "15px",
+                borderRadius: "10px",
+                textAlign: "center",
+                border: "2px solid #635bff",
+              }}
+            >
+              <div style={{ fontSize: "24px", marginBottom: "8px" }}>💳</div>
+              <strong style={{ color: "#635bff" }}>Credit Cards</strong>
+              <p
+                style={{ fontSize: "12px", color: "#666", margin: "5px 0 0 0" }}
+              >
+                Visa, Mastercard, Amex
+              </p>
+            </div>
+          </div>
         </div>
       </FormSection>
 
