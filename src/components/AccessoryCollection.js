@@ -707,7 +707,7 @@ const ViewDetailsButton = styled.button`
   }
 `;
 
-const InquireButton = styled.button`
+const BuyButton = styled.button`
   flex: 1;
   padding: 18px 30px;
   background: linear-gradient(135deg, #a8edea, #fed6e3);
@@ -823,7 +823,7 @@ const AccessoryCollection = () => {
     navigate(`/accessory-detail?id=${accessory.id}`);
   };
 
-  const handleInquire = (accessory) => {
+  const handleBuy = (accessory) => {
     navigate(
       `/contact?product=${encodeURIComponent(accessory.name)}&category=accessories`,
     );
@@ -1026,14 +1026,14 @@ const AccessoryCollection = () => {
                       >
                         View Details
                       </ViewDetailsButton>
-                      <InquireButton
+                      <BuyButton
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleInquire(accessory);
+                          handleBuy(accessory);
                         }}
                       >
-                        Inquire Now
-                      </InquireButton>
+                        Buy Now
+                      </BuyButton>
                     </ActionButtons>
                   </ProductContent>
                 </ProductCard>
