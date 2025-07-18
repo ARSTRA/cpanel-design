@@ -207,11 +207,34 @@ function LoginContent() {
     // Simulate API call
     setTimeout(() => {
       if (formData.email && formData.password) {
-        setSuccess("Login successful! Welcome back.");
-        // In a real app, you'd handle authentication here
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 1500);
+        // Check for admin credentials
+        if (
+          formData.email === "admin@gunstore.com" &&
+          formData.password === "admin123"
+        ) {
+          setSuccess("Admin login successful! Redirecting to admin panel...");
+          dispatch({ type: "LOGIN_ADMIN" });
+          setTimeout(() => {
+            navigate("/admin");
+          }, 1500);
+        }
+        // Check for regular user credentials
+        else if (
+          formData.email === "demo@gunstore.com" &&
+          formData.password === "demo123"
+        ) {
+          setSuccess("Login successful! Welcome back.");
+          // In a real app, you'd handle user authentication here
+          setTimeout(() => {
+            navigate("/dashboard");
+          }, 1500);
+        }
+        // Invalid credentials
+        else {
+          setError(
+            "Invalid email or password. Please check your credentials and try again.",
+          );
+        }
       } else {
         setError("Please fill in all fields");
       }
