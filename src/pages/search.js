@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "@reach/router";
 import styled from "styled-components";
 import { AppProvider, useApp } from "../context/AppContext";
