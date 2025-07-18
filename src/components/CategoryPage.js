@@ -282,11 +282,10 @@ export default function CategoryPage({ category = "handguns" }) {
   });
 
   const handleInquiry = (product) => {
-    // Create mailto link for purchase
-    const subject = `Purchase ${product.name}`;
-    const body = `Hi,\n\nI would like to purchase the ${product.name} (Price: $${product.price}).\n\nPlease provide purchase details.\n\nThank you!`;
-    const mailtoLink = `mailto:${state.siteSettings.contactInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.open(mailtoLink);
+    // Redirect to signup page for purchase
+    navigate(
+      `/signup?product=${encodeURIComponent(product.name)}&price=${product.price}&id=${product.id}&category=${category}`,
+    );
   };
 
   return (
