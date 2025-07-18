@@ -342,7 +342,11 @@ function DashboardContent() {
               </ActionButton>
               <ActionButton
                 variant="profile"
-                onClick={() => (window.location.href = "/profile")}
+                onClick={() =>
+                  alert(
+                    "Profile page coming soon! This feature is under development.",
+                  )
+                }
               >
                 👤 Profile
               </ActionButton>
