@@ -308,7 +308,6 @@ const NoResults = styled.div`
 
 function SearchResults() {
   const { state } = useApp();
-  const location = useLocation();
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortBy, setSortBy] = useState("relevance");
