@@ -290,10 +290,34 @@ export default function HomePage() {
   );
 
   const categories = [
-    { name: "Handguns", icon: "🔫", path: "/handguns", color: "#e74c3c" },
-    { name: "Rifles", icon: "🔫", path: "/rifles", color: "#3498db" },
-    { name: "Shotguns", icon: "🔫", path: "/shotguns", color: "#f39c12" },
-    { name: "Accessories", icon: "🔧", path: "/accessories", color: "#9b59b6" },
+    {
+      name: "Handguns",
+      path: "/handguns",
+      color: "#e74c3c",
+      image:
+        "https://images.pexels.com/photos/12311349/pexels-photo-12311349.jpeg",
+    },
+    {
+      name: "Rifles",
+      path: "/rifles",
+      color: "#3498db",
+      image:
+        "https://images.pexels.com/photos/26830939/pexels-photo-26830939.jpeg",
+    },
+    {
+      name: "Shotguns",
+      path: "/shotguns",
+      color: "#f39c12",
+      image:
+        "https://images.pexels.com/photos/6204731/pexels-photo-6204731.jpeg",
+    },
+    {
+      name: "Accessories",
+      path: "/accessories",
+      color: "#9b59b6",
+      image:
+        "https://images.pexels.com/photos/17603058/pexels-photo-17603058.jpeg",
+    },
   ];
 
   const handleBrowseClick = () => {
