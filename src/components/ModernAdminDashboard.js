@@ -972,6 +972,8 @@ const ModernAdminDashboard = () => {
         return "⚙️ Settings";
       case "ffl":
         return "🏪 FFL Requests";
+      case "inventory":
+        return "📦 Inventory Management";
       default:
         return "📊 Dashboard";
     }
