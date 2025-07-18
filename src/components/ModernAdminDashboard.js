@@ -967,6 +967,8 @@ const ModernAdminDashboard = () => {
         return "👥 User Activity";
       case "settings":
         return "⚙️ Settings";
+      case "ffl":
+        return "🏪 FFL Requests";
       default:
         return "📊 Dashboard";
     }
