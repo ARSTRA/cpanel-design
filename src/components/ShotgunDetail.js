@@ -695,7 +695,14 @@ const ShotgunDetail = ({ shotgunId }) => {
   return (
     <DetailContainer>
       <Container>
-        <BackButton onClick={() => navigate("/shotguns")}>
+        <BackButton
+          onClick={() => {
+            navigate("/shotguns");
+            setTimeout(() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }, 100);
+          }}
+        >
           ← Back to Shotguns
         </BackButton>
 
