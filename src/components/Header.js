@@ -464,6 +464,13 @@ export default function Header() {
 
   const handleNavClick = () => {
     setIsMenuOpen(false);
+    // Smooth scroll to top when navigating to new page
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
   };
 
   // Get current page to highlight active nav item
