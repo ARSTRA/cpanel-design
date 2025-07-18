@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useApp } from "../context/AppContext.optimized";
 import Header from "./Header";
 import Footer from "./Footer";
 
