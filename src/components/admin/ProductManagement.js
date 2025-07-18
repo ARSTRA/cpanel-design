@@ -274,7 +274,7 @@ const categories = [
   { value: "handguns", label: "Handguns" },
   { value: "rifles", label: "Rifles" },
   { value: "shotguns", label: "Shotguns" },
-  { value: "accessories", label: "Accessories" },
+  { value: "accessories", label: "Ammo" },
   { value: "ammunition", label: "Ammunition" },
 ];
 
