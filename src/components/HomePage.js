@@ -420,7 +420,7 @@ export default function HomePage() {
                   <ProductDescription>
                     {product.description.substring(0, 120)}...
                   </ProductDescription>
-                  <ProductButton onClick={() => handleProductInquiry(product)}>
+                  <ProductButton onClick={() => handleProductPurchase(product)}>
                     Buy Now
                   </ProductButton>
                 </ProductInfo>
