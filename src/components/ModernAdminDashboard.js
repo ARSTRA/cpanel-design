@@ -948,6 +948,8 @@ const ModernAdminDashboard = () => {
         return renderUserActivity();
       case "settings":
         return renderSettings();
+      case "ffl":
+        return <FFLRequestManager />;
       default:
         return renderDashboardStats();
     }
@@ -966,7 +968,7 @@ const ModernAdminDashboard = () => {
       case "settings":
         return "⚙️ Settings";
       default:
-        return "�� Dashboard";
+        return "📊 Dashboard";
     }
   };
 
