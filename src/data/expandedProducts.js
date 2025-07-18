@@ -56,8 +56,8 @@ export const expandedProducts = [
     category: "handguns",
     stock: 22,
     images: [
-      "https://images.pexels.com/photos/12311349/pexels-photo-12311349.jpeg",
-      "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg",
+      "https://images.pexels.com/photos/6091856/pexels-photo-6091856.jpeg",
+      "https://images.pexels.com/photos/6091165/pexels-photo-6091165.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
