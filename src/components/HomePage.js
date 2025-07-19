@@ -665,15 +665,21 @@ export default function HomePage() {
                           width: "100%",
                           height: "100%",
                           background:
-                            "linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%)",
+                            "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)",
                           display: "flex",
+                          flexDirection: "column",
                           alignItems: "center",
                           justifyContent: "center",
-                          color: "#7f8c8d",
-                          fontSize: "48px",
+                          color: "white",
+                          textAlign: "center",
                         }}
                       >
-                        🔫
+                        <div style={{ fontSize: "48px", marginBottom: "10px" }}>
+                          🔫
+                        </div>
+                        <div style={{ fontSize: "14px", fontWeight: "600" }}>
+                          Product Image
+                        </div>
                       </div>
                     )}
                   </ProductImage>
