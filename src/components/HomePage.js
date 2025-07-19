@@ -728,13 +728,37 @@ export default function HomePage() {
   const [showTestimonial, setShowTestimonial] = useState(false);
 
   useEffect(() => {
-    // Auto-trigger testimonial popup after 15 seconds
+    // Auto-trigger testimonial popup after 20 seconds
     const timer = setTimeout(() => {
       setShowTestimonial(true);
-    }, 15000);
+    }, 20000);
 
-    return () => clearTimeout(timer);
-  }, []);
+    // Additional trigger when user scrolls to featured products
+    const handleScroll = () => {
+      const featuredSection = document.querySelector(
+        '[data-section="featured-products"]',
+      );
+      if (featuredSection) {
+        const rect = featuredSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
+          // Trigger testimonial after 10 seconds of viewing featured products
+          setTimeout(() => {
+            if (!showTestimonial) {
+              setShowTestimonial(true);
+            }
+          }, 10000);
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showTestimonial]);
 
   const featuredProducts = state.products.filter(
     (product) => product.featured && product.displayLocation.includes("home"),
