@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, navigate } from "gatsby";
 import styled from "styled-components";
-import { AppProvider, useApp } from "../context/AppContext";
+import { AppProvider, useApp } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
 
 const LoginContainer = styled.div`
@@ -34,6 +34,11 @@ const LoginCard = styled.div`
     height: 4px;
     background: linear-gradient(90deg, #3498db, #27ae60, #f39c12, #e74c3c);
     border-radius: 20px 20px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+    margin: 20px;
   }
 `;
 
