@@ -258,21 +258,23 @@ const StatLabel = styled.div`
 `;
 
 const ControlsSection = styled.div`
-  background: rgba(255, 255, 255, 0.15);
-  padding: 40px;
-  border-radius: 30px;
+  background: rgba(44, 62, 80, 0.9);
+  padding: 35px;
+  border-radius: 16px;
   margin-bottom: 40px;
-  backdrop-filter: blur(25px);
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(52, 152, 219, 0.2);
   animation: ${fadeIn} 1s ease-out 0.3s both;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
   @media (max-width: 768px) {
-    padding: 35px 30px;
+    padding: 30px 25px;
   }
 
   @media (max-width: 480px) {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
 `;
 
