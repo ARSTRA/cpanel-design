@@ -766,21 +766,21 @@ const RatingText = styled.span`
 
 const EmptyState = styled.div`
   text-align: center;
-  padding: 120px 20px;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 80px 20px;
+  color: #bdc3c7;
 `;
 
 const EmptyTitle = styled.h3`
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-  color: white;
-  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ecf0f1;
+  font-weight: 600;
 `;
 
 const EmptyText = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.7;
-  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
 `;
 
 const AccessoryCollection = () => {
