@@ -651,19 +651,30 @@ export default function HomePage() {
                       <img
                         src={product.images[0]}
                         alt={product.name}
-                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                          const parent = e.target.parentElement;
+                          parent.style.background =
+                            "linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%)";
+                          parent.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #7f8c8d; font-size: 48px;">🔫</div>`;
+                        }}
                       />
                     ) : (
                       <div
                         style={{
                           width: "100%",
                           height: "100%",
-                          backgroundImage:
-                            "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
-                          backgroundSize: "cover",
-                          backgroundPosition: "center",
+                          background:
+                            "linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "#7f8c8d",
+                          fontSize: "48px",
                         }}
-                      />
+                      >
+                        🔫
+                      </div>
                     )}
                   </ProductImage>
                   <ProductInfo>
