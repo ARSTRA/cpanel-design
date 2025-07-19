@@ -725,6 +725,16 @@ const FloatingTestimonialButton = styled.button`
 
 export default function HomePage() {
   const { state } = useApp();
+  const [showTestimonial, setShowTestimonial] = useState(false);
+
+  useEffect(() => {
+    // Auto-trigger testimonial popup after 15 seconds
+    const timer = setTimeout(() => {
+      setShowTestimonial(true);
+    }, 15000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const featuredProducts = state.products.filter(
     (product) => product.featured && product.displayLocation.includes("home"),
