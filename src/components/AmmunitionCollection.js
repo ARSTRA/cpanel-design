@@ -372,15 +372,6 @@ const SecondaryButton = styled(Button)`
   }
 `;
 
-const LoadingState = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  font-size: 18px;
-  color: #7f8c8d;
-`;
-
 const EmptyState = styled.div`
   text-align: center;
   padding: 60px 20px;
