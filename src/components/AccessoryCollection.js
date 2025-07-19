@@ -125,53 +125,54 @@ const HeroSection = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 4.5rem;
-  font-weight: 900;
-  margin-bottom: 30px;
-  background: linear-gradient(
-    135deg,
-    #ff9a9e,
-    #fecfef,
-    #a8edea,
-    #fed6e3,
-    #667eea
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow 8s ease infinite;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 3;
+  letter-spacing: -0.5px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+  }
 
   @media (max-width: 768px) {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 60px;
-  line-height: 1.8;
-  max-width: 1000px;
+  font-size: 1.2rem;
+  color: #bdc3c7;
+  margin-bottom: 50px;
+  line-height: 1.7;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
   z-index: 3;
 
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
