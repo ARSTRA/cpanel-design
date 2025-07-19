@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const HeaderContainer = styled.header`
   position: fixed;
@@ -177,7 +177,9 @@ const SubText = styled.span`
   }
 `;
 
-const Navigation = styled.nav`
+const Navigation = styled.nav.withConfig({
+  shouldForwardProp: (prop) => prop !== "isOpen",
+})`
   display: flex;
   align-items: center;
   gap: 30px;
@@ -574,11 +576,11 @@ export default function Header() {
             Accessories
           </NavLink>
           <NavLink
-            to="/contact"
+            to="/ammunition"
             onClick={handleNavClick}
-            className={currentPath === "/contact" ? "active" : ""}
+            className={currentPath === "/ammunition" ? "active" : ""}
           >
-            Contact
+            Ammunition
           </NavLink>
         </Navigation>
 

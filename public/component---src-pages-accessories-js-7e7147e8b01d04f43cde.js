@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcode=self.webpackChunkcode||[]).push([[879],{4777:function(e,c,t){t.r(c);var l=t(6540),a=t(580),n=t(3722),r=t(4254);c.default=()=>l.createElement(a.D,null,l.createElement(n.A,null,l.createElement(r.A,{category:"accessories"})))}}]);
-//# sourceMappingURL=component---src-pages-accessories-js-7e7147e8b01d04f43cde.js.map

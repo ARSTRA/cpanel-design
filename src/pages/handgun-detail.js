@@ -1,5 +1,5 @@
 import React from "react";
-import { AppProvider } from "../context/AppContext";
+import { AppProvider } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
 import HandgunDetail from "../components/HandgunDetail";
 

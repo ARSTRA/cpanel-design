@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useApp } from "../context/AppContext";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -16,8 +15,6 @@ const Main = styled.main`
 `;
 
 export default function Layout({ children }) {
-  const { state } = useApp();
-
   return (
     <LayoutContainer>
       <Header />

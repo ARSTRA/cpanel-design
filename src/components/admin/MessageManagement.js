@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useApp } from "../../context/AppContext";
+import { useApp } from "../../context/AppContext.optimized";
 
 const Container = styled.div`
   background: white;
@@ -172,7 +172,10 @@ export default function MessageManagement() {
   const handleDelete = (messageId) => {
     if (window.confirm("Are you sure you want to delete this message?")) {
       // Add delete message action to reducer if needed
-      console.log("Delete message:", messageId);
+      dispatch({
+        type: "DELETE_MESSAGE",
+        payload: messageId,
+      });
     }
   };
 

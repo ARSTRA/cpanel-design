@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { navigate } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -11,14 +11,6 @@ const fadeIn = keyframes`
 const float = keyframes`
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-12px); }
-`;
-
-const rainbow = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
 `;
 
 const DetailContainer = styled.div`

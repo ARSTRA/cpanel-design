@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { navigate } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -791,8 +791,6 @@ const ShotgunCollection = () => {
   const avgRating =
     shotguns.reduce((sum, s) => sum + (s.rating || 0), 0) / shotguns.length;
   const featuredCount = shotguns.filter((s) => s.featured).length;
-  const avgPrice =
-    shotguns.reduce((sum, s) => sum + s.price, 0) / shotguns.length;
 
   return (
     <ShotgunContainer>
@@ -821,8 +819,8 @@ const ShotgunCollection = () => {
               <StatLabel>Avg Rating</StatLabel>
             </StatCard>
             <StatCard>
-              <StatNumber>${Math.round(avgPrice)}</StatNumber>
-              <StatLabel>Avg Price</StatLabel>
+              <StatNumber>{featuredCount}</StatNumber>
+              <StatLabel>Featured</StatLabel>
             </StatCard>
           </StatsGrid>
         </HeroSection>
@@ -841,22 +839,42 @@ const ShotgunCollection = () => {
               onChange={(e) => setFilterOption(e.target.value)}
               id="shotgun-filter"
             >
-              <option value="all">All Shotguns</option>
-              <option value="inStock">In Stock</option>
-              <option value="featured">Featured</option>
-              <option value="onSale">On Sale</option>
+              <option key="all" value="all">
+                All Shotguns
+              </option>
+              <option key="inStock" value="inStock">
+                In Stock
+              </option>
+              <option key="featured" value="featured">
+                Featured
+              </option>
+              <option key="onSale" value="onSale">
+                On Sale
+              </option>
             </FilterSelect>
             <SortSelect
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
               id="shotgun-sort"
             >
-              <option value="name">Sort by Name</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="rating">Highest Rated</option>
-              <option value="manufacturer">Manufacturer</option>
-              <option value="gauge">Gauge</option>
+              <option key="name" value="name">
+                Sort by Name
+              </option>
+              <option key="price-low" value="price-low">
+                Price: Low to High
+              </option>
+              <option key="price-high" value="price-high">
+                Price: High to Low
+              </option>
+              <option key="rating" value="rating">
+                Highest Rated
+              </option>
+              <option key="manufacturer" value="manufacturer">
+                Manufacturer
+              </option>
+              <option key="gauge" value="gauge">
+                Gauge
+              </option>
             </SortSelect>
           </SearchAndFilters>
 
@@ -975,7 +993,7 @@ const ShotgunCollection = () => {
                           handleInquire(shotgun);
                         }}
                       >
-                        Inquire Now
+                        BUY
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { navigate } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -714,10 +714,18 @@ export default function HandgunCollection() {
                 value={filterBy}
                 onChange={(e) => setFilterBy(e.target.value)}
               >
-                <option value="all">All Handguns</option>
-                <option value="in-stock">In Stock</option>
-                <option value="featured">Featured</option>
-                <option value="on-sale">On Sale</option>
+                <option key="all" value="all">
+                  All Handguns
+                </option>
+                <option key="in-stock" value="in-stock">
+                  In Stock
+                </option>
+                <option key="featured" value="featured">
+                  Featured
+                </option>
+                <option key="on-sale" value="on-sale">
+                  On Sale
+                </option>
               </Select>
             </FilterGroup>
 
@@ -728,11 +736,21 @@ export default function HandgunCollection() {
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
-                <option value="name">Name A-Z</option>
-                <option value="manufacturer">Manufacturer</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Highest Rated</option>
+                <option key="name" value="name">
+                  Name A-Z
+                </option>
+                <option key="manufacturer" value="manufacturer">
+                  Manufacturer
+                </option>
+                <option key="price-low" value="price-low">
+                  Price: Low to High
+                </option>
+                <option key="price-high" value="price-high">
+                  Price: High to Low
+                </option>
+                <option key="rating" value="rating">
+                  Highest Rated
+                </option>
               </Select>
             </FilterGroup>
           </FiltersGrid>
@@ -778,7 +796,21 @@ export default function HandgunCollection() {
                   product.images[0] !== "/api/placeholder/400/300" ? (
                     <ProductImage src={product.images[0]} alt={product.name} />
                   ) : (
-                    <ProductImagePlaceholder>🔫</ProductImagePlaceholder>
+                    <ProductImagePlaceholder
+                      style={{
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "transparent",
+                      }}
+                    >
+                      Image not available
+                    </ProductImagePlaceholder>
                   )}
 
                   <BadgeContainer>
@@ -848,7 +880,7 @@ export default function HandgunCollection() {
                       className="primary"
                       onClick={() => handleInquiry(product)}
                     >
-                      Inquire Now
+                      BUY
                     </ActionButton>
                     <ActionButton
                       className="secondary"

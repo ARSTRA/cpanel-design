@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { navigate } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -18,32 +18,10 @@ const rotate = keyframes`
   to { transform: rotate(360deg); }
 `;
 
-const rainbow = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
-
 const AccessoryContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #ff9a9e 0%,
-    #fecfef 15%,
-    #fecfef 25%,
-    #a8edea 35%,
-    #fed6e3 45%,
-    #a8edea 55%,
-    #d299c2 65%,
-    #fef9d7 75%,
-    #667eea 85%,
-    #764ba2 100%
-  );
-  background-size: 600% 600%;
-  animation: rainbow 25s ease infinite;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 `;
 
 const Container = styled.div`
@@ -64,10 +42,9 @@ const HeroSection = styled.div`
   text-align: center;
   margin-bottom: 50px;
   padding: 100px 50px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 35px;
-  backdrop-filter: blur(30px);
-  border: 3px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  border-radius: 20px;
+  color: white;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
   animation: ${fadeIn} 1s ease-out;
   position: relative;
@@ -840,8 +817,6 @@ const AccessoryCollection = () => {
     accessories.reduce((sum, a) => sum + (a.rating || 0), 0) /
     accessories.length;
   const featuredCount = accessories.filter((a) => a.featured).length;
-  const avgPrice =
-    accessories.reduce((sum, a) => sum + a.price, 0) / accessories.length;
 
   return (
     <AccessoryContainer>
@@ -871,8 +846,8 @@ const AccessoryCollection = () => {
               <StatLabel>Avg Rating</StatLabel>
             </StatCard>
             <StatCard>
-              <StatNumber>${Math.round(avgPrice)}</StatNumber>
-              <StatLabel>Avg Price</StatLabel>
+              <StatNumber>{featuredCount}</StatNumber>
+              <StatLabel>Featured</StatLabel>
             </StatCard>
           </StatsGrid>
         </HeroSection>
@@ -891,22 +866,42 @@ const AccessoryCollection = () => {
               onChange={(e) => setFilterOption(e.target.value)}
               id="accessory-filter"
             >
-              <option value="all">All Accessories</option>
-              <option value="inStock">In Stock</option>
-              <option value="featured">Featured</option>
-              <option value="onSale">On Sale</option>
+              <option key="all" value="all">
+                All Accessories
+              </option>
+              <option key="inStock" value="inStock">
+                In Stock
+              </option>
+              <option key="featured" value="featured">
+                Featured
+              </option>
+              <option key="onSale" value="onSale">
+                On Sale
+              </option>
             </FilterSelect>
             <SortSelect
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
               id="accessory-sort"
             >
-              <option value="name">Sort by Name</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="rating">Highest Rated</option>
-              <option value="manufacturer">Manufacturer</option>
-              <option value="type">Type</option>
+              <option key="name" value="name">
+                Sort by Name
+              </option>
+              <option key="price-low" value="price-low">
+                Price: Low to High
+              </option>
+              <option key="price-high" value="price-high">
+                Price: High to Low
+              </option>
+              <option key="rating" value="rating">
+                Highest Rated
+              </option>
+              <option key="manufacturer" value="manufacturer">
+                Manufacturer
+              </option>
+              <option key="type" value="type">
+                Type
+              </option>
             </SortSelect>
           </SearchAndFilters>
 
@@ -1032,7 +1027,7 @@ const AccessoryCollection = () => {
                           handleInquire(accessory);
                         }}
                       >
-                        Inquire Now
+                        BUY
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>

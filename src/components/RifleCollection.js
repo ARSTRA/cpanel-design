@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { navigate } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -733,21 +733,39 @@ const RifleCollection = () => {
               onChange={(e) => setFilterOption(e.target.value)}
               id="rifle-filter"
             >
-              <option value="all">All Rifles</option>
-              <option value="inStock">In Stock</option>
-              <option value="featured">Featured</option>
-              <option value="onSale">On Sale</option>
+              <option key="all" value="all">
+                All Rifles
+              </option>
+              <option key="inStock" value="inStock">
+                In Stock
+              </option>
+              <option key="featured" value="featured">
+                Featured
+              </option>
+              <option key="onSale" value="onSale">
+                On Sale
+              </option>
             </FilterSelect>
             <SortSelect
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
               id="rifle-sort"
             >
-              <option value="name">Sort by Name</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="rating">Highest Rated</option>
-              <option value="manufacturer">Manufacturer</option>
+              <option key="name" value="name">
+                Sort by Name
+              </option>
+              <option key="price-low" value="price-low">
+                Price: Low to High
+              </option>
+              <option key="price-high" value="price-high">
+                Price: High to Low
+              </option>
+              <option key="rating" value="rating">
+                Highest Rated
+              </option>
+              <option key="manufacturer" value="manufacturer">
+                Manufacturer
+              </option>
             </SortSelect>
           </SearchAndFilters>
 
@@ -864,7 +882,7 @@ const RifleCollection = () => {
                           handleInquire(rifle);
                         }}
                       >
-                        Inquire Now
+                        BUY
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>

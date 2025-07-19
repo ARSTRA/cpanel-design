@@ -1,5 +1,5 @@
 import React from "react";
-import { AppProvider, useApp } from "../context/AppContext";
+import { AppProvider, useApp } from "../context/AppContext.optimized";
 import AdminLogin from "../components/AdminLogin";
 import ColorfulAdminDashboard from "../components/ColorfulAdminDashboard";
 

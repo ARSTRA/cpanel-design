@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, navigate } from "gatsby";
 import styled from "styled-components";
-import { AppProvider, useApp } from "../context/AppContext";
+import { AppProvider } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
 
 const LoginContainer = styled.div`
@@ -34,6 +34,11 @@ const LoginCard = styled.div`
     height: 4px;
     background: linear-gradient(90deg, #3498db, #27ae60, #f39c12, #e74c3c);
     border-radius: 20px 20px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 20px;
+    margin: 20px;
   }
 `;
 
@@ -166,7 +171,6 @@ const DemoCredentials = styled.div`
 `;
 
 function LoginContent() {
-  const { dispatch } = useApp();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -184,11 +188,24 @@ function LoginContent() {
     // Simulate API call
     setTimeout(() => {
       if (formData.email && formData.password) {
-        setSuccess("Login successful! Welcome back.");
-        // In a real app, you'd handle authentication here
-        setTimeout(() => {
-          navigate("/");
-        }, 1500);
+        // Check if admin credentials
+        if (
+          formData.email === "admin@gunstore.com" &&
+          formData.password === "admin123"
+        ) {
+          setSuccess(
+            "Admin login successful! Redirecting to admin dashboard...",
+          );
+          setTimeout(() => {
+            navigate("/admin-dashboard");
+          }, 1500);
+        } else {
+          // Regular user login
+          setSuccess("Login successful! Redirecting to your dashboard...");
+          setTimeout(() => {
+            navigate("/user-dashboard");
+          }, 1500);
+        }
       } else {
         setError("Please fill in all fields");
       }
@@ -210,11 +227,11 @@ function LoginContent() {
         <Subtitle>Sign in to your Gun-k Pro account</Subtitle>
 
         <DemoCredentials>
-          <strong>Demo Account:</strong>
+          <strong>Demo Accounts:</strong>
           <br />
-          Email: demo@gunstore.com
+          <strong>User:</strong> demo@gunstore.com / demo123
           <br />
-          Password: demo123
+          <strong>Admin:</strong> admin@gunstore.com / admin123
         </DemoCredentials>
 
         <Form onSubmit={handleSubmit}>

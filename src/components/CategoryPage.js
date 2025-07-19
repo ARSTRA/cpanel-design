@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const CategoryContainer = styled.div`
   padding: 40px 20px;
@@ -116,6 +116,18 @@ const ProductImage = styled.div`
   font-size: 64px;
   color: #7f8c8d;
   position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
 `;
 
 const StockBadge = styled.div`
@@ -303,9 +315,15 @@ export default function CategoryPage({ category = "handguns" }) {
               value={filterBy}
               onChange={(e) => setFilterBy(e.target.value)}
             >
-              <option value="all">All Products</option>
-              <option value="in-stock">In Stock</option>
-              <option value="featured">Featured</option>
+              <option key="all" value="all">
+                All Products
+              </option>
+              <option key="in-stock" value="in-stock">
+                In Stock
+              </option>
+              <option key="featured" value="featured">
+                Featured
+              </option>
             </Select>
           </FilterGroup>
 
@@ -316,9 +334,15 @@ export default function CategoryPage({ category = "handguns" }) {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
-              <option value="name">Name A-Z</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
+              <option key="name" value="name">
+                Name A-Z
+              </option>
+              <option key="price-low" value="price-low">
+                Price: Low to High
+              </option>
+              <option key="price-high" value="price-high">
+                Price: High to Low
+              </option>
             </Select>
           </FilterGroup>
         </FiltersSection>
@@ -341,7 +365,24 @@ export default function CategoryPage({ category = "handguns" }) {
             {sortedProducts.map((product) => (
               <ProductCard key={product.id}>
                 <ProductImage>
-                  🔫
+                  {product.images && product.images[0] ? (
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
+                  )}
                   <StockBadge $inStock={product.stock > 0}>
                     {product.stock > 0 ? "In Stock" : "Out of Stock"}
                   </StockBadge>

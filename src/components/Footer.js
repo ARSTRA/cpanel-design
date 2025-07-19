@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 
 const FooterContainer = styled.footer`
   background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
@@ -117,7 +117,7 @@ export default function Footer() {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <h3>🔫 {state.siteSettings.siteName}</h3>
+          <h3>⚡ {state.siteSettings.siteName}</h3>
           <p>{state.siteSettings.aboutUs}</p>
           <SocialLinks>
             <SocialLink href="#" title="Facebook">
@@ -152,6 +152,9 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/accessories">Accessories</Link>
+            </li>
+            <li>
+              <Link to="/ammunition">Ammunition</Link>
             </li>
             <li>
               <Link to="/contact">Contact Us</Link>
