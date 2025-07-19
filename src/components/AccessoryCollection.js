@@ -1007,7 +1007,7 @@ const AccessoryCollection = () => {
                           handleInquire(accessory);
                         }}
                       >
-                        Inquire Now
+                        BUY
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>
