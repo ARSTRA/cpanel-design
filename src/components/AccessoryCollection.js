@@ -852,15 +852,13 @@ const AccessoryCollection = () => {
     <AccessoryContainer>
       <Container>
         <HeroSection>
-          <Title>Premium Firearm Accessories</Title>
+          <Title>Tactical Accessories & Optics</Title>
           <Subtitle>
-            Enhance your shooting experience with our comprehensive collection
-            of premium firearm accessories. From precision optics and tactical
-            lights to ergonomic stocks and professional-grade cases, we offer
-            the finest accessories from trusted manufacturers like Vortex,
-            Aimpoint, Surefire, Magpul, and Trijicon. Whether you're upgrading
-            for competition, hunting, or tactical applications, find the perfect
-            accessories to maximize your firearm's potential and performance.
+            Professional-grade firearm accessories for law enforcement,
+            military, competitive shooters, and hunters. From precision optics
+            and tactical lighting to advanced ergonomic enhancements - we
+            provide mission-critical gear from industry leaders like Vortex,
+            Aimpoint, EOTech, and Magpul.
           </Subtitle>
           <StatsGrid>
             <StatCard>
