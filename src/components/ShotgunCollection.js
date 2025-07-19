@@ -21,32 +21,28 @@ const float = keyframes`
 const ShotgunContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #667eea 0%,
-    #f093fb 20%,
-    #f5576c 40%,
-    #4facfe 60%,
-    #00f2fe 80%,
-    #ff0844 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 20s ease infinite;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+  position: relative;
 
-  @keyframes gradientShift {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    25% {
-      background-position: 100% 0%;
-    }
-    50% {
-      background-position: 100% 100%;
-    }
-    75% {
-      background-position: 0% 100%;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(155, 89, 182, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(230, 126, 34, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
   }
 `;
 
