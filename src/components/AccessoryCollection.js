@@ -50,10 +50,9 @@ const HeroSection = styled.div`
   text-align: center;
   margin-bottom: 50px;
   padding: 100px 50px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 35px;
-  backdrop-filter: blur(30px);
-  border: 3px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  border-radius: 20px;
+  color: white;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
   animation: ${fadeIn} 1s ease-out;
   position: relative;
