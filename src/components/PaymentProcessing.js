@@ -570,9 +570,211 @@ const PaymentProcessing = () => {
     </PaymentCard>
   );
 
+  const renderCryptocurrency = () => (
+    <PaymentCard>
+      <PaymentHeader>
+        <PaymentTitle>₿ Cryptocurrency</PaymentTitle>
+        <AddButton>Add Wallet</AddButton>
+      </PaymentHeader>
+
+      <div style={{ marginBottom: "25px" }}>
+        <h4 style={{ color: "#2c3e50", marginBottom: "20px" }}>
+          Supported Cryptocurrencies
+        </h4>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "15px",
+          }}
+        >
+          {[
+            { name: "Bitcoin", symbol: "BTC", icon: "₿", color: "#f7931a" },
+            { name: "Ethereum", symbol: "ETH", icon: "Ξ", color: "#627eea" },
+            { name: "Litecoin", symbol: "LTC", icon: "Ł", color: "#bfbbbb" },
+            {
+              name: "Bitcoin Cash",
+              symbol: "BCH",
+              icon: "₿",
+              color: "#8dc351",
+            },
+          ].map((crypto) => (
+            <div
+              key={crypto.symbol}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                padding: "15px",
+                border: "2px solid #e1e8ed",
+                borderRadius: "12px",
+                cursor: "pointer",
+                transition: "all 0.3s ease",
+              }}
+              onMouseOver={(e) => {
+                e.target.style.borderColor = crypto.color;
+                e.target.style.background = "#f8f9fa";
+              }}
+              onMouseOut={(e) => {
+                e.target.style.borderColor = "#e1e8ed";
+                e.target.style.background = "white";
+              }}
+            >
+              <div
+                style={{
+                  width: "40px",
+                  height: "40px",
+                  borderRadius: "50%",
+                  background: crypto.color,
+                  color: "white",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "18px",
+                  fontWeight: "bold",
+                  marginRight: "15px",
+                }}
+              >
+                {crypto.icon}
+              </div>
+              <div>
+                <div style={{ fontWeight: "600", color: "#2c3e50" }}>
+                  {crypto.name}
+                </div>
+                <div style={{ fontSize: "12px", color: "#7f8c8d" }}>
+                  {crypto.symbol}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        style={{
+          background: "#f8f9fa",
+          padding: "20px",
+          borderRadius: "12px",
+          marginBottom: "20px",
+        }}
+      >
+        <h4
+          style={{
+            color: "#2c3e50",
+            marginBottom: "15px",
+            display: "flex",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
+          🔐 Crypto Payment Features
+        </h4>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "15px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#27ae60",
+                marginBottom: "5px",
+              }}
+            >
+              ✓ Instant Transactions
+            </div>
+            <div style={{ fontSize: "14px", color: "#7f8c8d" }}>
+              Fast blockchain confirmations
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#27ae60",
+                marginBottom: "5px",
+              }}
+            >
+              ✓ Low Fees
+            </div>
+            <div style={{ fontSize: "14px", color: "#7f8c8d" }}>
+              Minimal processing costs
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#27ae60",
+                marginBottom: "5px",
+              }}
+            >
+              ✓ Privacy
+            </div>
+            <div style={{ fontSize: "14px", color: "#7f8c8d" }}>
+              Enhanced transaction privacy
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#27ae60",
+                marginBottom: "5px",
+              }}
+            >
+              ✓ Global Access
+            </div>
+            <div style={{ fontSize: "14px", color: "#7f8c8d" }}>
+              Borderless payments
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <FormGroup>
+        <Label>Wallet Address</Label>
+        <Input
+          placeholder="Enter your crypto wallet address"
+          style={{ fontFamily: "monospace", fontSize: "14px" }}
+        />
+      </FormGroup>
+
+      <div style={{ display: "flex", gap: "10px" }}>
+        <Button>Connect Wallet</Button>
+        <Button className="secondary">Scan QR Code</Button>
+      </div>
+
+      <div
+        style={{
+          marginTop: "20px",
+          padding: "15px",
+          background: "#e8f4fd",
+          borderRadius: "10px",
+          fontSize: "14px",
+        }}
+      >
+        <strong>📋 Important Notes:</strong>
+        <ul style={{ margin: "10px 0 0", paddingLeft: "20px" }}>
+          <li>Cryptocurrency payments are irreversible</li>
+          <li>Ensure accurate wallet addresses before sending</li>
+          <li>Network fees may apply depending on blockchain congestion</li>
+          <li>Transactions typically confirm within 10-30 minutes</li>
+        </ul>
+      </div>
+    </PaymentCard>
+  );
+
   const tabButtons = [
     { id: "cards", label: "💳 Cards", component: renderCreditCards },
     { id: "banks", label: "🏦 Bank Accounts", component: renderBankAccounts },
+    {
+      id: "crypto",
+      label: "₿ Cryptocurrency",
+      component: renderCryptocurrency,
+    },
     { id: "financing", label: "💰 Financing", component: renderFinancing },
   ];
 
