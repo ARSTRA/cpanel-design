@@ -695,7 +695,18 @@ export default function HomePage() {
             {categories.map((category) => (
               <CategoryCard key={category.name} to={category.path}>
                 <CategoryImage>
-                  <img src={category.icon} alt={category.name} loading="lazy" />
+                  <img
+                    src={category.icon}
+                    alt={category.name}
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      const parent = e.target.parentElement;
+                      parent.style.background = `linear-gradient(135deg, ${category.color} 0%, ${category.color}dd 100%)`;
+                      parent.innerHTML =
+                        '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 48px; z-index: 3; position: relative;">🔫</div>';
+                    }}
+                  />
                 </CategoryImage>
                 <CategoryName>{category.name}</CategoryName>
                 <CategoryDescription>
