@@ -862,7 +862,7 @@ export default function HandgunCollection() {
                       className="primary"
                       onClick={() => handleInquiry(product)}
                     >
-                      Inquire Now
+                      BUY
                     </ActionButton>
                     <ActionButton
                       className="secondary"
