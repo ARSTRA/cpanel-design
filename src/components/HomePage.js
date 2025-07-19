@@ -5,13 +5,40 @@ import { useApp } from "../context/AppContext.optimized";
 
 const HeroSection = styled.section`
   background:
-    linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9)),
-    url("/api/placeholder/1200/600");
+    linear-gradient(135deg, rgba(44, 62, 80, 0.85), rgba(52, 73, 94, 0.85)),
+    url("https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=1200&h=600&fit=crop&auto=format&q=80");
   background-size: cover;
   background-position: center;
-  padding: 120px 20px 80px;
+  background-attachment: fixed;
+  padding: 140px 20px 100px;
   text-align: center;
   color: white;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.02) 50%,
+      transparent 70%
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
 `;
 
 const HeroContent = styled.div`
@@ -258,6 +285,25 @@ const CategoryImage = styled.div`
   font-size: 48px;
   color: white;
   position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+    z-index: 1;
+  }
 
   &::after {
     content: "";
@@ -269,24 +315,37 @@ const CategoryImage = styled.div`
     background: linear-gradient(
       45deg,
       transparent 30%,
-      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.2) 50%,
       transparent 70%
     );
     transform: translateX(-100%);
     transition: transform 0.6s;
+    z-index: 2;
   }
 
   ${CategoryCard}:hover &::after {
     transform: translateX(100%);
   }
+
+  ${CategoryCard}:hover img {
+    transform: scale(1.1);
+  }
 `;
 
 const CategoryName = styled.h3`
-  padding: 20px;
+  padding: 20px 20px 10px;
   margin: 0;
   color: #2c3e50;
   font-size: 18px;
   font-weight: 600;
+`;
+
+const CategoryDescription = styled.p`
+  padding: 0 20px 20px;
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 14px;
+  font-style: italic;
 `;
 
 export default function HomePage() {
@@ -297,11 +356,41 @@ export default function HomePage() {
   );
 
   const categories = [
-    { name: "Handguns", icon: "🔫", path: "/handguns", color: "#e74c3c" },
-    { name: "Rifles", icon: "🔫", path: "/rifles", color: "#3498db" },
-    { name: "Shotguns", icon: "🔫", path: "/shotguns", color: "#f39c12" },
-    { name: "Accessories", icon: "🔧", path: "/accessories", color: "#9b59b6" },
-    { name: "Ammunition", icon: "💥", path: "/ammunition", color: "#e67e22" },
+    {
+      name: "Handguns",
+      icon: "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=200&h=200&fit=crop&auto=format&q=80",
+      path: "/handguns",
+      color: "#e74c3c",
+      description: "Pistols & Revolvers",
+    },
+    {
+      name: "Rifles",
+      icon: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&auto=format&q=80",
+      path: "/rifles",
+      color: "#3498db",
+      description: "AR-15s & Hunting Rifles",
+    },
+    {
+      name: "Shotguns",
+      icon: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=200&h=200&fit=crop&auto=format&q=80",
+      path: "/shotguns",
+      color: "#f39c12",
+      description: "Tactical & Sporting",
+    },
+    {
+      name: "Accessories",
+      icon: "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=200&h=200&fit=crop&auto=format&q=80",
+      path: "/accessories",
+      color: "#9b59b6",
+      description: "Optics & Gear",
+    },
+    {
+      name: "Ammunition",
+      icon: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=200&h=200&fit=crop&auto=format&q=80",
+      path: "/ammunition",
+      color: "#e67e22",
+      description: "Premium Ammo",
+    },
   ];
 
   const handleBrowseClick = () => {
@@ -436,14 +525,13 @@ export default function HomePage() {
           <CategoriesGrid>
             {categories.map((category) => (
               <CategoryCard key={category.name} to={category.path}>
-                <CategoryImage
-                  style={{
-                    background: `linear-gradient(135deg, ${category.color} 0%, ${category.color}dd 100%)`,
-                  }}
-                >
-                  {category.icon}
+                <CategoryImage>
+                  <img src={category.icon} alt={category.name} loading="lazy" />
                 </CategoryImage>
                 <CategoryName>{category.name}</CategoryName>
+                <CategoryDescription>
+                  {category.description}
+                </CategoryDescription>
               </CategoryCard>
             ))}
           </CategoriesGrid>
