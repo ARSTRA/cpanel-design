@@ -563,7 +563,9 @@ export default function AmmunitionCollection() {
                 value={filterCaliber}
                 onChange={(e) => setFilterCaliber(e.target.value)}
               >
-                <option value="">All Calibers</option>
+                <option key="all-calibers" value="">
+                  All Calibers
+                </option>
                 {uniqueCalibers.map((caliber) => (
                   <option key={caliber} value={caliber}>
                     {caliber}
