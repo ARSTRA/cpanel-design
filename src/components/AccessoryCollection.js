@@ -594,34 +594,34 @@ const ProductSpecs = styled.div`
 `;
 
 const SpecItem = styled.div`
-  background: rgba(255, 255, 255, 0.2);
-  padding: 12px 18px;
-  border-radius: 15px;
+  background: rgba(52, 73, 94, 0.8);
+  padding: 10px 14px;
+  border-radius: 8px;
   text-align: center;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  backdrop-filter: blur(10px);
 
   @media (max-width: 480px) {
-    padding: 10px 15px;
+    padding: 8px 12px;
   }
 `;
 
 const SpecLabel = styled.div`
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 4px;
+  font-size: 0.7rem;
+  color: #95a5a6;
+  margin-bottom: 3px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 const SpecValue = styled.div`
-  font-size: 0.95rem;
-  color: white;
-  font-weight: 800;
+  font-size: 0.8rem;
+  color: #ecf0f1;
+  font-weight: 600;
 
   @media (max-width: 480px) {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 `;
 
