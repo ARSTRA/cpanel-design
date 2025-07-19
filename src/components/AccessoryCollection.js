@@ -690,53 +690,53 @@ const ActionButtons = styled.div`
 
 const ViewDetailsButton = styled.button`
   flex: 1;
-  padding: 18px 30px;
-  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  padding: 12px 20px;
+  background: rgba(52, 152, 219, 0.8);
   color: white;
-  border: none;
-  border-radius: 15px;
-  font-weight: 800;
-  font-size: 1.1rem;
+  border: 1px solid #3498db;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
   &:hover {
-    background: linear-gradient(135deg, #fecfef, #ff9a9e);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(255, 154, 158, 0.5);
+    background: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
   }
 
   @media (max-width: 480px) {
-    padding: 15px 25px;
-    font-size: 1rem;
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 `;
 
 const InquireButton = styled.button`
   flex: 1;
-  padding: 18px 30px;
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  padding: 12px 20px;
+  background: rgba(46, 204, 113, 0.8);
   color: white;
-  border: none;
-  border-radius: 15px;
-  font-weight: 800;
-  font-size: 1.1rem;
+  border: 1px solid #2ecc71;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
   &:hover {
-    background: linear-gradient(135deg, #fed6e3, #a8edea);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(168, 237, 234, 0.5);
+    background: #2ecc71;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
   }
 
   @media (max-width: 480px) {
-    padding: 15px 25px;
-    font-size: 1rem;
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 `;
 
