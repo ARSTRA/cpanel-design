@@ -163,8 +163,44 @@ const FeatureCard = styled.div`
 `;
 
 const FeatureIcon = styled.div`
-  font-size: 48px;
-  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(52, 152, 219, 0.8) 0%,
+      rgba(46, 204, 113, 0.8) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 0.3;
+  }
 `;
 
 const FeatureTitle = styled.h3`
