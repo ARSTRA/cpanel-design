@@ -650,102 +650,11 @@ function UserDashboardContent() {
       <PageHeader>
         <PageTitle>🔐 Identity Verification (KYC)</PageTitle>
         <PageSubtitle>
-          Complete your identity verification to access all features.
+          Complete your identity verification to access all features and make
+          firearm purchases.
         </PageSubtitle>
       </PageHeader>
-
-      <CardGrid>
-        <Card>
-          <SectionTitle>Government ID Verification</SectionTitle>
-          <FormGroup>
-            <Label>ID Type</Label>
-            <Select
-              value={kycData.idType}
-              onChange={(e) =>
-                handleInputChange("kyc", "idType", e.target.value)
-              }
-            >
-              <option value="drivers_license">Driver's License</option>
-              <option value="passport">Passport</option>
-              <option value="state_id">State ID</option>
-            </Select>
-          </FormGroup>
-          <FormGroup>
-            <Label>ID Number</Label>
-            <Input
-              value={kycData.idNumber}
-              onChange={(e) =>
-                handleInputChange("kyc", "idNumber", e.target.value)
-              }
-              placeholder="Enter your ID number"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label>Upload ID Image</Label>
-            <Input type="file" accept="image/*" />
-          </FormGroup>
-          <Button>Submit ID Verification</Button>
-        </Card>
-
-        <Card>
-          <SectionTitle>Background Check Status</SectionTitle>
-          <div style={{ textAlign: "center", padding: "20px 0" }}>
-            <div
-              style={{
-                width: "80px",
-                height: "80px",
-                borderRadius: "50%",
-                background: "linear-gradient(135deg, #f39c12 0%, #e67e22 100%)",
-                margin: "0 auto 15px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "32px",
-              }}
-            >
-              ⏳
-            </div>
-            <h3 style={{ color: "#2c3e50", margin: "0 0 10px" }}>
-              Background Check Pending
-            </h3>
-            <p style={{ color: "#7f8c8d", margin: 0 }}>
-              Your background check is currently being processed. This typically
-              takes 1-3 business days.
-            </p>
-            <StatusTag
-              className="pending"
-              style={{ marginTop: "15px", display: "inline-block" }}
-            >
-              In Progress
-            </StatusTag>
-          </div>
-        </Card>
-
-        <Card>
-          <SectionTitle>FFL License Information</SectionTitle>
-          <FormGroup>
-            <Label>FFL License Number (if applicable)</Label>
-            <Input
-              value={profileData.licenseNumber}
-              onChange={(e) =>
-                handleInputChange("profile", "licenseNumber", e.target.value)
-              }
-              placeholder="Enter FFL license number"
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label>License Expiry Date</Label>
-            <Input
-              type="date"
-              value={profileData.licenseExpiry}
-              onChange={(e) =>
-                handleInputChange("profile", "licenseExpiry", e.target.value)
-              }
-            />
-          </FormGroup>
-          <Button>Update License Info</Button>
-        </Card>
-      </CardGrid>
+      <KYCVerification />
     </>
   );
 
