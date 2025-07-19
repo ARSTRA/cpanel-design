@@ -758,7 +758,7 @@ const PaymentProcessing = () => {
             e.target.style.boxShadow = "0 8px 25px rgba(39, 174, 96, 0.3)";
           }}
         >
-          🚀 Apply for Financing Now
+          Gun-k Pro Apply for Financing Now
         </button>
         <div style={{ marginTop: "10px", fontSize: "14px", color: "#7f8c8d" }}>
           Secure application • No impact to credit score for pre-qualification

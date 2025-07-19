@@ -677,7 +677,7 @@ export default function AmmunitionCollection() {
                             handleInquire(ammo);
                           }}
                         >
-                          Inquire
+                          BUY
                         </SecondaryButton>
                         <PrimaryButton
                           onClick={(e) => {
