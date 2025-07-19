@@ -21,13 +21,37 @@ const rotate = keyframes`
 const AccessoryContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(52, 152, 219, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(46, 204, 113, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     padding: 30px 15px;
@@ -40,56 +64,63 @@ const Container = styled.div`
 
 const HeroSection = styled.div`
   text-align: center;
-  margin-bottom: 50px;
-  padding: 100px 50px;
-  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  margin-bottom: 60px;
+  padding: 80px 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.95) 0%,
+    rgba(52, 73, 94, 0.95) 50%,
+    rgba(44, 62, 80, 0.95) 100%
+  );
   border-radius: 20px;
   color: white;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   animation: ${fadeIn} 1s ease-out;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   &::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: conic-gradient(
-      from 0deg,
-      rgba(255, 154, 158, 0.1),
-      rgba(254, 207, 239, 0.1),
-      rgba(168, 237, 234, 0.1),
-      rgba(254, 214, 227, 0.1),
-      rgba(255, 154, 158, 0.1)
-    );
-    animation: ${rotate} 30s linear infinite;
-  }
-
-  &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 70%
-    );
+    background:
+      linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(52, 152, 219, 0.1) 50%,
+        transparent 70%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(255, 255, 255, 0.02) 100px,
+        rgba(255, 255, 255, 0.02) 101px
+      );
+    animation: shimmer 4s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
 
   @media (max-width: 768px) {
-    padding: 80px 40px;
-    border-radius: 30px;
+    padding: 60px 40px;
   }
 
   @media (max-width: 480px) {
-    padding: 60px 30px;
-    border-radius: 25px;
+    padding: 50px 30px;
   }
 `;
 
