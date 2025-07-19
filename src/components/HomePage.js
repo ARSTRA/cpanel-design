@@ -912,13 +912,14 @@ export default function HomePage() {
                     {product.images && product.images[0] ? (
                       <img
                         src={product.images[0]}
-                        alt={product.name}
+                        alt={`${product.name} - ${product.manufacturer}`}
+                        loading="lazy"
                         onError={(e) => {
                           e.target.style.display = "none";
                           const parent = e.target.parentElement;
                           parent.style.background =
                             "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
-                          parent.innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: white; text-align: center;"><div style="font-size: 48px; margin-bottom: 10px;">🔫</div><div style="font-size: 14px; font-weight: 600;">Product Image</div></div>`;
+                          parent.innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: white; text-align: center;"><div style="font-size: 48px; margin-bottom: 10px;">🔫</div><div style="font-size: 14px; font-weight: 600; text-transform: uppercase;">${product.category}</div><div style="font-size: 12px; margin-top: 5px;">${product.manufacturer}</div></div>`;
                         }}
                       />
                     ) : (
@@ -939,8 +940,17 @@ export default function HomePage() {
                         <div style={{ fontSize: "48px", marginBottom: "10px" }}>
                           🔫
                         </div>
-                        <div style={{ fontSize: "14px", fontWeight: "600" }}>
-                          Product Image
+                        <div
+                          style={{
+                            fontSize: "14px",
+                            fontWeight: "600",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {product.category}
+                        </div>
+                        <div style={{ fontSize: "12px", marginTop: "5px" }}>
+                          {product.manufacturer}
                         </div>
                       </div>
                     )}
