@@ -16,25 +16,28 @@ const pulse = keyframes`
 const HandgunContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #667eea 0%,
-    #764ba2 25%,
-    #f093fb 50%,
-    #f5576c 75%,
-    #4facfe 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+  position: relative;
 
-  @keyframes gradientShift {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(231, 76, 60, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(52, 152, 219, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
   }
 `;
 
