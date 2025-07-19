@@ -227,11 +227,11 @@ function LoginContent() {
         <Subtitle>Sign in to your Gun-k Pro account</Subtitle>
 
         <DemoCredentials>
-          <strong>Demo Account:</strong>
+          <strong>Demo Accounts:</strong>
           <br />
-          Email: demo@gunstore.com
+          <strong>User:</strong> demo@gunstore.com / demo123
           <br />
-          Password: demo123
+          <strong>Admin:</strong> admin@gunstore.com / admin123
         </DemoCredentials>
 
         <Form onSubmit={handleSubmit}>
