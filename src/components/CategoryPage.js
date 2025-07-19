@@ -315,9 +315,15 @@ export default function CategoryPage({ category = "handguns" }) {
               value={filterBy}
               onChange={(e) => setFilterBy(e.target.value)}
             >
-              <option value="all">All Products</option>
-              <option value="in-stock">In Stock</option>
-              <option value="featured">Featured</option>
+              <option key="all" value="all">
+                All Products
+              </option>
+              <option key="in-stock" value="in-stock">
+                In Stock
+              </option>
+              <option key="featured" value="featured">
+                Featured
+              </option>
             </Select>
           </FilterGroup>
 
