@@ -188,11 +188,24 @@ function LoginContent() {
     // Simulate API call
     setTimeout(() => {
       if (formData.email && formData.password) {
-        setSuccess("Login successful! Welcome back.");
-        // In a real app, you'd handle authentication here
-        setTimeout(() => {
-          navigate("/");
-        }, 1500);
+        // Check if admin credentials
+        if (
+          formData.email === "admin@gunstore.com" &&
+          formData.password === "admin123"
+        ) {
+          setSuccess(
+            "Admin login successful! Redirecting to admin dashboard...",
+          );
+          setTimeout(() => {
+            navigate("/admin-dashboard");
+          }, 1500);
+        } else {
+          // Regular user login
+          setSuccess("Login successful! Redirecting to your dashboard...");
+          setTimeout(() => {
+            navigate("/user-dashboard");
+          }, 1500);
+        }
       } else {
         setError("Please fill in all fields");
       }
