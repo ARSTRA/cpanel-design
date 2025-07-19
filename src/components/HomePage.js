@@ -144,6 +144,19 @@ const ProductImage = styled.div`
   justify-content: center;
   font-size: 64px;
   color: #7f8c8d;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
 `;
 
 const ProductInfo = styled.div`
