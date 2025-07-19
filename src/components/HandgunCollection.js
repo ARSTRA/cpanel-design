@@ -736,11 +736,21 @@ export default function HandgunCollection() {
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
-                <option value="name">Name A-Z</option>
-                <option value="manufacturer">Manufacturer</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Highest Rated</option>
+                <option key="name" value="name">
+                  Name A-Z
+                </option>
+                <option key="manufacturer" value="manufacturer">
+                  Manufacturer
+                </option>
+                <option key="price-low" value="price-low">
+                  Price: Low to High
+                </option>
+                <option key="price-high" value="price-high">
+                  Price: High to Low
+                </option>
+                <option key="rating" value="rating">
+                  Highest Rated
+                </option>
               </Select>
             </FilterGroup>
           </FiltersGrid>
