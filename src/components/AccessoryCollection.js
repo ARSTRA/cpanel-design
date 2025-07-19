@@ -18,14 +18,6 @@ const rotate = keyframes`
   to { transform: rotate(360deg); }
 `;
 
-const rainbow = keyframes`
-  0% { background-position: 0% 50%; }
-  25% { background-position: 50% 0%; }
-  50% { background-position: 100% 50%; }
-  75% { background-position: 50% 100%; }
-  100% { background-position: 0% 50%; }
-`;
-
 const AccessoryContainer = styled.div`
   padding: 0;
   min-height: 100vh;
