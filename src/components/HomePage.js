@@ -1074,6 +1074,18 @@ export default function HomePage() {
           </CategoriesGrid>
         </Container>
       </CategorySection>
+
+      <FloatingTestimonialButton
+        onClick={() => setShowTestimonial(true)}
+        title="Read Customer Testimonials"
+      >
+        💬
+      </FloatingTestimonialButton>
+
+      <TestimonialPopup
+        isVisible={showTestimonial}
+        onClose={() => setShowTestimonial(false)}
+      />
     </>
   );
 }
