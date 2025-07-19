@@ -17,8 +17,44 @@ const slideIn = keyframes`
 
 const DashboardContainer = styled.div`
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.9) 0%,
+      rgba(118, 75, 162, 0.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop&auto=format&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   padding: 20px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.02) 50%,
+      transparent 70%
+    );
+    animation: shimmer 4s infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
 `;
 
 const DashboardContent = styled.div`
