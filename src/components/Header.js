@@ -374,8 +374,13 @@ const LoginButton = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    padding: 10px 18px;
-    font-size: 12px;
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 10px;
+    font-size: 10px;
   }
 `;
 
@@ -425,8 +430,13 @@ const SignupButton = styled(Link)`
   }
 
   @media (max-width: 768px) {
-    padding: 10px 18px;
-    font-size: 12px;
+    padding: 8px 14px;
+    font-size: 11px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 10px;
+    font-size: 10px;
   }
 `;
 
