@@ -431,17 +431,18 @@ const ProductsGrid = styled.div`
 `;
 
 const ProductCard = styled.div`
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
+  background: rgba(44, 62, 80, 0.9);
+  border-radius: 16px;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.6s ease;
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
   cursor: pointer;
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(15px);
   display: ${(props) => (props.$viewMode === "list" ? "flex" : "block")};
   align-items: ${(props) =>
     props.$viewMode === "list" ? "center" : "stretch"};
   position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
   &::before {
     content: "";
@@ -452,19 +453,18 @@ const ProductCard = styled.div`
     bottom: 0;
     background: linear-gradient(
       135deg,
-      rgba(255, 154, 158, 0.1),
-      rgba(254, 207, 239, 0.1),
-      rgba(168, 237, 234, 0.1)
+      rgba(52, 152, 219, 0.1),
+      rgba(46, 204, 113, 0.1)
     );
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
   }
 
   &:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.22);
-    border-color: #ff9a9e;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(52, 73, 94, 0.95);
+    border-color: #3498db;
 
     &::before {
       opacity: 1;
