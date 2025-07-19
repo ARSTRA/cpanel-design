@@ -778,7 +778,21 @@ export default function HandgunCollection() {
                   product.images[0] !== "/api/placeholder/400/300" ? (
                     <ProductImage src={product.images[0]} alt={product.name} />
                   ) : (
-                    <ProductImagePlaceholder>🔫</ProductImagePlaceholder>
+                    <ProductImagePlaceholder
+                      style={{
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "transparent",
+                      }}
+                    >
+                      Image not available
+                    </ProductImagePlaceholder>
                   )}
 
                   <BadgeContainer>
