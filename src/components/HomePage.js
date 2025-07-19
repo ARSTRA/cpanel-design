@@ -5,8 +5,15 @@ import { useApp } from "../context/AppContext.optimized";
 
 const HeroSection = styled.section`
   background:
-    linear-gradient(135deg, rgba(44, 62, 80, 0.85), rgba(52, 73, 94, 0.85)),
-    url("https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=1200&h=600&fit=crop&auto=format&q=80");
+    linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9)),
+    linear-gradient(
+      45deg,
+      #2c3e50 0%,
+      #34495e 25%,
+      #2c3e50 50%,
+      #34495e 75%,
+      #2c3e50 100%
+    );
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
