@@ -340,14 +340,25 @@ export default function CategoryPage({ category = "handguns" }) {
           <ProductsGrid>
             {sortedProducts.map((product) => (
               <ProductCard key={product.id}>
-                <ProductImage
-                  style={{
-                    backgroundImage: `url(${product.images && product.images[0] ? product.images[0] : "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop"})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                  }}
-                >
+                <ProductImage>
+                  {product.images && product.images[0] ? (
+                    <img
+                      src={product.images[0]}
+                      alt={product.name}
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
+                  )}
                   <StockBadge $inStock={product.stock > 0}>
                     {product.stock > 0 ? "In Stock" : "Out of Stock"}
                   </StockBadge>
