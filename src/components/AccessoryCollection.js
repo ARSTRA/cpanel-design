@@ -296,60 +296,59 @@ const SearchAndFilters = styled.div`
 `;
 
 const SearchInput = styled.input`
-  padding: 20px 30px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: all 0.4s ease;
+  padding: 16px 20px;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
+  background: rgba(52, 73, 94, 0.8);
+  color: #ecf0f1;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 
   &::placeholder {
-    color: rgba(255, 255, 255, 0.8);
+    color: #bdc3c7;
   }
 
   &:focus {
     outline: none;
-    border-color: #ff9a9e;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 30px rgba(255, 154, 158, 0.5);
-    transform: translateY(-3px);
+    border-color: #3498db;
+    background: rgba(52, 73, 94, 0.9);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
   }
 
   @media (max-width: 480px) {
-    padding: 18px 25px;
-    font-size: 1.1rem;
+    padding: 14px 18px;
+    font-size: 0.95rem;
   }
 `;
 
 const FilterSelect = styled.select`
-  padding: 20px 30px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 16px 20px;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
+  background: rgba(52, 73, 94, 0.8);
+  color: #ecf0f1;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: #ff9a9e;
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
+    border-color: #3498db;
+    background: rgba(52, 73, 94, 0.9);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
   }
 
   option {
-    background: #333;
-    color: white;
-    font-weight: 600;
+    background: #2c3e50;
+    color: #ecf0f1;
+    font-weight: 500;
   }
 
   @media (max-width: 480px) {
-    padding: 18px 25px;
-    font-size: 1.1rem;
+    padding: 14px 18px;
+    font-size: 0.95rem;
   }
 `;
 
