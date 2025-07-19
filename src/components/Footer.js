@@ -206,7 +206,7 @@ export default function Footer() {
 
       <LegalNotice>
         <p>
-          ⚠�� IMPORTANT: All firearms sales are subject to federal, state, and
+          ⚠️ IMPORTANT: All firearms sales are subject to federal, state, and
           local laws. Background checks required. Must be 18+ for long guns, 21+
           for handguns. We reserve the right to refuse any sale.
         </p>
