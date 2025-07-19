@@ -582,13 +582,6 @@ export default function Header() {
           >
             Ammunition
           </NavLink>
-          <NavLink
-            to="/contact"
-            onClick={handleNavClick}
-            className={currentPath === "/contact" ? "active" : ""}
-          >
-            Contact
-          </NavLink>
         </Navigation>
 
         <ActionButtons>
