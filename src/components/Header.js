@@ -263,8 +263,11 @@ const SearchContainer = styled.div`
     border-color: rgba(255, 255, 255, 0.5);
   }
 
+  @media (max-width: 980px) {
+    max-width: 180px;
+  }
+
   @media (max-width: 768px) {
-    max-width: 200px;
     display: none; /* Hide search on mobile to make room for auth buttons */
   }
 `;
