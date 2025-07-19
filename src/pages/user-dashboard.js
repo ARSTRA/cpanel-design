@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import { AppProvider, useApp } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
+import KYCVerification from "../components/KYCVerification";
+import PaymentProcessing from "../components/PaymentProcessing";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
