@@ -791,8 +791,6 @@ const ShotgunCollection = () => {
   const avgRating =
     shotguns.reduce((sum, s) => sum + (s.rating || 0), 0) / shotguns.length;
   const featuredCount = shotguns.filter((s) => s.featured).length;
-  const avgPrice =
-    shotguns.reduce((sum, s) => sum + s.price, 0) / shotguns.length;
 
   return (
     <ShotgunContainer>
