@@ -846,8 +846,8 @@ const AccessoryCollection = () => {
               <StatLabel>Avg Rating</StatLabel>
             </StatCard>
             <StatCard>
-              <StatNumber>${Math.round(avgPrice)}</StatNumber>
-              <StatLabel>Avg Price</StatLabel>
+              <StatNumber>{featuredCount}</StatNumber>
+              <StatLabel>Featured</StatLabel>
             </StatCard>
           </StatsGrid>
         </HeroSection>
