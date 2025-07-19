@@ -714,10 +714,18 @@ export default function HandgunCollection() {
                 value={filterBy}
                 onChange={(e) => setFilterBy(e.target.value)}
               >
-                <option value="all">All Handguns</option>
-                <option value="in-stock">In Stock</option>
-                <option value="featured">Featured</option>
-                <option value="on-sale">On Sale</option>
+                <option key="all" value="all">
+                  All Handguns
+                </option>
+                <option key="in-stock" value="in-stock">
+                  In Stock
+                </option>
+                <option key="featured" value="featured">
+                  Featured
+                </option>
+                <option key="on-sale" value="on-sale">
+                  On Sale
+                </option>
               </Select>
             </FilterGroup>
 
