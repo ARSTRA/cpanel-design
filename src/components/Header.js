@@ -599,13 +599,6 @@ export default function Header() {
           >
             Ammunition
           </NavLink>
-          <NavLink
-            to="/about"
-            onClick={handleNavClick}
-            className={currentPath === "/about" ? "active" : ""}
-          >
-            About
-          </NavLink>
         </Navigation>
 
         <ActionButtons>
