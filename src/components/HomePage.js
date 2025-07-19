@@ -362,7 +362,14 @@ export default function HomePage() {
           <ProductsGrid>
             {featuredProducts.map((product) => (
               <ProductCard key={product.id}>
-                <ProductImage>🔫</ProductImage>
+                <ProductImage
+                  style={{
+                    backgroundImage: `url(${product.images[0]})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                />
                 <ProductInfo>
                   <ProductName>{product.name}</ProductName>
                   <ProductPrice>${product.price}</ProductPrice>
