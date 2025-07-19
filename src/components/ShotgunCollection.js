@@ -973,7 +973,7 @@ const ShotgunCollection = () => {
                           handleInquire(shotgun);
                         }}
                       >
-                        Inquire Now
+                        BUY
                       </InquireButton>
                     </ActionButtons>
                   </ProductContent>
