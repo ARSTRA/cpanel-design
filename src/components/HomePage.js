@@ -716,6 +716,97 @@ export default function HomePage() {
         </Container>
       </ProductsSection>
 
+      <AboutSection>
+        <Container>
+          <SectionTitle>About Gun-k Pro</SectionTitle>
+          <SectionSubtitle>
+            Excellence Through Experience, Trust Through Transparency
+          </SectionSubtitle>
+
+          <AboutContent>
+            <AboutTextSection>
+              <AboutMainText>{state.siteSettings.aboutUs}</AboutMainText>
+
+              <AboutFeatures>
+                <AboutFeature>
+                  <FeatureNumber>20+</FeatureNumber>
+                  <FeatureLabel>Years of Excellence</FeatureLabel>
+                </AboutFeature>
+                <AboutFeature>
+                  <FeatureNumber>50K+</FeatureNumber>
+                  <FeatureLabel>Satisfied Customers</FeatureLabel>
+                </AboutFeature>
+                <AboutFeature>
+                  <FeatureNumber>99.8%</FeatureNumber>
+                  <FeatureLabel>Customer Satisfaction</FeatureLabel>
+                </AboutFeature>
+              </AboutFeatures>
+            </AboutTextSection>
+
+            <AboutImageSection>
+              <TeamImage>
+                <img
+                  src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=600&h=400&fit=crop&auto=format&q=80"
+                  alt="Professional team member at Gun-k Pro"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 24px; text-align: center;"><div>Professional<br/>Firearms Team</div></div>';
+                  }}
+                />
+              </TeamImage>
+              <TeamImage>
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=400&fit=crop&auto=format&q=80"
+                  alt="Expert gunsmith at work"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 24px; text-align: center;"><div>Expert<br/>Gunsmith Services</div></div>';
+                  }}
+                />
+              </TeamImage>
+            </AboutImageSection>
+          </AboutContent>
+
+          <ValuesSection>
+            <ValuesTitle>Our Core Values</ValuesTitle>
+            <ValuesGrid>
+              <ValueCard>
+                <ValueIcon>🛡️</ValueIcon>
+                <ValueTitle>Safety First</ValueTitle>
+                <ValueDescription>
+                  Safety is paramount in everything we do. From secure storage
+                  protocols to comprehensive safety training.
+                </ValueDescription>
+              </ValueCard>
+              <ValueCard>
+                <ValueIcon>⚖️</ValueIcon>
+                <ValueTitle>Legal Compliance</ValueTitle>
+                <ValueDescription>
+                  We strictly adhere to all federal, state, and local
+                  regulations with full legal compliance.
+                </ValueDescription>
+              </ValueCard>
+              <ValueCard>
+                <ValueIcon>🎯</ValueIcon>
+                <ValueTitle>Expert Knowledge</ValueTitle>
+                <ValueDescription>
+                  Our team's expertise spans hunting, competitive shooting, law
+                  enforcement, and military applications.
+                </ValueDescription>
+              </ValueCard>
+            </ValuesGrid>
+          </ValuesSection>
+        </Container>
+      </AboutSection>
+
       <CategorySection id="categories-section">
         <Container>
           <SectionTitle>Shop by Category</SectionTitle>
