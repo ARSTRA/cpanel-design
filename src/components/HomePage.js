@@ -14,7 +14,9 @@ const HeroSection = styled.section`
       #34495e 75%,
       #2c3e50 100%
     );
-  background-size: cover;
+  background-size:
+    cover,
+    40px 40px;
   background-position: center;
   background-attachment: fixed;
   padding: 140px 20px 100px;
