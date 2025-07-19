@@ -870,54 +870,134 @@ export default function HomePage() {
           <SectionTitle>Why Choose Us?</SectionTitle>
           <FeaturesGrid>
             <FeatureCard>
-              <FeatureIcon>🏆</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/8112198/pexels-photo-8112198.jpeg"
+                  alt="Licensed FFL Dealer Certificate"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #3498db 0%, #2980b9 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">🏆</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Licensed FFL Dealer</FeatureTitle>
               <FeatureDescription>
                 Fully licensed and authorized federal firearms dealer with years
-                of experience
+                of experience and regulatory compliance expertise
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>🚚</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/6169056/pexels-photo-6169056.jpeg"
+                  alt="Fast Secure Shipping"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">🚚</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Fast Shipping</FeatureTitle>
               <FeatureDescription>
-                Quick and secure shipping to your local FFL dealer with tracking
-                included
+                Quick and secure shipping to your local FFL dealer with full
+                tracking and insurance coverage included
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>💎</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/7222223/pexels-photo-7222223.jpeg"
+                  alt="Quality Manufacturing"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">💎</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Quality Products</FeatureTitle>
               <FeatureDescription>
                 Only the finest firearms and accessories from trusted
-                manufacturers
+                manufacturers with rigorous quality control standards
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>🔒</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/39584/censorship-limitations-freedom-of-expression-restricted-39584.jpeg"
+                  alt="Secure Transactions"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">🔒</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Secure Transactions</FeatureTitle>
               <FeatureDescription>
-                Safe and secure payment processing with complete buyer
-                protection
+                Bank-level encryption and secure payment processing with
+                complete buyer protection and fraud prevention
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>📞</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/7979432/pexels-photo-7979432.jpeg"
+                  alt="Expert Customer Support"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #f39c12 0%, #e67e22 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">📞</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Expert Support</FeatureTitle>
               <FeatureDescription>
-                Knowledgeable staff ready to help with all your firearms needs
+                Professional firearms experts and certified gunsmiths ready to
+                provide technical assistance and product guidance
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>⚡</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/3305/numbers-money-calculating-calculation.jpg"
+                  alt="Competitive Pricing"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #1abc9c 0%, #16a085 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">⚡</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Competitive Prices</FeatureTitle>
               <FeatureDescription>
-                Best prices guaranteed with regular promotions and discounts
+                Market-leading prices with price matching guarantee, regular
+                promotions, and exclusive dealer discounts
               </FeatureDescription>
             </FeatureCard>
           </FeaturesGrid>
