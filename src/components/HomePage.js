@@ -495,6 +495,177 @@ const CategoryDescription = styled.p`
   font-style: italic;
 `;
 
+const AboutSection = styled.section`
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+`;
+
+const AboutContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+`;
+
+const AboutTextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`;
+
+const AboutMainText = styled.p`
+  font-size: 18px;
+  line-height: 1.8;
+  color: #34495e;
+  text-align: justify;
+`;
+
+const AboutFeatures = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
+
+const AboutFeature = styled.div`
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+`;
+
+const FeatureNumber = styled.div`
+  font-size: 32px;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 8px;
+`;
+
+const FeatureLabel = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+const AboutImageSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+`;
+
+const TeamImage = styled.div`
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(52, 73, 94, 0.3) 0%,
+      rgba(44, 62, 80, 0.3) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+`;
+
+const ValuesSection = styled.div`
+  text-align: center;
+`;
+
+const ValuesTitle = styled.h3`
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    border-radius: 2px;
+  }
+`;
+
+const ValuesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+`;
+
+const ValueCard = styled.div`
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+`;
+
+const ValueIcon = styled.div`
+  font-size: 48px;
+  margin-bottom: 20px;
+`;
+
+const ValueTitle = styled.h4`
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+`;
+
+const ValueDescription = styled.p`
+  color: #7f8c8d;
+  line-height: 1.6;
+  font-size: 16px;
+`;
+
 export default function HomePage() {
   const { state } = useApp();
 
