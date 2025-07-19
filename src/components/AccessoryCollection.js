@@ -370,29 +370,28 @@ const ViewButtons = styled.div`
 `;
 
 const ViewButton = styled.button`
-  padding: 18px 25px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
+  padding: 14px 20px;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
   background: ${(props) =>
-    props.$active ? "rgba(255, 154, 158, 0.5)" : "rgba(255, 255, 255, 0.2)"};
-  color: white;
+    props.$active ? "rgba(52, 152, 219, 0.8)" : "rgba(52, 73, 94, 0.8)"};
+  color: #ecf0f1;
   cursor: pointer;
-  transition: all 0.4s ease;
-  font-weight: 800;
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 
   &:hover {
-    background: rgba(255, 154, 158, 0.4);
-    border-color: #ff9a9e;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255, 154, 158, 0.3);
+    background: ${(props) =>
+      props.$active ? "rgba(52, 152, 219, 0.9)" : "rgba(52, 152, 219, 0.6)"};
+    border-color: #3498db;
   }
 
   @media (max-width: 480px) {
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 12px 16px;
+    font-size: 0.85rem;
   }
 `;
 
