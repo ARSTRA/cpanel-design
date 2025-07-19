@@ -191,13 +191,13 @@ const StatsGrid = styled.div`
 `;
 
 const StatCard = styled.div`
-  background: rgba(255, 255, 255, 0.2);
-  padding: 35px 30px;
-  border-radius: 25px;
+  background: rgba(52, 73, 94, 0.8);
+  padding: 30px 25px;
+  border-radius: 12px;
   text-align: center;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.5s ease;
-  backdrop-filter: blur(20px);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 
@@ -211,16 +211,17 @@ const StatCard = styled.div`
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(52, 152, 219, 0.1),
       transparent
     );
-    transition: left 0.8s;
+    transition: left 0.6s;
   }
 
   &:hover {
-    transform: translateY(-12px) scale(1.05);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+    background: rgba(52, 73, 94, 0.9);
+    border-color: #3498db;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
 
     &::before {
       left: 100%;
@@ -228,31 +229,31 @@ const StatCard = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
 `;
 
 const StatNumber = styled.div`
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 12px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 480px) {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 `;
 
 const StatLabel = styled.div`
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ecf0f1;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;
 
