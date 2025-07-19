@@ -857,12 +857,24 @@ const ShotgunCollection = () => {
               onChange={(e) => setSortOption(e.target.value)}
               id="shotgun-sort"
             >
-              <option value="name">Sort by Name</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
-              <option value="rating">Highest Rated</option>
-              <option value="manufacturer">Manufacturer</option>
-              <option value="gauge">Gauge</option>
+              <option key="name" value="name">
+                Sort by Name
+              </option>
+              <option key="price-low" value="price-low">
+                Price: Low to High
+              </option>
+              <option key="price-high" value="price-high">
+                Price: High to Low
+              </option>
+              <option key="rating" value="rating">
+                Highest Rated
+              </option>
+              <option key="manufacturer" value="manufacturer">
+                Manufacturer
+              </option>
+              <option key="gauge" value="gauge">
+                Gauge
+              </option>
             </SortSelect>
           </SearchAndFilters>
 
