@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { useApp } from "../context/AppContext.optimized";
+import TestimonialPopup from "./TestimonialPopup";
 
 const HeroSection = styled.section`
   background:
@@ -162,8 +163,44 @@ const FeatureCard = styled.div`
 `;
 
 const FeatureIcon = styled.div`
-  font-size: 48px;
-  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(52, 152, 219, 0.8) 0%,
+      rgba(46, 204, 113, 0.8) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 0.3;
+  }
 `;
 
 const FeatureTitle = styled.h3`
@@ -495,8 +532,269 @@ const CategoryDescription = styled.p`
   font-style: italic;
 `;
 
+const AboutSection = styled.section`
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+`;
+
+const AboutContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+`;
+
+const AboutTextSection = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+`;
+
+const AboutMainText = styled.p`
+  font-size: 18px;
+  line-height: 1.8;
+  color: #34495e;
+  text-align: justify;
+`;
+
+const AboutFeatures = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
+
+const AboutFeature = styled.div`
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+`;
+
+const FeatureNumber = styled.div`
+  font-size: 32px;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 8px;
+`;
+
+const FeatureLabel = styled.div`
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+const AboutImageSection = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+`;
+
+const TeamImage = styled.div`
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(52, 73, 94, 0.3) 0%,
+      rgba(44, 62, 80, 0.3) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+`;
+
+const ValuesSection = styled.div`
+  text-align: center;
+`;
+
+const ValuesTitle = styled.h3`
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 50px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    border-radius: 2px;
+  }
+`;
+
+const ValuesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+`;
+
+const ValueCard = styled.div`
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+`;
+
+const ValueIcon = styled.div`
+  font-size: 48px;
+  margin-bottom: 20px;
+`;
+
+const ValueTitle = styled.h4`
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+`;
+
+const ValueDescription = styled.p`
+  color: #7f8c8d;
+  line-height: 1.6;
+  font-size: 16px;
+`;
+
+const FloatingTestimonialButton = styled.button`
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(231, 76, 60, 0.6);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 50%;
+    border: 2px solid rgba(231, 76, 60, 0.3);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+`;
+
 export default function HomePage() {
   const { state } = useApp();
+  const [showTestimonial, setShowTestimonial] = useState(false);
+
+  useEffect(() => {
+    // Auto-trigger testimonial popup after 20 seconds
+    const timer = setTimeout(() => {
+      setShowTestimonial(true);
+    }, 20000);
+
+    // Additional trigger when user scrolls to featured products
+    const handleScroll = () => {
+      const featuredSection = document.querySelector(
+        '[data-section="featured-products"]',
+      );
+      if (featuredSection) {
+        const rect = featuredSection.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= 0) {
+          // Trigger testimonial after 10 seconds of viewing featured products
+          setTimeout(() => {
+            if (!showTestimonial) {
+              setShowTestimonial(true);
+            }
+          }, 10000);
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showTestimonial]);
 
   const featuredProducts = state.products.filter(
     (product) => product.featured && product.displayLocation.includes("home"),
@@ -572,61 +870,141 @@ export default function HomePage() {
           <SectionTitle>Why Choose Us?</SectionTitle>
           <FeaturesGrid>
             <FeatureCard>
-              <FeatureIcon>🏆</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/8112198/pexels-photo-8112198.jpeg"
+                  alt="Licensed FFL Dealer Certificate"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #3498db 0%, #2980b9 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">🏆</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Licensed FFL Dealer</FeatureTitle>
               <FeatureDescription>
                 Fully licensed and authorized federal firearms dealer with years
-                of experience
+                of experience and regulatory compliance expertise
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>🚚</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/6169056/pexels-photo-6169056.jpeg"
+                  alt="Fast Secure Shipping"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #e74c3c 0%, #c0392b 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">🚚</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Fast Shipping</FeatureTitle>
               <FeatureDescription>
-                Quick and secure shipping to your local FFL dealer with tracking
-                included
+                Quick and secure shipping to your local FFL dealer with full
+                tracking and insurance coverage included
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>💎</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/7222223/pexels-photo-7222223.jpeg"
+                  alt="Quality Manufacturing"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">💎</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Quality Products</FeatureTitle>
               <FeatureDescription>
                 Only the finest firearms and accessories from trusted
-                manufacturers
+                manufacturers with rigorous quality control standards
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>🔒</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/39584/censorship-limitations-freedom-of-expression-restricted-39584.jpeg"
+                  alt="Secure Transactions"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #2ecc71 0%, #27ae60 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">🔒</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Secure Transactions</FeatureTitle>
               <FeatureDescription>
-                Safe and secure payment processing with complete buyer
-                protection
+                Bank-level encryption and secure payment processing with
+                complete buyer protection and fraud prevention
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>📞</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/7979432/pexels-photo-7979432.jpeg"
+                  alt="Expert Customer Support"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #f39c12 0%, #e67e22 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">📞</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Expert Support</FeatureTitle>
               <FeatureDescription>
-                Knowledgeable staff ready to help with all your firearms needs
+                Professional firearms experts and certified gunsmiths ready to
+                provide technical assistance and product guidance
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>⚡</FeatureIcon>
+              <FeatureIcon>
+                <img
+                  src="https://images.pexels.com/photos/3305/numbers-money-calculating-calculation.jpg"
+                  alt="Competitive Pricing"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #1abc9c 0%, #16a085 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 32px;">⚡</div>';
+                  }}
+                />
+              </FeatureIcon>
               <FeatureTitle>Competitive Prices</FeatureTitle>
               <FeatureDescription>
-                Best prices guaranteed with regular promotions and discounts
+                Market-leading prices with price matching guarantee, regular
+                promotions, and exclusive dealer discounts
               </FeatureDescription>
             </FeatureCard>
           </FeaturesGrid>
         </Container>
       </FeaturesSection>
 
-      <ProductsSection>
+      <ProductsSection data-section="featured-products">
         <Container>
           <SectionTitle>Featured Products</SectionTitle>
           <SectionSubtitle>
@@ -650,20 +1028,47 @@ export default function HomePage() {
                     {product.images && product.images[0] ? (
                       <img
                         src={product.images[0]}
-                        alt={product.name}
+                        alt={`${product.name} - ${product.manufacturer}`}
                         loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                          const parent = e.target.parentElement;
+                          parent.style.background =
+                            "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
+                          parent.innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: white; text-align: center;"><div style="font-size: 48px; margin-bottom: 10px;">🔫</div><div style="font-size: 14px; font-weight: 600; text-transform: uppercase;">${product.category}</div><div style="font-size: 12px; margin-top: 5px;">${product.manufacturer}</div></div>`;
+                        }}
                       />
                     ) : (
                       <div
                         style={{
                           width: "100%",
                           height: "100%",
-                          backgroundImage:
-                            "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
-                          backgroundSize: "cover",
-                          backgroundPosition: "center",
+                          background:
+                            "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "white",
+                          textAlign: "center",
                         }}
-                      />
+                      >
+                        <div style={{ fontSize: "48px", marginBottom: "10px" }}>
+                          🔫
+                        </div>
+                        <div
+                          style={{
+                            fontSize: "14px",
+                            fontWeight: "600",
+                            textTransform: "uppercase",
+                          }}
+                        >
+                          {product.category}
+                        </div>
+                        <div style={{ fontSize: "12px", marginTop: "5px" }}>
+                          {product.manufacturer}
+                        </div>
+                      </div>
                     )}
                   </ProductImage>
                   <ProductInfo>
@@ -699,6 +1104,97 @@ export default function HomePage() {
         </Container>
       </ProductsSection>
 
+      <AboutSection>
+        <Container>
+          <SectionTitle>About Gun-k Pro</SectionTitle>
+          <SectionSubtitle>
+            Excellence Through Experience, Trust Through Transparency
+          </SectionSubtitle>
+
+          <AboutContent>
+            <AboutTextSection>
+              <AboutMainText>{state.siteSettings.aboutUs}</AboutMainText>
+
+              <AboutFeatures>
+                <AboutFeature>
+                  <FeatureNumber>20+</FeatureNumber>
+                  <FeatureLabel>Years of Excellence</FeatureLabel>
+                </AboutFeature>
+                <AboutFeature>
+                  <FeatureNumber>50K+</FeatureNumber>
+                  <FeatureLabel>Satisfied Customers</FeatureLabel>
+                </AboutFeature>
+                <AboutFeature>
+                  <FeatureNumber>99.8%</FeatureNumber>
+                  <FeatureLabel>Customer Satisfaction</FeatureLabel>
+                </AboutFeature>
+              </AboutFeatures>
+            </AboutTextSection>
+
+            <AboutImageSection>
+              <TeamImage>
+                <img
+                  src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?w=600&h=400&fit=crop&auto=format&q=80"
+                  alt="Professional team member at Gun-k Pro"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 24px; text-align: center;"><div>Professional<br/>Firearms Team</div></div>';
+                  }}
+                />
+              </TeamImage>
+              <TeamImage>
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=400&fit=crop&auto=format&q=80"
+                  alt="Expert gunsmith at work"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                    const parent = e.target.parentElement;
+                    parent.style.background =
+                      "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
+                    parent.innerHTML =
+                      '<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 24px; text-align: center;"><div>Expert<br/>Gunsmith Services</div></div>';
+                  }}
+                />
+              </TeamImage>
+            </AboutImageSection>
+          </AboutContent>
+
+          <ValuesSection>
+            <ValuesTitle>Our Core Values</ValuesTitle>
+            <ValuesGrid>
+              <ValueCard>
+                <ValueIcon>🛡️</ValueIcon>
+                <ValueTitle>Safety First</ValueTitle>
+                <ValueDescription>
+                  Safety is paramount in everything we do. From secure storage
+                  protocols to comprehensive safety training.
+                </ValueDescription>
+              </ValueCard>
+              <ValueCard>
+                <ValueIcon>⚖️</ValueIcon>
+                <ValueTitle>Legal Compliance</ValueTitle>
+                <ValueDescription>
+                  We strictly adhere to all federal, state, and local
+                  regulations with full legal compliance.
+                </ValueDescription>
+              </ValueCard>
+              <ValueCard>
+                <ValueIcon>🎯</ValueIcon>
+                <ValueTitle>Expert Knowledge</ValueTitle>
+                <ValueDescription>
+                  Our team's expertise spans hunting, competitive shooting, law
+                  enforcement, and military applications.
+                </ValueDescription>
+              </ValueCard>
+            </ValuesGrid>
+          </ValuesSection>
+        </Container>
+      </AboutSection>
+
       <CategorySection id="categories-section">
         <Container>
           <SectionTitle>Shop by Category</SectionTitle>
@@ -728,6 +1224,18 @@ export default function HomePage() {
           </CategoriesGrid>
         </Container>
       </CategorySection>
+
+      <FloatingTestimonialButton
+        onClick={() => setShowTestimonial(true)}
+        title="Read Customer Testimonials"
+      >
+        💬
+      </FloatingTestimonialButton>
+
+      <TestimonialPopup
+        isVisible={showTestimonial}
+        onClose={() => setShowTestimonial(false)}
+      />
     </>
   );
 }

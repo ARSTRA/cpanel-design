@@ -8,26 +8,40 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const pulse = keyframes`
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-`;
-
-const rotate = keyframes`
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-`;
-
 const AccessoryContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(52, 152, 219, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(46, 204, 113, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
 `;
 
 const Container = styled.div`
   max-width: 1400px;
   margin: 0 auto;
   padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 
   @media (max-width: 768px) {
     padding: 30px 15px;
@@ -40,107 +54,115 @@ const Container = styled.div`
 
 const HeroSection = styled.div`
   text-align: center;
-  margin-bottom: 50px;
-  padding: 100px 50px;
-  background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+  margin-bottom: 60px;
+  padding: 80px 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.95) 0%,
+    rgba(52, 73, 94, 0.95) 50%,
+    rgba(44, 62, 80, 0.95) 100%
+  );
   border-radius: 20px;
   color: white;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   animation: ${fadeIn} 1s ease-out;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
   &::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 300%;
-    height: 300%;
-    background: conic-gradient(
-      from 0deg,
-      rgba(255, 154, 158, 0.1),
-      rgba(254, 207, 239, 0.1),
-      rgba(168, 237, 234, 0.1),
-      rgba(254, 214, 227, 0.1),
-      rgba(255, 154, 158, 0.1)
-    );
-    animation: ${rotate} 30s linear infinite;
-  }
-
-  &::after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 70%
-    );
+    background:
+      linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(52, 152, 219, 0.1) 50%,
+        transparent 70%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(255, 255, 255, 0.02) 100px,
+        rgba(255, 255, 255, 0.02) 101px
+      );
+    animation: shimmer 4s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
 
   @media (max-width: 768px) {
-    padding: 80px 40px;
-    border-radius: 30px;
+    padding: 60px 40px;
   }
 
   @media (max-width: 480px) {
-    padding: 60px 30px;
-    border-radius: 25px;
+    padding: 50px 30px;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 4.5rem;
-  font-weight: 900;
-  margin-bottom: 30px;
-  background: linear-gradient(
-    135deg,
-    #ff9a9e,
-    #fecfef,
-    #a8edea,
-    #fed6e3,
-    #667eea
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: rainbow 8s ease infinite;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 3;
+  letter-spacing: -0.5px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+  }
 
   @media (max-width: 768px) {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 `;
 
 const Subtitle = styled.p`
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 60px;
-  line-height: 1.8;
-  max-width: 1000px;
+  font-size: 1.2rem;
+  color: #bdc3c7;
+  margin-bottom: 50px;
+  line-height: 1.7;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
   z-index: 3;
 
   @media (max-width: 768px) {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
@@ -159,13 +181,13 @@ const StatsGrid = styled.div`
 `;
 
 const StatCard = styled.div`
-  background: rgba(255, 255, 255, 0.2);
-  padding: 35px 30px;
-  border-radius: 25px;
+  background: rgba(52, 73, 94, 0.8);
+  padding: 30px 25px;
+  border-radius: 12px;
   text-align: center;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.5s ease;
-  backdrop-filter: blur(20px);
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 
@@ -179,16 +201,17 @@ const StatCard = styled.div`
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(52, 152, 219, 0.1),
       transparent
     );
-    transition: left 0.8s;
+    transition: left 0.6s;
   }
 
   &:hover {
-    transform: translateY(-12px) scale(1.05);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+    background: rgba(52, 73, 94, 0.9);
+    border-color: #3498db;
+    box-shadow: 0 10px 25px rgba(52, 152, 219, 0.2);
 
     &::before {
       left: 100%;
@@ -196,50 +219,52 @@ const StatCard = styled.div`
   }
 
   @media (max-width: 480px) {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
 `;
 
 const StatNumber = styled.div`
-  font-size: 2.8rem;
-  font-weight: 900;
-  color: #fff;
-  margin-bottom: 12px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #3498db;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 480px) {
-    font-size: 2.3rem;
+    font-size: 1.8rem;
   }
 `;
 
 const StatLabel = styled.div`
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ecf0f1;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;
 
 const ControlsSection = styled.div`
-  background: rgba(255, 255, 255, 0.15);
-  padding: 40px;
-  border-radius: 30px;
+  background: rgba(44, 62, 80, 0.9);
+  padding: 35px;
+  border-radius: 16px;
   margin-bottom: 40px;
-  backdrop-filter: blur(25px);
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(52, 152, 219, 0.2);
   animation: ${fadeIn} 1s ease-out 0.3s both;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
   @media (max-width: 768px) {
-    padding: 35px 30px;
+    padding: 30px 25px;
   }
 
   @media (max-width: 480px) {
-    padding: 30px 25px;
+    padding: 25px 20px;
   }
 `;
 
@@ -261,60 +286,59 @@ const SearchAndFilters = styled.div`
 `;
 
 const SearchInput = styled.input`
-  padding: 20px 30px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: all 0.4s ease;
+  padding: 16px 20px;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
+  background: rgba(52, 73, 94, 0.8);
+  color: #ecf0f1;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 
   &::placeholder {
-    color: rgba(255, 255, 255, 0.8);
+    color: #bdc3c7;
   }
 
   &:focus {
     outline: none;
-    border-color: #ff9a9e;
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 0 30px rgba(255, 154, 158, 0.5);
-    transform: translateY(-3px);
+    border-color: #3498db;
+    background: rgba(52, 73, 94, 0.9);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
   }
 
   @media (max-width: 480px) {
-    padding: 18px 25px;
-    font-size: 1.1rem;
+    padding: 14px 18px;
+    font-size: 0.95rem;
   }
 `;
 
 const FilterSelect = styled.select`
-  padding: 20px 30px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  font-size: 1.2rem;
-  font-weight: 600;
+  padding: 16px 20px;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
+  background: rgba(52, 73, 94, 0.8);
+  color: #ecf0f1;
+  font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 
   &:focus {
     outline: none;
-    border-color: #ff9a9e;
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
+    border-color: #3498db;
+    background: rgba(52, 73, 94, 0.9);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
   }
 
   option {
-    background: #333;
-    color: white;
-    font-weight: 600;
+    background: #2c3e50;
+    color: #ecf0f1;
+    font-weight: 500;
   }
 
   @media (max-width: 480px) {
-    padding: 18px 25px;
-    font-size: 1.1rem;
+    padding: 14px 18px;
+    font-size: 0.95rem;
   }
 `;
 
@@ -336,29 +360,28 @@ const ViewButtons = styled.div`
 `;
 
 const ViewButton = styled.button`
-  padding: 18px 25px;
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 15px;
+  padding: 14px 20px;
+  border: 1px solid rgba(52, 152, 219, 0.3);
+  border-radius: 8px;
   background: ${(props) =>
-    props.$active ? "rgba(255, 154, 158, 0.5)" : "rgba(255, 255, 255, 0.2)"};
-  color: white;
+    props.$active ? "rgba(52, 152, 219, 0.8)" : "rgba(52, 73, 94, 0.8)"};
+  color: #ecf0f1;
   cursor: pointer;
-  transition: all 0.4s ease;
-  font-weight: 800;
-  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 
   &:hover {
-    background: rgba(255, 154, 158, 0.4);
-    border-color: #ff9a9e;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255, 154, 158, 0.3);
+    background: ${(props) =>
+      props.$active ? "rgba(52, 152, 219, 0.9)" : "rgba(52, 152, 219, 0.6)"};
+    border-color: #3498db;
   }
 
   @media (max-width: 480px) {
-    padding: 15px 20px;
-    font-size: 1rem;
+    padding: 12px 16px;
+    font-size: 0.85rem;
   }
 `;
 
@@ -398,17 +421,18 @@ const ProductsGrid = styled.div`
 `;
 
 const ProductCard = styled.div`
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
+  background: rgba(44, 62, 80, 0.9);
+  border-radius: 16px;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.6s ease;
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
   cursor: pointer;
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(15px);
   display: ${(props) => (props.$viewMode === "list" ? "flex" : "block")};
   align-items: ${(props) =>
     props.$viewMode === "list" ? "center" : "stretch"};
   position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
   &::before {
     content: "";
@@ -419,19 +443,18 @@ const ProductCard = styled.div`
     bottom: 0;
     background: linear-gradient(
       135deg,
-      rgba(255, 154, 158, 0.1),
-      rgba(254, 207, 239, 0.1),
-      rgba(168, 237, 234, 0.1)
+      rgba(52, 152, 219, 0.1),
+      rgba(46, 204, 113, 0.1)
     );
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
   }
 
   &:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.22);
-    border-color: #ff9a9e;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    background: rgba(52, 73, 94, 0.95);
+    border-color: #3498db;
 
     &::before {
       opacity: 1;
@@ -469,25 +492,25 @@ const ProductImage = styled.img`
 
 const ProductBadge = styled.div`
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 15px;
+  right: 15px;
   background: ${(props) =>
     props.type === "sale"
-      ? "linear-gradient(135deg, #ff9a9e, #fecfef)"
+      ? "#e74c3c"
       : props.type === "featured"
-        ? "linear-gradient(135deg, #a8edea, #fed6e3)"
-        : "linear-gradient(135deg, #667eea, #764ba2)"};
+        ? "#f39c12"
+        : "#7f8c8d"};
   color: white;
-  padding: 10px 18px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  animation: ${pulse} 2s infinite;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 `;
 
 const ProductContent = styled.div`
@@ -502,49 +525,49 @@ const ProductContent = styled.div`
 `;
 
 const ProductName = styled.h3`
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 900;
-  margin-bottom: 15px;
+  color: #ecf0f1;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
   line-height: 1.3;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 480px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 `;
 
 const ProductManufacturer = styled.div`
-  color: #ff9a9e;
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-`;
-
-const ProductType = styled.div`
-  color: #a8edea;
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 15px;
+  color: #3498db;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 `;
 
+const ProductType = styled.div`
+  color: #2ecc71;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+`;
+
 const ProductDescription = styled.p`
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 25px;
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-weight: 500;
+  font-weight: 400;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -561,34 +584,34 @@ const ProductSpecs = styled.div`
 `;
 
 const SpecItem = styled.div`
-  background: rgba(255, 255, 255, 0.2);
-  padding: 12px 18px;
-  border-radius: 15px;
+  background: rgba(52, 73, 94, 0.8);
+  padding: 10px 14px;
+  border-radius: 8px;
   text-align: center;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(15px);
+  border: 1px solid rgba(52, 152, 219, 0.2);
+  backdrop-filter: blur(10px);
 
   @media (max-width: 480px) {
-    padding: 10px 15px;
+    padding: 8px 12px;
   }
 `;
 
 const SpecLabel = styled.div`
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 4px;
+  font-size: 0.7rem;
+  color: #95a5a6;
+  margin-bottom: 3px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-weight: 700;
+  font-weight: 600;
 `;
 
 const SpecValue = styled.div`
-  font-size: 0.95rem;
-  color: white;
-  font-weight: 800;
+  font-size: 0.8rem;
+  color: #ecf0f1;
+  font-weight: 600;
 
   @media (max-width: 480px) {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 `;
 
@@ -606,45 +629,42 @@ const PriceContainer = styled.div`
 `;
 
 const Price = styled.div`
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: #ff9a9e;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2ecc71;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 480px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 `;
 
 const OriginalPrice = styled.div`
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  color: #95a5a6;
   text-decoration: line-through;
 
   @media (max-width: 480px) {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 
 const StockStatus = styled.div`
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  background: ${(props) =>
-    props.$inStock
-      ? "linear-gradient(135deg, #a8edea, #fed6e3)"
-      : "linear-gradient(135deg, #ff9a9e, #fecfef)"};
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: ${(props) => (props.$inStock ? "#27ae60" : "#e74c3c")};
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 480px) {
-    padding: 8px 15px;
-    font-size: 0.85rem;
+    padding: 5px 10px;
+    font-size: 0.7rem;
   }
 `;
 
@@ -660,53 +680,53 @@ const ActionButtons = styled.div`
 
 const ViewDetailsButton = styled.button`
   flex: 1;
-  padding: 18px 30px;
-  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  padding: 12px 20px;
+  background: rgba(52, 152, 219, 0.8);
   color: white;
-  border: none;
-  border-radius: 15px;
-  font-weight: 800;
-  font-size: 1.1rem;
+  border: 1px solid #3498db;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
   &:hover {
-    background: linear-gradient(135deg, #fecfef, #ff9a9e);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(255, 154, 158, 0.5);
+    background: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
   }
 
   @media (max-width: 480px) {
-    padding: 15px 25px;
-    font-size: 1rem;
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 `;
 
 const InquireButton = styled.button`
   flex: 1;
-  padding: 18px 30px;
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  padding: 12px 20px;
+  background: rgba(46, 204, 113, 0.8);
   color: white;
-  border: none;
-  border-radius: 15px;
-  font-weight: 800;
-  font-size: 1.1rem;
+  border: 1px solid #2ecc71;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 
   &:hover {
-    background: linear-gradient(135deg, #fed6e3, #a8edea);
-    transform: translateY(-4px);
-    box-shadow: 0 15px 30px rgba(168, 237, 234, 0.5);
+    background: #2ecc71;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
   }
 
   @media (max-width: 480px) {
-    padding: 15px 25px;
-    font-size: 1rem;
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 `;
 
@@ -736,21 +756,21 @@ const RatingText = styled.span`
 
 const EmptyState = styled.div`
   text-align: center;
-  padding: 120px 20px;
-  color: rgba(255, 255, 255, 0.9);
+  padding: 80px 20px;
+  color: #bdc3c7;
 `;
 
 const EmptyTitle = styled.h3`
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-  color: white;
-  font-weight: 900;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ecf0f1;
+  font-weight: 600;
 `;
 
 const EmptyText = styled.p`
-  font-size: 1.3rem;
-  line-height: 1.7;
-  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 400;
 `;
 
 const AccessoryCollection = () => {
@@ -822,15 +842,13 @@ const AccessoryCollection = () => {
     <AccessoryContainer>
       <Container>
         <HeroSection>
-          <Title>Premium Firearm Accessories</Title>
+          <Title>Tactical Accessories & Optics</Title>
           <Subtitle>
-            Enhance your shooting experience with our comprehensive collection
-            of premium firearm accessories. From precision optics and tactical
-            lights to ergonomic stocks and professional-grade cases, we offer
-            the finest accessories from trusted manufacturers like Vortex,
-            Aimpoint, Surefire, Magpul, and Trijicon. Whether you're upgrading
-            for competition, hunting, or tactical applications, find the perfect
-            accessories to maximize your firearm's potential and performance.
+            Professional-grade firearm accessories for law enforcement,
+            military, competitive shooters, and hunters. From precision optics
+            and tactical lighting to advanced ergonomic enhancements - we
+            provide mission-critical gear from industry leaders like Vortex,
+            Aimpoint, EOTech, and Magpul.
           </Subtitle>
           <StatsGrid>
             <StatCard>

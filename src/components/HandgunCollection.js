@@ -16,25 +16,28 @@ const pulse = keyframes`
 const HandgunContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #667eea 0%,
-    #764ba2 25%,
-    #f093fb 50%,
-    #f5576c 75%,
-    #4facfe 100%
-  );
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
+  position: relative;
 
-  @keyframes gradientShift {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(231, 76, 60, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(52, 152, 219, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
   }
 `;
 
@@ -55,54 +58,115 @@ const Container = styled.div`
 const HeroSection = styled.div`
   text-align: center;
   margin-bottom: 60px;
-  padding: 60px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 80px 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.95) 0%,
+    rgba(52, 73, 94, 0.95) 50%,
+    rgba(44, 62, 80, 0.95) 100%
+  );
+  border-radius: 20px;
+  color: white;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   animation: ${fadeIn} 1s ease-out;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(231, 76, 60, 0.1) 50%,
+        transparent 70%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(255, 255, 255, 0.02) 100px,
+        rgba(255, 255, 255, 0.02) 101px
+      );
+    animation: shimmer 4s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
 
   @media (max-width: 768px) {
-    margin-bottom: 40px;
-    padding: 40px 15px;
-    border-radius: 20px;
+    padding: 60px 40px;
   }
 
   @media (max-width: 480px) {
-    margin-bottom: 30px;
-    padding: 30px 10px;
-    border-radius: 15px;
+    padding: 50px 30px;
   }
 `;
 
 const MainTitle = styled.h1`
-  font-size: clamp(48px, 8vw, 72px);
-  font-weight: 900;
-  background: linear-gradient(
-    135deg,
-    #ff6b6b,
-    #4ecdc4,
-    #45b7d1,
-    #96ceb4,
-    #ffeaa7
-  );
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 3s ease-in-out infinite;
-  margin-bottom: 20px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  line-height: 1.1;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #ecf0f1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 3;
+  letter-spacing: -0.5px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #3498db);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+  }
 `;
 
 const SubTitle = styled.p`
-  font-size: clamp(18px, 3vw, 24px);
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  color: #bdc3c7;
+  margin-bottom: 50px;
+  line-height: 1.7;
   max-width: 800px;
-  margin: 0 auto 40px auto;
-  line-height: 1.6;
-  font-weight: 500;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+  position: relative;
+  z-index: 3;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const StatsContainer = styled.div`
@@ -668,11 +732,12 @@ export default function HandgunCollection() {
     <HandgunContainer>
       <Container>
         <HeroSection>
-          <MainTitle>Premium Handgun Collection</MainTitle>
+          <MainTitle>Professional Handguns</MainTitle>
           <SubTitle>
-            Discover our carefully curated selection of premium handguns from
-            the world's most trusted manufacturers. Each firearm is backed by
-            our commitment to quality, safety, and exceptional service.
+            Comprehensive selection of handguns for law enforcement, concealed
+            carry, and sport shooting. Featuring industry-leading brands and
+            models trusted by professionals worldwide. our commitment to
+            quality, safety, and exceptional service.
           </SubTitle>
           <StatsContainer>
             <StatCard>
