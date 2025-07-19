@@ -535,49 +535,49 @@ const ProductContent = styled.div`
 `;
 
 const ProductName = styled.h3`
-  color: white;
-  font-size: 1.6rem;
-  font-weight: 900;
-  margin-bottom: 15px;
+  color: #ecf0f1;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
   line-height: 1.3;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 480px) {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 `;
 
 const ProductManufacturer = styled.div`
-  color: #ff9a9e;
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-`;
-
-const ProductType = styled.div`
-  color: #a8edea;
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 15px;
+  color: #3498db;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
 `;
 
+const ProductType = styled.div`
+  color: #2ecc71;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+`;
+
 const ProductDescription = styled.p`
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 25px;
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  font-weight: 500;
+  font-weight: 400;
 
   @media (max-width: 480px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 `;
 
