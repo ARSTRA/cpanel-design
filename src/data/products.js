@@ -751,7 +751,7 @@ export const products = [
     category: "ammunition",
     stock: 50,
     images: [
-      "https://images.pexels.com/photos/6091649/pexels-photo-6091649.jpeg",
+      "https://images.pexels.com/photos/9170202/pexels-photo-9170202.jpeg",
     ],
     featured: true,
     displayLocation: ["ammunition", "featured"],
