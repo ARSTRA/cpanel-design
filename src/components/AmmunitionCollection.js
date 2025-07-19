@@ -597,7 +597,9 @@ export default function AmmunitionCollection() {
                 value={filterType}
                 onChange={(e) => setFilterType(e.target.value)}
               >
-                <option value="">All Types</option>
+                <option key="all-types" value="">
+                  All Types
+                </option>
                 {uniqueTypes.map((type) => (
                   <option key={type} value={type}>
                     {type}
