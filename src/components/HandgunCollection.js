@@ -732,11 +732,12 @@ export default function HandgunCollection() {
     <HandgunContainer>
       <Container>
         <HeroSection>
-          <MainTitle>Premium Handgun Collection</MainTitle>
+          <MainTitle>Professional Handguns</MainTitle>
           <SubTitle>
-            Discover our carefully curated selection of premium handguns from
-            the world's most trusted manufacturers. Each firearm is backed by
-            our commitment to quality, safety, and exceptional service.
+            Comprehensive selection of handguns for law enforcement, concealed
+            carry, and sport shooting. Featuring industry-leading brands and
+            models trusted by professionals worldwide. our commitment to
+            quality, safety, and exceptional service.
           </SubTitle>
           <StatsContainer>
             <StatCard>
