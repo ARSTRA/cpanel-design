@@ -8,11 +8,6 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const shimmer = keyframes`
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-`;
-
 const float = keyframes`
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
