@@ -268,6 +268,7 @@ export default function HomePage() {
     { name: "Rifles", icon: "🔫", path: "/rifles", color: "#3498db" },
     { name: "Shotguns", icon: "🔫", path: "/shotguns", color: "#f39c12" },
     { name: "Accessories", icon: "🔧", path: "/accessories", color: "#9b59b6" },
+    { name: "Ammunition", icon: "💥", path: "/ammunition", color: "#e67e22" },
   ];
 
   const handleBrowseClick = () => {
