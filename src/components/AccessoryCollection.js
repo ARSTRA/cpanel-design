@@ -502,25 +502,25 @@ const ProductImage = styled.img`
 
 const ProductBadge = styled.div`
   position: absolute;
-  top: 25px;
-  right: 25px;
+  top: 15px;
+  right: 15px;
   background: ${(props) =>
     props.type === "sale"
-      ? "linear-gradient(135deg, #ff9a9e, #fecfef)"
+      ? "#e74c3c"
       : props.type === "featured"
-        ? "linear-gradient(135deg, #a8edea, #fed6e3)"
-        : "linear-gradient(135deg, #667eea, #764ba2)"};
+        ? "#f39c12"
+        : "#7f8c8d"};
   color: white;
-  padding: 10px 18px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  animation: ${pulse} 2s infinite;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 `;
 
 const ProductContent = styled.div`
