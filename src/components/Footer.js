@@ -117,7 +117,7 @@ export default function Footer() {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <h3>🔫 {state.siteSettings.siteName}</h3>
+          <h3>⚡ {state.siteSettings.siteName}</h3>
           <p>{state.siteSettings.aboutUs}</p>
           <SocialLinks>
             <SocialLink href="#" title="Facebook">
