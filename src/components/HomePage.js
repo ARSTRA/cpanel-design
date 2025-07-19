@@ -655,8 +655,8 @@ export default function HomePage() {
                           e.target.style.display = "none";
                           const parent = e.target.parentElement;
                           parent.style.background =
-                            "linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%)";
-                          parent.innerHTML = `<div style="display: flex; align-items: center; justify-content: center; height: 100%; color: #7f8c8d; font-size: 48px;">🔫</div>`;
+                            "linear-gradient(135deg, #34495e 0%, #2c3e50 100%)";
+                          parent.innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: white; text-align: center;"><div style="font-size: 48px; margin-bottom: 10px;">🔫</div><div style="font-size: 14px; font-weight: 600;">Product Image</div></div>`;
                         }}
                       />
                     ) : (
