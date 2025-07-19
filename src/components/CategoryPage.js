@@ -340,8 +340,14 @@ export default function CategoryPage({ category = "handguns" }) {
           <ProductsGrid>
             {sortedProducts.map((product) => (
               <ProductCard key={product.id}>
-                <ProductImage>
-                  🔫
+                <ProductImage
+                  style={{
+                    backgroundImage: `url(${product.images && product.images[0] ? product.images[0] : "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=400&h=300&fit=crop"})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                >
                   <StockBadge $inStock={product.stock > 0}>
                     {product.stock > 0 ? "In Stock" : "Out of Stock"}
                   </StockBadge>
