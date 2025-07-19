@@ -52,9 +52,7 @@ export const products = [
     originalPrice: 699.99,
     category: "handguns",
     stock: 12,
-    images: [
-      "https://images.pexels.com/photos/889709/pexels-photo-889709.jpeg",
-    ],
+    images: ["https://images.pexels.com/photos/34552/pexels-photo.jpg"],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
     manufacturer: "Sig Sauer",
@@ -77,7 +75,7 @@ export const products = [
     category: "rifles",
     stock: 8,
     images: [
-      "https://images.pexels.com/photos/5202396/pexels-photo-5202396.jpeg",
+      "https://images.pexels.com/photos/17023914/pexels-photo-17023914.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
@@ -118,7 +116,7 @@ export const products = [
     category: "rifles",
     stock: 15,
     images: [
-      "https://images.pexels.com/photos/53224/bullet-cartridge-ammunition-crime-53224.jpeg",
+      "https://images.pexels.com/photos/8390980/pexels-photo-8390980.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
@@ -229,7 +227,7 @@ export const products = [
     category: "rifles",
     stock: 6,
     images: [
-      "https://images.pexels.com/photos/889709/pexels-photo-889709.jpeg",
+      "https://images.pexels.com/photos/6621958/pexels-photo-6621958.jpeg",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
