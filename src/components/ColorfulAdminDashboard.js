@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import { useApp } from "../context/AppContext";
+import { useApp } from "../context/AppContext.optimized";
 import ProductManagement from "./admin/ProductManagement";
 import OrderManagement from "./admin/OrderManagement";
 import UserManagement from "./admin/UserManagement";
