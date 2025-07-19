@@ -310,7 +310,7 @@ const ActionButtons = styled.div`
   gap: 12px;
 
   @media (max-width: 768px) {
-    gap: 8px;
+    gap: 6px;
   }
 `;
 
