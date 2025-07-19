@@ -536,12 +536,24 @@ export default function AmmunitionCollection() {
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value)}
               >
-                <option value="name">Name</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="rating">Rating</option>
-                <option value="manufacturer">Manufacturer</option>
-                <option value="caliber">Caliber</option>
+                <option key="name" value="name">
+                  Name
+                </option>
+                <option key="price-low" value="price-low">
+                  Price: Low to High
+                </option>
+                <option key="price-high" value="price-high">
+                  Price: High to Low
+                </option>
+                <option key="rating" value="rating">
+                  Rating
+                </option>
+                <option key="manufacturer" value="manufacturer">
+                  Manufacturer
+                </option>
+                <option key="caliber" value="caliber">
+                  Caliber
+                </option>
               </Select>
             </FilterGroup>
 
