@@ -320,7 +320,11 @@ const AuthButtonsContainer = styled.div`
   gap: 10px;
 
   @media (max-width: 768px) {
-    gap: 8px;
+    gap: 6px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 4px;
   }
 `;
 
