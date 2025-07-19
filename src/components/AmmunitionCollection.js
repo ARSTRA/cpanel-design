@@ -479,8 +479,6 @@ export default function AmmunitionCollection() {
   const avgRating =
     ammunition.reduce((sum, a) => sum + (a.rating || 0), 0) / ammunition.length;
   const featuredCount = ammunition.filter((a) => a.featured).length;
-  const avgPrice =
-    ammunition.reduce((sum, a) => sum + a.price, 0) / ammunition.length;
 
   const uniqueCalibers = [...new Set(ammunition.map((a) => a.caliber))].sort();
   const uniqueManufacturers = [
