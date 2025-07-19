@@ -733,10 +733,18 @@ const RifleCollection = () => {
               onChange={(e) => setFilterOption(e.target.value)}
               id="rifle-filter"
             >
-              <option value="all">All Rifles</option>
-              <option value="inStock">In Stock</option>
-              <option value="featured">Featured</option>
-              <option value="onSale">On Sale</option>
+              <option key="all" value="all">
+                All Rifles
+              </option>
+              <option key="inStock" value="inStock">
+                In Stock
+              </option>
+              <option key="featured" value="featured">
+                Featured
+              </option>
+              <option key="onSale" value="onSale">
+                On Sale
+              </option>
             </FilterSelect>
             <SortSelect
               value={sortOption}
