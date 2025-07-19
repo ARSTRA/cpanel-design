@@ -188,12 +188,25 @@ const NavItem = styled.div`
 `;
 
 const MainContent = styled.div`
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
   border-radius: 20px;
   padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   animation: ${fadeIn} 0.8s ease-out;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
+    border-radius: 20px 20px 0 0;
+  }
 `;
 
 const PageHeader = styled.div`
