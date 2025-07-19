@@ -496,76 +496,360 @@ const PaymentProcessing = () => {
         <PaymentTitle>💰 Financing Options</PaymentTitle>
       </PaymentHeader>
 
-      <div style={{ marginBottom: "25px" }}>
-        <FinancingOption className="selected">
-          <div style={{ fontSize: "24px", marginBottom: "10px" }}>🎯</div>
-          <h4 style={{ color: "#2c3e50", margin: "0 0 10px" }}>
-            0% APR for 12 Months
-          </h4>
-          <p style={{ color: "#7f8c8d", margin: 0, fontSize: "14px" }}>
-            No interest if paid in full within 12 months. Minimum purchase $500.
-          </p>
-          <div style={{ marginTop: "15px" }}>
+      <div style={{ marginBottom: "30px" }}>
+        <h4
+          style={{
+            color: "#2c3e50",
+            marginBottom: "20px",
+            textAlign: "center",
+          }}
+        >
+          Choose Your Perfect Financing Plan
+        </h4>
+
+        {/* Premium 0% APR Option */}
+        <FinancingOption
+          className="selected"
+          style={{ marginBottom: "20px", border: "3px solid #27ae60" }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              marginBottom: "15px",
+            }}
+          >
+            <div>
+              <div style={{ fontSize: "32px", marginBottom: "8px" }}>🎯</div>
+              <h3
+                style={{
+                  color: "#2c3e50",
+                  margin: "0 0 8px",
+                  fontSize: "22px",
+                }}
+              >
+                0% APR Promotional Financing
+              </h3>
+              <div
+                style={{
+                  color: "#27ae60",
+                  fontWeight: "700",
+                  fontSize: "18px",
+                  marginBottom: "10px",
+                }}
+              >
+                No Interest for 12 Months
+              </div>
+            </div>
             <span
               style={{
-                background: "#27ae60",
+                background: "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)",
                 color: "white",
-                padding: "4px 12px",
-                borderRadius: "12px",
-                fontSize: "12px",
-                fontWeight: "600",
+                padding: "8px 16px",
+                borderRadius: "20px",
+                fontSize: "14px",
+                fontWeight: "700",
+                boxShadow: "0 4px 15px rgba(39, 174, 96, 0.3)",
               }}
             >
-              Pre-Approved
+              ✓ PRE-APPROVED
             </span>
+          </div>
+
+          <div
+            style={{
+              background: "#f0fdf4",
+              padding: "15px",
+              borderRadius: "8px",
+              marginBottom: "15px",
+            }}
+          >
+            <ul style={{ margin: 0, paddingLeft: "20px", color: "#155724" }}>
+              <li>
+                <strong>Perfect for:</strong> Purchases $500 - $5,000
+              </li>
+              <li>
+                <strong>Payment:</strong> Pay nothing for 12 months, then pay in
+                full
+              </li>
+              <li>
+                <strong>Benefits:</strong> Save hundreds in interest charges
+              </li>
+              <li>
+                <strong>Qualification:</strong> Excellent credit (720+ FICO
+                score)
+              </li>
+            </ul>
+          </div>
+
+          <div style={{ textAlign: "center" }}>
+            <div
+              style={{
+                color: "#7f8c8d",
+                fontSize: "12px",
+                marginBottom: "10px",
+              }}
+            >
+              *If paid in full within promotional period. Standard APR applies
+              after.
+            </div>
           </div>
         </FinancingOption>
       </div>
 
       <FormGrid>
-        <FinancingOption>
-          <div style={{ fontSize: "20px", marginBottom: "10px" }}>📊</div>
-          <h4 style={{ color: "#2c3e50", margin: "0 0 10px" }}>
-            Extended Terms
-          </h4>
-          <p style={{ color: "#7f8c8d", margin: 0, fontSize: "14px" }}>
-            24-60 month terms available. Rates starting at 5.99% APR.
-          </p>
+        {/* Standard Financing */}
+        <FinancingOption style={{ border: "2px solid #3498db" }}>
+          <div style={{ textAlign: "center", marginBottom: "15px" }}>
+            <div style={{ fontSize: "28px", marginBottom: "10px" }}>📊</div>
+            <h4
+              style={{ color: "#2c3e50", margin: "0 0 8px", fontSize: "18px" }}
+            >
+              Standard Financing
+            </h4>
+            <div
+              style={{ color: "#3498db", fontWeight: "600", fontSize: "16px" }}
+            >
+              5.99% - 24.99% APR
+            </div>
+          </div>
+
+          <div
+            style={{
+              background: "#f8f9fa",
+              padding: "12px",
+              borderRadius: "6px",
+              marginBottom: "12px",
+            }}
+          >
+            <div
+              style={{ fontSize: "13px", color: "#2c3e50", lineHeight: "1.4" }}
+            >
+              <strong>Terms:</strong> 24-60 months
+              <br />
+              <strong>Amount:</strong> $500 - $25,000
+              <br />
+              <strong>Credit:</strong> Good to Excellent
+              <br />
+              <strong>Processing:</strong> 2-4 business days
+            </div>
+          </div>
+
+          <div
+            style={{ fontSize: "12px", color: "#7f8c8d", textAlign: "center" }}
+          >
+            Fixed monthly payments with competitive rates
+          </div>
         </FinancingOption>
 
-        <FinancingOption>
-          <div style={{ fontSize: "20px", marginBottom: "10px" }}>⚡</div>
-          <h4 style={{ color: "#2c3e50", margin: "0 0 10px" }}>
-            Instant Approval
-          </h4>
-          <p style={{ color: "#7f8c8d", margin: 0, fontSize: "14px" }}>
-            Get approved in minutes with our quick application process.
-          </p>
+        {/* Instant Approval */}
+        <FinancingOption style={{ border: "2px solid #f39c12" }}>
+          <div style={{ textAlign: "center", marginBottom: "15px" }}>
+            <div style={{ fontSize: "28px", marginBottom: "10px" }}>⚡</div>
+            <h4
+              style={{ color: "#2c3e50", margin: "0 0 8px", fontSize: "18px" }}
+            >
+              Express Approval
+            </h4>
+            <div
+              style={{ color: "#f39c12", fontWeight: "600", fontSize: "16px" }}
+            >
+              Instant Decision
+            </div>
+          </div>
+
+          <div
+            style={{
+              background: "#fff8e1",
+              padding: "12px",
+              borderRadius: "6px",
+              marginBottom: "12px",
+            }}
+          >
+            <div
+              style={{ fontSize: "13px", color: "#2c3e50", lineHeight: "1.4" }}
+            >
+              <strong>Speed:</strong> 60-second approval
+              <br />
+              <strong>Amount:</strong> $100 - $10,000
+              <br />
+              <strong>Credit:</strong> Fair to Excellent
+              <br />
+              <strong>Funding:</strong> Same business day
+            </div>
+          </div>
+
+          <div
+            style={{ fontSize: "12px", color: "#7f8c8d", textAlign: "center" }}
+          >
+            Perfect for immediate purchases
+          </div>
+        </FinancingOption>
+
+        {/* Flexible Payment */}
+        <FinancingOption style={{ border: "2px solid #9b59b6" }}>
+          <div style={{ textAlign: "center", marginBottom: "15px" }}>
+            <div style={{ fontSize: "28px", marginBottom: "10px" }}>🔄</div>
+            <h4
+              style={{ color: "#2c3e50", margin: "0 0 8px", fontSize: "18px" }}
+            >
+              Flexible Payments
+            </h4>
+            <div
+              style={{ color: "#9b59b6", fontWeight: "600", fontSize: "16px" }}
+            >
+              Buy Now, Pay Later
+            </div>
+          </div>
+
+          <div
+            style={{
+              background: "#f3e5f5",
+              padding: "12px",
+              borderRadius: "6px",
+              marginBottom: "12px",
+            }}
+          >
+            <div
+              style={{ fontSize: "13px", color: "#2c3e50", lineHeight: "1.4" }}
+            >
+              <strong>Options:</strong> 4, 6, or 12 payments
+              <br />
+              <strong>Interest:</strong> 0% (4 payments)
+              <br />
+              <strong>Minimum:</strong> $50 purchase
+              <br />
+              <strong>Setup:</strong> No hard credit check
+            </div>
+          </div>
+
+          <div
+            style={{ fontSize: "12px", color: "#7f8c8d", textAlign: "center" }}
+          >
+            Split your purchase into equal payments
+          </div>
         </FinancingOption>
       </FormGrid>
 
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
-        <Button style={{ padding: "15px 30px", fontSize: "16px" }}>
-          Apply for Financing
-        </Button>
+      <div style={{ textAlign: "center", marginTop: "25px" }}>
+        <button
+          style={{
+            padding: "18px 40px",
+            fontSize: "18px",
+            background: "linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)",
+            boxShadow: "0 8px 25px rgba(39, 174, 96, 0.3)",
+            border: "none",
+            borderRadius: "12px",
+            color: "white",
+            fontWeight: "700",
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
+          }}
+          onClick={() => window.open("/financing-application", "_blank")}
+          onMouseOver={(e) => {
+            e.target.style.transform = "translateY(-3px)";
+            e.target.style.boxShadow = "0 12px 35px rgba(39, 174, 96, 0.4)";
+          }}
+          onMouseOut={(e) => {
+            e.target.style.transform = "translateY(0)";
+            e.target.style.boxShadow = "0 8px 25px rgba(39, 174, 96, 0.3)";
+          }}
+        >
+          🚀 Apply for Financing Now
+        </button>
+        <div style={{ marginTop: "10px", fontSize: "14px", color: "#7f8c8d" }}>
+          Secure application • No impact to credit score for pre-qualification
+        </div>
       </div>
 
       <div
         style={{
-          marginTop: "20px",
-          padding: "15px",
-          background: "#fff3cd",
-          borderRadius: "10px",
+          marginTop: "25px",
+          padding: "20px",
+          background: "linear-gradient(135deg, #e8f4fd 0%, #f0f8ff 100%)",
+          borderRadius: "12px",
           fontSize: "14px",
         }}
       >
-        <strong>📋 What you'll need:</strong>
-        <ul style={{ margin: "10px 0 0", paddingLeft: "20px" }}>
-          <li>Valid government-issued ID</li>
-          <li>Proof of income (pay stubs, tax returns)</li>
-          <li>Bank account information</li>
-          <li>Social Security Number</li>
-        </ul>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: "15px",
+          }}
+        >
+          <div style={{ fontSize: "24px", marginRight: "10px" }}>📋</div>
+          <strong style={{ color: "#2c3e50", fontSize: "16px" }}>
+            Required Documentation:
+          </strong>
+        </div>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "15px",
+          }}
+        >
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#3498db",
+                marginBottom: "5px",
+              }}
+            >
+              🆔 Identification
+            </div>
+            <div style={{ color: "#7f8c8d", fontSize: "13px" }}>
+              Valid government-issued photo ID
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#3498db",
+                marginBottom: "5px",
+              }}
+            >
+              💰 Income Proof
+            </div>
+            <div style={{ color: "#7f8c8d", fontSize: "13px" }}>
+              Recent pay stubs or tax returns
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#3498db",
+                marginBottom: "5px",
+              }}
+            >
+              🏦 Banking Info
+            </div>
+            <div style={{ color: "#7f8c8d", fontSize: "13px" }}>
+              Bank account details for payments
+            </div>
+          </div>
+          <div>
+            <div
+              style={{
+                fontWeight: "600",
+                color: "#3498db",
+                marginBottom: "5px",
+              }}
+            >
+              🔢 SSN
+            </div>
+            <div style={{ color: "#7f8c8d", fontSize: "13px" }}>
+              Social Security Number
+            </div>
+          </div>
+        </div>
       </div>
     </PaymentCard>
   );
