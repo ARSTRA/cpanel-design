@@ -14,11 +14,11 @@ const initialState = {
   // Site settings
   siteSettings: {
     siteName: "Gun-k Pro",
-    headerText: "Professional firearms and accessories store",
+    headerText: "America's Premier Firearms & Tactical Equipment Specialists",
     aboutUs:
-      "Your trusted firearms dealer with over 20 years of experience serving the community. We specialize in quality firearms, accessories, and professional gunsmithing services.",
+      "Gun-k Pro stands as America's premier destination for premium firearms, tactical equipment, and professional gunsmithing services. With over two decades of unwavering commitment to excellence, we've built our reputation on three fundamental pillars: uncompromising quality, expert knowledge, and exceptional customer service. Our federally licensed facility houses an extensive inventory of carefully curated firearms from the world's most respected manufacturers, complemented by a comprehensive selection of optics, accessories, and tactical gear. Whether you're a law enforcement professional, competitive shooter, hunter, or responsible citizen exercising your Second Amendment rights, our team of certified experts provides personalized guidance to ensure you find the perfect solution for your specific needs. We pride ourselves on maintaining the highest standards of safety, compliance, and professionalism while fostering a welcoming environment for enthusiasts of all experience levels.",
     footerText:
-      "Professional firearms dealer specializing in handguns, rifles, shotguns, and accessories. Licensed FFL dealer.",
+      "Gun-k Pro: Setting the standard for excellence in firearms retail since 2004. Licensed FFL dealer committed to safety, quality, and professional service.",
     contactInfo: {
       email: "info@gun-k.com",
       phone: "(555) 123-4567",
