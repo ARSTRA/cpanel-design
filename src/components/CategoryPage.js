@@ -334,9 +334,15 @@ export default function CategoryPage({ category = "handguns" }) {
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
-              <option value="name">Name A-Z</option>
-              <option value="price-low">Price: Low to High</option>
-              <option value="price-high">Price: High to Low</option>
+              <option key="name" value="name">
+                Name A-Z
+              </option>
+              <option key="price-low" value="price-low">
+                Price: Low to High
+              </option>
+              <option key="price-high" value="price-high">
+                Price: High to Low
+              </option>
             </Select>
           </FilterGroup>
         </FiltersSection>
