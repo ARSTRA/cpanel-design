@@ -8,11 +8,6 @@ const fadeIn = keyframes`
   to { opacity: 1; transform: translateY(0); }
 `;
 
-const shimmer = keyframes`
-  0% { background-position: -200px 0; }
-  100% { background-position: calc(200px + 100%) 0; }
-`;
-
 const DetailContainer = styled.div`
   min-height: 100vh;
   background: linear-gradient(
