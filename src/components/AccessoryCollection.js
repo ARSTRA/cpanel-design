@@ -639,45 +639,42 @@ const PriceContainer = styled.div`
 `;
 
 const Price = styled.div`
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: #ff9a9e;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2ecc71;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 480px) {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 `;
 
 const OriginalPrice = styled.div`
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  color: #95a5a6;
   text-decoration: line-through;
 
   @media (max-width: 480px) {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 
 const StockStatus = styled.div`
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-size: 0.9rem;
-  font-weight: 800;
-  background: ${(props) =>
-    props.$inStock
-      ? "linear-gradient(135deg, #a8edea, #fed6e3)"
-      : "linear-gradient(135deg, #ff9a9e, #fecfef)"};
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: ${(props) => (props.$inStock ? "#27ae60" : "#e74c3c")};
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  backdrop-filter: blur(15px);
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 
   @media (max-width: 480px) {
-    padding: 8px 15px;
-    font-size: 0.85rem;
+    padding: 5px 10px;
+    font-size: 0.7rem;
   }
 `;
 
