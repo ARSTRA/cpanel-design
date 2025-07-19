@@ -580,7 +580,9 @@ export default function AmmunitionCollection() {
                 value={filterManufacturer}
                 onChange={(e) => setFilterManufacturer(e.target.value)}
               >
-                <option value="">All Manufacturers</option>
+                <option key="all-manufacturers" value="">
+                  All Manufacturers
+                </option>
                 {uniqueManufacturers.map((manufacturer) => (
                   <option key={manufacturer} value={manufacturer}>
                     {manufacturer}
