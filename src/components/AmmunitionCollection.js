@@ -43,12 +43,18 @@ const Container = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.95) 0%,
+    rgba(52, 73, 94, 0.95) 50%,
+    rgba(44, 62, 80, 0.95) 100%
+  );
   color: white;
-  padding: 100px 20px 60px;
+  padding: 80px 20px 60px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgba(241, 196, 15, 0.2);
 
   &::before {
     content: "";
@@ -57,8 +63,30 @@ const HeroSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" patternUnits="userSpaceOnUse" width="2" height="2"><circle cx="1" cy="1" r="0.3" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
+    background:
+      linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(241, 196, 15, 0.1) 50%,
+        transparent 70%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 100px,
+        rgba(255, 255, 255, 0.02) 100px,
+        rgba(255, 255, 255, 0.02) 101px
+      );
+    animation: shimmer 4s infinite linear;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
   }
 `;
 
