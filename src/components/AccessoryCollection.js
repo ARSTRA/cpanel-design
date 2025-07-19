@@ -29,21 +29,7 @@ const rainbow = keyframes`
 const AccessoryContainer = styled.div`
   padding: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    135deg,
-    #ff9a9e 0%,
-    #fecfef 15%,
-    #fecfef 25%,
-    #a8edea 35%,
-    #fed6e3 45%,
-    #a8edea 55%,
-    #d299c2 65%,
-    #fef9d7 75%,
-    #667eea 85%,
-    #764ba2 100%
-  );
-  background-size: 600% 600%;
-  animation: rainbow 25s ease infinite;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 `;
 
 const Container = styled.div`
