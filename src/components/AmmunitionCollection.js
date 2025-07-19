@@ -10,8 +10,30 @@ const fadeIn = keyframes`
 
 const AmmunitionContainer = styled.div`
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
   animation: ${fadeIn} 0.6s ease-out;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 25% 25%,
+        rgba(241, 196, 15, 0.1) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 75% 75%,
+        rgba(231, 76, 60, 0.1) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
 `;
 
 const Container = styled.div`
