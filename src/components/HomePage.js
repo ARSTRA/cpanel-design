@@ -888,7 +888,7 @@ export default function HomePage() {
         </Container>
       </FeaturesSection>
 
-      <ProductsSection>
+      <ProductsSection data-section="featured-products">
         <Container>
           <SectionTitle>Featured Products</SectionTitle>
           <SectionSubtitle>
