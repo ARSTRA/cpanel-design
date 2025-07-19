@@ -359,9 +359,7 @@ export const products = [
     originalPrice: 529.99,
     category: "handguns",
     stock: 18,
-    images: [
-      "https://images.pexels.com/photos/6091856/pexels-photo-6091856.jpeg",
-    ],
+    images: ["https://images.pexels.com/photos/34552/pexels-photo.jpg"],
     featured: false,
     displayLocation: ["handguns"],
     manufacturer: "Smith & Wesson",
