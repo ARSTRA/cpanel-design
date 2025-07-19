@@ -171,7 +171,6 @@ const DemoCredentials = styled.div`
 `;
 
 function LoginContent() {
-  const { dispatch } = useApp();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
