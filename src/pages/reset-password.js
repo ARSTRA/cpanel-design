@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, navigate } from "gatsby";
 import styled from "styled-components";
-import { AppProvider } from "../context/AppContext";
+import { AppProvider } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
 
 const ResetPasswordContainer = styled.div`
@@ -32,7 +32,7 @@ const ResetPasswordCard = styled.div`
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90px, #27ae60, #2ecc71, #58d68d);
+    background: linear-gradient(90deg, #27ae60, #2ecc71, #58d68d);
     border-radius: 20px 20px 0 0;
   }
 
