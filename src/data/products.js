@@ -10,11 +10,7 @@ export const products = [
     originalPrice: 599.99,
     category: "handguns",
     stock: 15,
-    images: [
-      "https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop&auto=format&q=80",
-      "https://images.unsplash.com/photo-1595590424283-b8f17842773f?w=600&h=400&fit=crop&auto=format&q=80",
-    ],
+    images: [],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
     manufacturer: "Glock",
