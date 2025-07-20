@@ -846,55 +846,57 @@ export default function HomePage() {
         <Container>
           <SectionTitle>Why Choose Us?</SectionTitle>
           <FeaturesGrid>
-            <FeatureCard>
+                        <FeatureCard>
               <FeatureIcon>🏆</FeatureIcon>
               <FeatureTitle>Licensed FFL Dealer</FeatureTitle>
               <FeatureDescription>
-                Fully licensed and authorized federal firearms dealer with years
-                of experience
+                Fully licensed Federal Firearms License dealer with 20+ years of experience.
+                Authorized to handle all firearms transfers and compliance requirements.
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>🚚</FeatureIcon>
-              <FeatureTitle>Fast Shipping</FeatureTitle>
+              <FeatureIcon>🎯</FeatureIcon>
+              <FeatureTitle>Certified Training</FeatureTitle>
               <FeatureDescription>
-                Quick and secure shipping to your local FFL dealer with tracking
-                included
+                Professional firearms instruction and safety courses by certified NRA instructors.
+                Concealed carry permits and advanced tactical training available.
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>💎</FeatureIcon>
-              <FeatureTitle>Quality Products</FeatureTitle>
+              <FeatureIcon>🔧</FeatureIcon>
+              <FeatureTitle>Expert Gunsmithing</FeatureTitle>
               <FeatureDescription>
-                Only the finest firearms and accessories from trusted
-                manufacturers
+                In-house gunsmith services including custom modifications, repairs, and precision tuning.
+                Factory-trained technicians for all major brands.
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>🔒</FeatureIcon>
-              <FeatureTitle>Secure Transactions</FeatureTitle>
+              <FeatureIcon>🛡️</FeatureIcon>
+              <FeatureTitle>Law Enforcement Supplier</FeatureTitle>
               <FeatureDescription>
-                Safe and secure payment processing with complete buyer
-                protection
+                Trusted supplier to law enforcement agencies and military personnel.
+                Specialized duty gear and tactical equipment from leading manufacturers.
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>📞</FeatureIcon>
-              <FeatureTitle>Expert Support</FeatureTitle>
+              <FeatureIcon>📋</FeatureIcon>
+              <FeatureTitle>Compliance Expertise</FeatureTitle>
               <FeatureDescription>
-                Knowledgeable staff ready to help with all your firearms needs
+                Expert guidance on federal, state, and local firearms regulations.
+                Complete background check services and legal transfer documentation.
               </FeatureDescription>
             </FeatureCard>
 
             <FeatureCard>
-              <FeatureIcon>⚡</FeatureIcon>
-              <FeatureTitle>Competitive Prices</FeatureTitle>
+              <FeatureIcon>🤝</FeatureIcon>
+              <FeatureTitle>Lifetime Support</FeatureTitle>
               <FeatureDescription>
-                Best prices guaranteed with regular promotions and discounts
+                Ongoing customer relationships with lifetime support and service.
+                Trade-in programs, maintenance services, and upgrade consultations.
               </FeatureDescription>
             </FeatureCard>
           </FeaturesGrid>
