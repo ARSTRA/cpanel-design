@@ -384,6 +384,275 @@ const ProductButton = styled.button`
   }
 `;
 
+const AboutSection = styled.section`
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 20% 20%,
+        rgba(52, 152, 219, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(231, 76, 60, 0.05) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
+`;
+
+const AboutContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+`;
+
+const AboutTextContent = styled.div`
+  @media (max-width: 1024px) {
+    order: 2;
+  }
+`;
+
+const AboutTitle = styled.h2`
+  font-size: 42px;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 1024px) {
+    text-align: center;
+
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+`;
+
+const AboutDescription = styled.div`
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  .highlight {
+    color: #e74c3c;
+    font-weight: 600;
+  }
+
+  .experience {
+    background: linear-gradient(135deg, #e74c3c10, #f39c1210);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #e74c3c;
+    margin: 25px 0;
+    font-style: italic;
+  }
+`;
+
+const AboutStats = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
+
+const StatItem = styled.div`
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
+const StatNumber = styled.div`
+  font-size: 36px;
+  font-weight: 800;
+  color: #e74c3c;
+  margin-bottom: 10px;
+  line-height: 1;
+`;
+
+const StatLabel = styled.div`
+  font-size: 14px;
+  color: #7f8c8d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+`;
+
+const AboutImageContainer = styled.div`
+  position: relative;
+  @media (max-width: 1024px) {
+    order: 1;
+  }
+`;
+
+const AboutMainImage = styled.div`
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(44, 62, 80, 0.1) 0%,
+      rgba(231, 76, 60, 0.1) 100%
+    );
+  }
+`;
+
+const AboutSecondaryImages = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const SecondaryImage = styled.div`
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+`;
+
+const ExpertiseCard = styled.div`
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  border: 1px solid rgba(231, 76, 60, 0.1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60);
+  }
+`;
+
+const ExpertiseTitle = styled.h3`
+  color: #2c3e50;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-weight: 600;
+`;
+
+const ExpertiseList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 8px 0;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #27ae60;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+`;
+
 const CategorySection = styled.section`
   padding: 80px 20px;
   background: #f8f9fa;
@@ -624,7 +893,98 @@ export default function HomePage() {
             </FeatureCard>
           </FeaturesGrid>
         </Container>
-      </FeaturesSection>
+            </FeaturesSection>
+
+      <AboutSection>
+        <Container>
+          <AboutContent>
+            <AboutTextContent>
+              <AboutTitle>About Gun-k Pro</AboutTitle>
+              <AboutDescription>
+                <p>
+                  Welcome to <span className="highlight">Gun-k Pro</span>, your trusted partner in firearms excellence since 2003.
+                  As a fully licensed Federal Firearms License (FFL) dealer, we bring over <span className="highlight">20 years of experience</span>
+                  to the firearms industry, serving both law enforcement professionals and civilian enthusiasts across the nation.
+                </p>
+
+                <div className="experience">
+                  "Our commitment goes beyond selling firearms – we're dedicated to promoting responsible ownership,
+                  safety education, and providing expert guidance for every customer's unique needs."
+                  <br /><br />
+                  <strong>— Michael Thompson, Owner & Lead Firearms Instructor</strong>
+                </div>
+
+                <p>
+                  Our team consists of certified firearms instructors, experienced gunsmiths, and knowledgeable sales professionals
+                  who share a passion for quality craftsmanship and customer service. We maintain partnerships with industry-leading
+                  manufacturers including <span className="highlight">Glock, Smith & Wesson, Sig Sauer, Daniel Defense, and Wilson Combat</span>,
+                  ensuring our customers have access to the finest firearms and accessories available.
+                </p>
+
+                <p>
+                  Whether you're a first-time buyer seeking guidance, a competitive shooter looking for precision equipment,
+                  or a law enforcement agency requiring reliable duty gear, Gun-k Pro delivers personalized service backed by
+                  decades of expertise and an unwavering commitment to excellence.
+                </p>
+              </AboutDescription>
+
+              <AboutStats>
+                <StatItem>
+                  <StatNumber>20+</StatNumber>
+                  <StatLabel>Years Experience</StatLabel>
+                </StatItem>
+                <StatItem>
+                  <StatNumber>15K+</StatNumber>
+                  <StatLabel>Satisfied Customers</StatLabel>
+                </StatItem>
+                <StatItem>
+                  <StatNumber>500+</StatNumber>
+                  <StatLabel>Products Available</StatLabel>
+                </StatItem>
+              </AboutStats>
+
+              <ExpertiseCard>
+                <ExpertiseTitle>Our Expertise</ExpertiseTitle>
+                <ExpertiseList>
+                  <li>Federal Firearms License (FFL) Transfer Services</li>
+                  <li>Custom Gunsmithing & Weapon Modifications</li>
+                  <li>Professional Firearms Training & Safety Courses</li>
+                  <li>Law Enforcement & Military Equipment Supply</li>
+                  <li>Competitive Shooting Gear & Precision Optics</li>
+                  <li>Concealed Carry Consultation & Licensing</li>
+                </ExpertiseList>
+              </ExpertiseCard>
+            </AboutTextContent>
+
+            <AboutImageContainer>
+              <AboutMainImage>
+                <img
+                  src="https://images.pexels.com/photos/3777562/pexels-photo-3777562.jpeg"
+                  alt="Michael Thompson, Owner of Gun-k Pro - Professional firearms dealer with over 20 years of experience"
+                  loading="lazy"
+                />
+              </AboutMainImage>
+
+              <AboutSecondaryImages>
+                <SecondaryImage>
+                  <img
+                    src="https://images.pexels.com/photos/5716037/pexels-photo-5716037.jpeg"
+                    alt="Professional team collaboration at Gun-k Pro"
+                    loading="lazy"
+                  />
+                </SecondaryImage>
+                <SecondaryImage>
+                  <img
+                    src="https://images.pexels.com/photos/3084333/pexels-photo-3084333.jpeg"
+                    alt="Expert gunsmith working on precision firearms at Gun-k Pro"
+                    loading="lazy"
+                  />
+                </SecondaryImage>
+              </AboutSecondaryImages>
+            </AboutImageContainer>
+          </AboutContent>
+        </Container>
+      </AboutSection>
 
       <ProductsSection>
         <Container>
