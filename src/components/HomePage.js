@@ -826,12 +826,18 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroSection>
+            <HeroSection>
         <HeroContent>
           <HeroTitle>Welcome to {state.siteSettings.siteName}</HeroTitle>
-          <HeroSubtitle>{state.siteSettings.headerText}</HeroSubtitle>
+          <HeroSubtitle>
+            Your Premier Licensed FFL Dealer - Serving Professionals & Enthusiasts Since 2003
+            <br />
+            <span style={{ fontSize: '18px', marginTop: '10px', display: 'block', opacity: '0.9' }}>
+              Specializing in Premium Firearms, Expert Gunsmithing & Professional Training Services
+            </span>
+          </HeroSubtitle>
           <CTAButton onClick={handleBrowseClick}>
-            Browse Our Inventory
+            Explore Our Premium Collection
           </CTAButton>
         </HeroContent>
       </HeroSection>
