@@ -223,6 +223,11 @@ const SliderDot = styled.button`
     background: rgba(255, 255, 255, 0.7);
     transform: scale(1.2);
   }
+
+  &:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
 `;
 
 const HeroTitle = styled.h1`
