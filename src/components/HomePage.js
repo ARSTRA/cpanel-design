@@ -1292,7 +1292,7 @@ export default function HomePage() {
               {heroImages.map((image, index) => (
                 <SliderDot
                   key={index}
-                  active={index === currentImageIndex}
+                  $active={index === currentImageIndex}
                   onClick={() => setCurrentImageIndex(index)}
                   aria-label={`View ${image.title} image`}
                 />
