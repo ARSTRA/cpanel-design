@@ -215,7 +215,7 @@ const SliderDot = styled.button`
   height: 12px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  background: ${props => props.active ? 'rgba(255, 255, 255, 0.9)' : 'transparent'};
+  background: ${props => props.$active ? 'rgba(255, 255, 255, 0.9)' : 'transparent'};
   cursor: pointer;
   transition: all 0.3s ease;
 
