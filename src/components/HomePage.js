@@ -427,36 +427,75 @@ const ProductPrice = styled.div`
 `;
 
 const ProductDescription = styled.p`
-  color: #7f8c8d;
-  font-size: 15px;
-  line-height: 1.6;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.7;
   margin-bottom: 25px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-weight: 400;
+  text-align: justify;
+`;
+
+const ProductSpecs = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  border: 1px solid rgba(231, 76, 60, 0.1);
+`;
+
+const SpecItem = styled.div`
+  text-align: center;
+  flex: 1;
+
+  .spec-label {
+    font-size: 11px;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+
+  .spec-value {
+    font-size: 13px;
+    color: #2c3e50;
+    font-weight: 700;
+  }
 `;
 
 const ProductButton = styled.button`
-  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 50%, #a93226 100%);
   color: white;
   border: none;
-  padding: 14px 28px;
-  border-radius: 8px;
+  padding: 16px 32px;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 700;
   width: 100%;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+  border: 2px solid transparent;
 
   &:hover {
-    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3);
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 50%, #8e2d23 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(231, 76, 60, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &:active {
+    transform: translateY(-1px);
   }
 
   &::before {
@@ -469,10 +508,10 @@ const ProductButton = styled.button`
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.25),
       transparent
     );
-    transition: left 0.5s;
+    transition: left 0.6s;
   }
 
   &:hover::before {
