@@ -1291,11 +1291,12 @@ export default function HomePage() {
             </ImageSlider>
 
             <SliderDots>
-              {heroImages.map((_, index) => (
+              {heroImages.map((image, index) => (
                 <SliderDot
                   key={index}
                   active={index === currentImageIndex}
                   onClick={() => setCurrentImageIndex(index)}
+                  aria-label={`View ${image.title} image`}
                 />
               ))}
             </SliderDots>
