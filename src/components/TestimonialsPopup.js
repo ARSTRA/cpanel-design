@@ -51,14 +51,14 @@ const PopupContainer = styled.div`
 
   @media (max-width: 768px) {
     right: 15px;
-    bottom: ${props => props.isVisible ? '15px' : '-300px'};
+    bottom: ${props => props.$isVisible ? '15px' : '-300px'};
     width: calc(100vw - 30px);
     max-width: 350px;
   }
 
   @media (max-width: 480px) {
     right: 10px;
-    bottom: ${props => props.isVisible ? '10px' : '-300px'};
+    bottom: ${props => props.$isVisible ? '10px' : '-300px'};
     width: calc(100vw - 20px);
     max-width: 320px;
   }
