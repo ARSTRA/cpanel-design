@@ -1226,7 +1226,7 @@ export default function HomePage() {
                     <ProductButton
                       onClick={() => handleProductInquiry(product)}
                     >
-                      🎯 Contact Dealer
+                      BUY
                     </ProductButton>
                   </ProductInfo>
                 </ProductCard>
