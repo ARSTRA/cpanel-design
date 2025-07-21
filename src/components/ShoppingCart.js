@@ -253,8 +253,10 @@ const CheckoutButton = styled.button`
   margin-top: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
   }
@@ -263,6 +265,30 @@ const CheckoutButton = styled.button`
     opacity: 0.6;
     cursor: not-allowed;
     transform: none;
+    background: #95a5a6;
+  }
+
+  &.loading {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+      );
+      animation: loading-shine 1.5s infinite;
+    }
+  }
+
+  @keyframes loading-shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
   }
 `;
 
@@ -376,7 +402,7 @@ export default function ShoppingCart() {
     return (
       <CartContainer>
         <CartHeader>
-          <h2>��� Shopping Cart</h2>
+          <h2>🛒 Shopping Cart</h2>
           <div className="cart-count">0 items</div>
         </CartHeader>
         <EmptyCart>
