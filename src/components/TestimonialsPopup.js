@@ -350,8 +350,8 @@ export default function TestimonialsPopup() {
   const testimonial = testimonials[currentTestimonial];
 
   return (
-    <PopupContainer 
-      isVisible={isVisible}
+    <PopupContainer
+      $isVisible={isVisible}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
