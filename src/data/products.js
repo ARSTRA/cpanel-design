@@ -55,8 +55,8 @@ export const products = [
     category: "handguns",
     stock: 12,
     images: [
-      "https://images.pexels.com/photos/7715238/pexels-photo-7715238.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/6604782/pexels-photo-6604782.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/28555738/pexels-photo-28555738.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/6091856/pexels-photo-6091856.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
     ],
     featured: true,
     displayLocation: ["home", "featured", "handguns"],
@@ -122,8 +122,8 @@ export const products = [
     category: "rifles",
     stock: 15,
     images: [
-      "https://images.pexels.com/photos/6204731/pexels-photo-6204731.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/3706640/pexels-photo-3706640.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/6091165/pexels-photo-6091165.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/7929079/pexels-photo-7929079.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
     ],
     featured: true,
     displayLocation: ["home", "featured", "rifles"],
@@ -147,8 +147,8 @@ export const products = [
     category: "shotguns",
     stock: 12,
     images: [
+      "https://images.pexels.com/photos/221683/pexels-photo-221683.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
       "https://images.pexels.com/photos/6204731/pexels-photo-6204731.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/3706640/pexels-photo-3706640.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
     ],
     featured: true,
     displayLocation: ["home", "featured", "shotguns"],
@@ -169,8 +169,8 @@ export const products = [
     category: "shotguns",
     stock: 15,
     images: [
-      "https://images.pexels.com/photos/6204731/pexels-photo-6204731.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      "https://images.pexels.com/photos/3706640/pexels-photo-3706640.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/221683/pexels-photo-221683.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      "https://images.pexels.com/photos/6091165/pexels-photo-6091165.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
     ],
     featured: true,
     displayLocation: ["home", "featured", "shotguns"],
