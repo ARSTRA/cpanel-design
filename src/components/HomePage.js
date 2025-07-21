@@ -959,6 +959,19 @@ export default function HomePage() {
     window.open(mailtoLink);
   };
 
+  const handleBuyClick = (product) => {
+    // Store product info in sessionStorage for after login
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('selectedProduct', JSON.stringify({
+        id: product.id,
+        name: product.name,
+        price: product.price
+      }));
+    }
+    // Redirect to login page
+    navigate('/login');
+  };
+
   return (
     <>
             <HeroSection>
