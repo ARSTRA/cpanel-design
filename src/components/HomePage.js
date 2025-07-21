@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link, navigate } from "gatsby";
 import { useApp } from "../context/AppContext.optimized";
+import TestimonialsPopup from "./TestimonialsPopup";
 
 const HeroSection = styled.section`
   background:
