@@ -1149,11 +1149,15 @@ export default function HomePage() {
 
               return (
                 <ProductCard key={product.id}>
+                  <ProductBadges>
+                    <ManufacturerBadge>{product.manufacturer}</ManufacturerBadge>
+                    <CategoryTag>{product.category}</CategoryTag>
+                  </ProductBadges>
                   <ProductImage>
                     {product.images && product.images[0] ? (
                       <img
                         src={product.images[0]}
-                        alt={product.name}
+                        alt={`${product.name} - ${product.manufacturer} ${product.caliber || product.type || ''}`}
                         loading="lazy"
                       />
                     ) : (
@@ -1162,7 +1166,7 @@ export default function HomePage() {
                           width: "100%",
                           height: "100%",
                           backgroundImage:
-                            "url(https://images.unsplash.com/photo-1544717684-4b0c7db5b03a?w=600&h=400&fit=crop&auto=format&q=80)",
+                            "url(https://images.pexels.com/photos/6091856/pexels-photo-6091856.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop)",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                         }}
@@ -1186,13 +1190,43 @@ export default function HomePage() {
                         </>
                       )}
                     </ProductPrice>
+
+                    {(product.caliber || product.capacity || product.type) && (
+                      <ProductSpecs>
+                        {product.caliber && (
+                          <SpecItem>
+                            <div className="spec-label">Caliber</div>
+                            <div className="spec-value">{product.caliber}</div>
+                          </SpecItem>
+                        )}
+                        {product.capacity && (
+                          <SpecItem>
+                            <div className="spec-label">Capacity</div>
+                            <div className="spec-value">{product.capacity}</div>
+                          </SpecItem>
+                        )}
+                        {product.type && !product.caliber && (
+                          <SpecItem>
+                            <div className="spec-label">Type</div>
+                            <div className="spec-value">{product.type}</div>
+                          </SpecItem>
+                        )}
+                        {product.magnification && (
+                          <SpecItem>
+                            <div className="spec-label">Magnification</div>
+                            <div className="spec-value">{product.magnification}</div>
+                          </SpecItem>
+                        )}
+                      </ProductSpecs>
+                    )}
+
                     <ProductDescription>
                       {product.description}
                     </ProductDescription>
                     <ProductButton
                       onClick={() => handleProductInquiry(product)}
                     >
-                      BUY NOW
+                      🎯 Contact Dealer
                     </ProductButton>
                   </ProductInfo>
                 </ProductCard>
