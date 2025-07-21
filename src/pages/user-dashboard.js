@@ -4,6 +4,7 @@ import { AppProvider, useApp } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
 import KYCVerification from "../components/KYCVerification";
 import PaymentProcessing from "../components/PaymentProcessing";
+import ShoppingCart from "../components/ShoppingCart";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
