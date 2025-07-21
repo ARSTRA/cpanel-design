@@ -337,42 +337,92 @@ const ProductImage = styled.div`
   }
 `;
 
+const ProductBadges = styled.div`
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 3;
+`;
+
+const ManufacturerBadge = styled.div`
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.9));
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+`;
+
+const CategoryTag = styled.div`
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+`;
+
 const ProductInfo = styled.div`
-  padding: 30px;
+  padding: 35px 30px 30px;
   position: relative;
+  z-index: 1;
 `;
 
 const ProductName = styled.h3`
   color: #2c3e50;
-  margin-bottom: 12px;
-  font-size: 20px;
-  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 700;
   line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+  }
 `;
 
 const ProductPrice = styled.div`
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 800;
   color: #27ae60;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
   .original-price {
-    font-size: 18px;
+    font-size: 19px;
     color: #95a5a6;
     text-decoration: line-through;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   .discount {
-    background: #e74c3c;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
     color: white;
-    padding: 2px 8px;
-    border-radius: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
   }
 `;
 
