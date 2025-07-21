@@ -1245,20 +1245,50 @@ export default function HomePage() {
       <TestimonialsPopup />
             <HeroSection>
         <HeroContent>
-          <HeroTitle>Welcome to {state.siteSettings.siteName}</HeroTitle>
-          <HeroSubtitle>
-            Your Premier Licensed FFL Dealer - Serving Professionals & Enthusiasts Since 2003
-            <br />
-            <span style={{ fontSize: '18px', marginTop: '10px', display: 'block', opacity: '0.9' }}>
-              Specializing in Premium Firearms, Expert Gunsmithing & Professional Training Services
-            </span>
-          </HeroSubtitle>
-          <CTAButton
-            onClick={handleBrowseClick}
-            aria-label="Explore our premium firearms collection - scroll to categories section"
-          >
-            Explore Our Premium Collection
-          </CTAButton>
+          <HeroTextContent>
+            <HeroTitle>Welcome to {state.siteSettings.siteName}</HeroTitle>
+            <HeroSubtitle>
+              Your Premier Licensed FFL Dealer - Serving Professionals & Enthusiasts Since 2003
+              <br />
+              <span style={{ fontSize: '18px', marginTop: '10px', display: 'block', opacity: '0.9' }}>
+                Specializing in Premium Firearms, Expert Gunsmithing & Professional Training Services
+              </span>
+            </HeroSubtitle>
+            <CTAButton
+              onClick={handleBrowseClick}
+              aria-label="Explore our premium firearms collection - scroll to categories section"
+            >
+              Explore Our Premium Collection
+            </CTAButton>
+          </HeroTextContent>
+
+          <HeroImageGallery>
+            <ImageSlider>
+              {heroImages.map((image, index) => (
+                <SlideImage key={index} active={index === currentImageIndex}>
+                  <img
+                    src={image.src}
+                    alt={image.title}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                  <ImageCaption>
+                    <div className="title">{image.title}</div>
+                    <div className="description">{image.description}</div>
+                  </ImageCaption>
+                </SlideImage>
+              ))}
+            </ImageSlider>
+
+            <SliderDots>
+              {heroImages.map((_, index) => (
+                <SliderDot
+                  key={index}
+                  active={index === currentImageIndex}
+                  onClick={() => setCurrentImageIndex(index)}
+                />
+              ))}
+            </SliderDots>
+          </HeroImageGallery>
         </HeroContent>
       </HeroSection>
 
