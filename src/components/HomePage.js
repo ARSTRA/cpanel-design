@@ -222,16 +222,18 @@ const ProductsGrid = styled.div`
 
 const ProductCard = styled.div`
   background: white;
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(231, 76, 60, 0.1);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.3);
   }
 
   &::before {
@@ -240,15 +242,36 @@ const ProductCard = styled.div`
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 4px;
     background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db);
     z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(231, 76, 60, 0.02) 0%,
+      rgba(52, 152, 219, 0.02) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
+  &:hover::after {
+    opacity: 1;
   }
 `;
 
 const ProductImage = styled.div`
-  height: 280px;
-  background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+  height: 320px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,12 +284,34 @@ const ProductImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-    filter: brightness(1.1) contrast(1.1);
+    transition: all 0.5s ease;
+    filter: brightness(1.05) contrast(1.05) saturate(1.1);
   }
 
   &:hover img {
-    transform: scale(1.08);
+    transform: scale(1.1);
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(44, 62, 80, 0.1) 0%,
+      rgba(231, 76, 60, 0.05) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    opacity: 1;
   }
 
   &::after {
@@ -279,11 +324,12 @@ const ProductImage = styled.div`
     background: linear-gradient(
       45deg,
       transparent 30%,
-      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.15) 50%,
       transparent 70%
     );
     transform: translateX(-100%);
-    transition: transform 0.6s;
+    transition: transform 0.8s;
+    z-index: 2;
   }
 
   ${ProductCard}:hover &::after {
