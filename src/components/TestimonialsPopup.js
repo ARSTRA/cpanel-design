@@ -170,6 +170,9 @@ const TestimonialText = styled.p`
   margin: 0 0 15px;
   font-style: italic;
   position: relative;
+  padding: 0 15px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   &::before {
     content: """;
@@ -189,6 +192,26 @@ const TestimonialText = styled.p`
     right: -5px;
     color: #e74c3c;
     font-family: Georgia, serif;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 0 12px;
+
+    &::before, &::after {
+      font-size: 30px;
+    }
+
+    &::before {
+      top: -8px;
+      left: -8px;
+    }
+
+    &::after {
+      bottom: -20px;
+      right: -3px;
+    }
   }
 `;
 
