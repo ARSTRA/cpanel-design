@@ -1299,6 +1299,7 @@ export default function HomePage() {
                     </ProductDescription>
                     <ProductButton
                       onClick={() => handleBuyClick(product)}
+                      aria-label={`Buy ${product.name} for $${product.price}`}
                     >
                       BUY
                     </ProductButton>
