@@ -67,6 +67,16 @@ function appReducer(state, action) {
         cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
       };
 
+    case "UPDATE_CART_QUANTITY":
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: action.payload.quantity }
+            : item
+        ),
+      };
+
     case "REMOVE_FROM_CART":
       return {
         ...state,
