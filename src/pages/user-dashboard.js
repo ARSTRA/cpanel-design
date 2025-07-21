@@ -484,16 +484,6 @@ function UserDashboardContent() {
   const { state } = useApp();
   const [activeTab, setActiveTab] = useState("dashboard");
 
-  // Check URL parameters on mount
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      const tab = urlParams.get('tab');
-      if (tab && menuItems.find(item => item.id === tab)) {
-        setActiveTab(tab);
-      }
-    }
-  }, []);
   const [profileData, setProfileData] = useState({
     firstName: "John",
     lastName: "Doe",
