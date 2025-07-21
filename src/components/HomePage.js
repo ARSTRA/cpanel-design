@@ -1130,7 +1130,44 @@ const CategoryDescription = styled.p`
 `;
 
 export default function HomePage() {
-  const { state } = useApp();
+  const { state, dispatch } = useApp();
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+
+  const heroImages = [
+    {
+      src: "https://images.pexels.com/photos/3777562/pexels-photo-3777562.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      title: "Professional Training Excellence",
+      description: "Expert firearms instruction by certified NRA professionals"
+    },
+    {
+      src: "https://images.pexels.com/photos/5716037/pexels-photo-5716037.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      title: "Team Collaboration",
+      description: "Dedicated professionals working together for your safety"
+    },
+    {
+      src: "https://images.pexels.com/photos/6121966/pexels-photo-6121966.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      title: "Premium Firearms Collection",
+      description: "Curated selection from trusted manufacturers"
+    },
+    {
+      src: "https://images.pexels.com/photos/3084333/pexels-photo-3084333.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      title: "Expert Gunsmith Services",
+      description: "Precision craftsmanship and custom modifications"
+    },
+    {
+      src: "https://images.pexels.com/photos/17266185/pexels-photo-17266185.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      title: "Tactical Equipment",
+      description: "Professional-grade gear for law enforcement and civilians"
+    }
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   const featuredProducts = state.products.filter(
     (product) => product.featured && product.displayLocation.includes("home"),
