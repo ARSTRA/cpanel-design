@@ -524,7 +524,8 @@ function UserDashboardContent() {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const tab = urlParams.get('tab');
-      if (tab && menuItems.find(item => item.id === tab)) {
+      const validTabs = ["dashboard", "cart", "profile", "kyc", "payments", "orders", "favorites", "settings"];
+      if (tab && validTabs.includes(tab)) {
         setActiveTab(tab);
       }
     }
