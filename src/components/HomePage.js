@@ -1230,8 +1230,6 @@ export default function HomePage() {
     }
   };
 
-  const { dispatch } = useApp();
-
   const handleBuyClick = (product) => {
     // Add product to cart
     dispatch({
