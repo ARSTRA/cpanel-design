@@ -25,7 +25,7 @@ const slideOutDown = keyframes`
 
 const PopupContainer = styled.div`
   position: fixed;
-  bottom: ${props => props.isVisible ? '30px' : '-300px'};
+  bottom: ${props => props.$isVisible ? '30px' : '-300px'};
   right: 30px;
   width: 380px;
   max-width: calc(100vw - 60px);
@@ -33,7 +33,7 @@ const PopupContainer = styled.div`
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  animation: ${props => props.isVisible ? slideInUp : slideOutDown} 0.6s ease-out;
+  animation: ${props => props.$isVisible ? slideInUp : slideOutDown} 0.6s ease-out;
   border: 2px solid rgba(231, 76, 60, 0.1);
   backdrop-filter: blur(10px);
   overflow: hidden;
