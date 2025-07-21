@@ -789,8 +789,30 @@ const ExpertiseList = styled.ul`
 `;
 
 const CategorySection = styled.section`
-  padding: 80px 20px;
-  background: #f8f9fa;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(
+        circle at 30% 30%,
+        rgba(231, 76, 60, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 70% 70%,
+        rgba(52, 152, 219, 0.05) 0%,
+        transparent 50%
+      );
+    pointer-events: none;
+  }
 `;
 
 const CategoriesGrid = styled.div`
@@ -811,19 +833,34 @@ const CategoriesGrid = styled.div`
 
 const CategoryCard = styled(Link)`
   background: white;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   text-decoration: none;
   color: inherit;
   display: block;
+  position: relative;
+  border: 2px solid rgba(231, 76, 60, 0.1);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(231, 76, 60, 0.15);
+    border-color: rgba(231, 76, 60, 0.2);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60, #3498db, #9b59b6);
+    z-index: 1;
   }
 `;
 
