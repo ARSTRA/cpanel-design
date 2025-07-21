@@ -1020,7 +1020,15 @@ export default function HomePage() {
     }
   };
 
+  const { dispatch } = useApp();
+
   const handleBuyClick = (product) => {
+    // Add product to cart
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: product
+    });
+
     // Store product info in sessionStorage for after login
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('selectedProduct', JSON.stringify({
