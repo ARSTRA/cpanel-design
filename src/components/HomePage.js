@@ -1274,7 +1274,7 @@ export default function HomePage() {
           <HeroImageGallery>
             <ImageSlider>
               {heroImages.map((image, index) => (
-                <SlideImage key={index} active={index === currentImageIndex}>
+                <SlideImage key={index} $active={index === currentImageIndex}>
                   <img
                     src={image.src}
                     alt={image.title}
