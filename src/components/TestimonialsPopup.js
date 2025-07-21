@@ -294,12 +294,37 @@ const PurchaseInfo = styled.div`
     font-weight: 600;
     color: #2c3e50;
     margin: 0 0 4px;
+    word-wrap: break-word;
   }
 
   .timestamp {
     font-size: 12px;
     color: #7f8c8d;
     margin: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 12px;
+
+    .product {
+      font-size: 12px;
+    }
+
+    .timestamp {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    padding: 8px 10px;
+
+    .product {
+      font-size: 11px;
+    }
+
+    .timestamp {
+      font-size: 9px;
+    }
   }
 `;
 
