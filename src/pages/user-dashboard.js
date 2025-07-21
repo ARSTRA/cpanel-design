@@ -735,6 +735,18 @@ function UserDashboardContent() {
     </>
   );
 
+  const renderCart = () => (
+    <>
+      <PageHeader>
+        <PageTitle>🛒 Shopping Cart</PageTitle>
+        <PageSubtitle>
+          Review your selected items and proceed to checkout.
+        </PageSubtitle>
+      </PageHeader>
+      <ShoppingCart />
+    </>
+  );
+
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
