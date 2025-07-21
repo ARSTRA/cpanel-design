@@ -175,6 +175,26 @@ const CustomerDetails = styled.div`
     color: #7f8c8d;
     margin: 0;
   }
+
+  @media (max-width: 480px) {
+    .name {
+      font-size: 14px;
+    }
+
+    .info {
+      font-size: 11px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .name {
+      font-size: 13px;
+    }
+
+    .info {
+      font-size: 10px;
+    }
+  }
 `;
 
 const TestimonialText = styled.p`
