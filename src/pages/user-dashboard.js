@@ -811,6 +811,9 @@ function UserDashboardContent() {
               >
                 <span className="icon">{item.icon}</span>
                 {item.label}
+                {item.badge && (
+                  <span className="badge">{item.badge}</span>
+                )}
               </NavItem>
             ))}
           </NavMenu>
