@@ -751,6 +751,8 @@ function UserDashboardContent() {
     switch (activeTab) {
       case "dashboard":
         return renderDashboard();
+      case "cart":
+        return renderCart();
       case "profile":
         return renderProfile();
       case "kyc":
