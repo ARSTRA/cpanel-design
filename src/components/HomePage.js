@@ -1045,7 +1045,10 @@ export default function HomePage() {
               Specializing in Premium Firearms, Expert Gunsmithing & Professional Training Services
             </span>
           </HeroSubtitle>
-          <CTAButton onClick={handleBrowseClick}>
+          <CTAButton
+            onClick={handleBrowseClick}
+            aria-label="Explore our premium firearms collection - scroll to categories section"
+          >
             Explore Our Premium Collection
           </CTAButton>
         </HeroContent>
