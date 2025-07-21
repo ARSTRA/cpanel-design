@@ -919,29 +919,52 @@ const CategoryImage = styled.div`
     z-index: 2;
   }
 
+  ${CategoryCard}:hover &::before {
+    opacity: 0.4;
+  }
+
   ${CategoryCard}:hover &::after {
     transform: translateX(100%);
   }
 
   ${CategoryCard}:hover img {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    filter: brightness(1.2) contrast(1.2) saturate(1.1);
   }
 `;
 
 const CategoryName = styled.h3`
-  padding: 20px 20px 10px;
+  padding: 25px 20px 12px;
   margin: 0;
   color: #2c3e50;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+
+  ${CategoryCard}:hover & {
+    color: #e74c3c;
+    transition: color 0.3s ease;
+  }
 `;
 
 const CategoryDescription = styled.p`
-  padding: 0 20px 20px;
+  padding: 0 20px 25px;
   margin: 0;
   color: #7f8c8d;
-  font-size: 14px;
-  font-style: italic;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+
+  ${CategoryCard}:hover & {
+    color: #555;
+    transition: color 0.3s ease;
+  }
 `;
 
 export default function HomePage() {
