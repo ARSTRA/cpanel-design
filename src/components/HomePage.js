@@ -54,8 +54,169 @@ const HeroSection = styled.section`
 `;
 
 const HeroContent = styled.div`
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+`;
+
+const HeroTextContent = styled.div`
+  z-index: 2;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    order: 2;
+  }
+`;
+
+const HeroImageGallery = styled.div`
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 25px;
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    order: 1;
+    height: 350px;
+  }
+
+  @media (max-width: 768px) {
+    height: 280px;
+  }
+`;
+
+const ImageSlider = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 25px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+`;
+
+const SlideImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: ${props => props.active ? 1 : 0};
+  transition: opacity 1.5s ease-in-out;
+  background: linear-gradient(
+    135deg,
+    rgba(44, 62, 80, 0.3) 0%,
+    rgba(231, 76, 60, 0.2) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.1) contrast(1.1) saturate(1.05);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(44, 62, 80, 0.2) 0%,
+      rgba(231, 76, 60, 0.1) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    animation: shimmer 4s infinite;
+    z-index: 2;
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+`;
+
+const ImageCaption = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: white;
+  z-index: 3;
+
+  .title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 5px;
+  }
+
+  .description {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0;
+  }
+`;
+
+const SliderDots = styled.div`
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+`;
+
+const SliderDot = styled.button`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: ${props => props.active ? 'rgba(255, 255, 255, 0.9)' : 'transparent'};
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.2);
+  }
 `;
 
 const HeroTitle = styled.h1`
