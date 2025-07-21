@@ -187,6 +187,7 @@ const TestimonialText = styled.p`
   padding: 0 15px;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  hyphens: auto;
 
   &::before {
     content: """;
@@ -209,22 +210,44 @@ const TestimonialText = styled.p`
   }
 
   @media (max-width: 480px) {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     padding: 0 12px;
+    margin: 0 0 12px;
 
     &::before, &::after {
-      font-size: 30px;
+      font-size: 25px;
     }
 
     &::before {
-      top: -8px;
-      left: -8px;
+      top: -6px;
+      left: -6px;
     }
 
     &::after {
-      bottom: -20px;
-      right: -3px;
+      bottom: -15px;
+      right: -2px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 0 10px;
+    margin: 0 0 10px;
+
+    &::before, &::after {
+      font-size: 20px;
+    }
+
+    &::before {
+      top: -4px;
+      left: -4px;
+    }
+
+    &::after {
+      bottom: -12px;
+      right: -1px;
     }
   }
 `;
