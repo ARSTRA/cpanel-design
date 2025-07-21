@@ -1237,7 +1237,7 @@ export default function HomePage() {
                       {product.description}
                     </ProductDescription>
                     <ProductButton
-                      onClick={() => handleProductInquiry(product)}
+                      onClick={() => handleBuyClick(product)}
                     >
                       BUY
                     </ProductButton>
