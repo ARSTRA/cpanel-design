@@ -1044,6 +1044,7 @@ export default function HomePage() {
 
   return (
     <>
+      <TestimonialsPopup />
             <HeroSection>
         <HeroContent>
           <HeroTitle>Welcome to {state.siteSettings.siteName}</HeroTitle>
