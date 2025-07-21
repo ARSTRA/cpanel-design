@@ -1323,7 +1323,7 @@ export default function HomePage() {
                 <CategoryImage>
                   <img
                     src={category.icon}
-                    alt={category.name}
+                    alt={`Professional ${category.name.toLowerCase()} - ${category.description}`}
                     loading="lazy"
                     onError={(e) => {
                       e.target.style.display = "none";
