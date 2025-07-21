@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { AppProvider, useApp } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
