@@ -489,8 +489,11 @@ function UserDashboardContent() {
     backgroundCheck: "pending",
   });
 
+  const cartItemsCount = state.cartItems?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+
   const menuItems = [
     { id: "dashboard", icon: "📊", label: "Dashboard" },
+    { id: "cart", icon: "🛒", label: "Shopping Cart", badge: cartItemsCount > 0 ? cartItemsCount : null },
     { id: "profile", icon: "👤", label: "Profile Settings" },
     { id: "kyc", icon: "🔐", label: "Identity Verification" },
     { id: "payments", icon: "💳", label: "Payment Methods" },
