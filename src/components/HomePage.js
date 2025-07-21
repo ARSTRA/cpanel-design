@@ -865,8 +865,8 @@ const CategoryCard = styled(Link)`
 `;
 
 const CategoryImage = styled.div`
-  height: 200px;
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  height: 250px;
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -879,7 +879,8 @@ const CategoryImage = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: all 0.5s ease;
+    filter: brightness(1.1) contrast(1.1) saturate(1.05);
   }
 
   &::before {
@@ -889,8 +890,15 @@ const CategoryImage = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(
+      135deg,
+      rgba(44, 62, 80, 0.4) 0%,
+      rgba(231, 76, 60, 0.2) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
     z-index: 1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
   }
 
   &::after {
@@ -903,11 +911,11 @@ const CategoryImage = styled.div`
     background: linear-gradient(
       45deg,
       transparent 30%,
-      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.25) 50%,
       transparent 70%
     );
     transform: translateX(-100%);
-    transition: transform 0.6s;
+    transition: transform 0.8s;
     z-index: 2;
   }
 
