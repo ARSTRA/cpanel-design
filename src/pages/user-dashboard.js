@@ -180,6 +180,7 @@ const NavItem = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
 
   &:hover {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -197,6 +198,21 @@ const NavItem = styled.div`
 
   .icon {
     font-size: 18px;
+  }
+
+  .badge {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: auto;
+    min-width: 20px;
   }
 `;
 
