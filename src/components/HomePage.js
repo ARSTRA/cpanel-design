@@ -65,6 +65,12 @@ const HeroContent = styled.div`
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+    max-width: 800px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 30px;
+    padding: 0 10px;
   }
 `;
 
