@@ -115,7 +115,7 @@ const SlideImage = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: ${props => props.active ? 1 : 0};
+  opacity: ${props => props.$active ? 1 : 0};
   transition: opacity 1.5s ease-in-out;
   background: linear-gradient(
     135deg,
