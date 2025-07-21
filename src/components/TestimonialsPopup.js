@@ -113,6 +113,10 @@ const CloseButton = styled.button`
 
 const TestimonialContent = styled.div`
   padding: 20px 25px;
+
+  @media (max-width: 480px) {
+    padding: 15px 20px;
+  }
 `;
 
 const CustomerInfo = styled.div`
