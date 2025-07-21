@@ -509,6 +509,7 @@ export default function ShoppingCart() {
         <CheckoutButton
           onClick={handleCheckout}
           disabled={isLoading || cartItems.length === 0}
+          className={isLoading ? "loading" : ""}
         >
           {isLoading ? "Processing..." : "Proceed to Checkout"}
         </CheckoutButton>
