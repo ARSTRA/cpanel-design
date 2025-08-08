@@ -11,18 +11,18 @@ const initialState = {
   // Products from external file
   products: products,
 
-  // Site settings
+    // Site settings
   siteSettings: {
     siteName: "Gun-k Pro",
-    headerText: "Professional firearms and accessories store",
+    headerText: "Premier Licensed FFL Dealer - Serving Professionals & Enthusiasts Since 2003",
     aboutUs:
-      "Your trusted firearms dealer with over 20 years of experience serving the community. We specialize in quality firearms, accessories, and professional gunsmithing services.",
+      "Gun-k Pro is your premier destination for professional firearms services, quality equipment, and expert guidance. As a fully licensed Federal Firearms License (FFL) dealer with over 20 years of industry experience, we serve law enforcement professionals, competitive shooters, hunters, and civilian enthusiasts nationwide. Our commitment to excellence, safety, and customer service has made us a trusted name in the firearms community.",
     footerText:
-      "Professional firearms dealer specializing in handguns, rifles, shotguns, and accessories. Licensed FFL dealer.",
+      "Licensed Federal Firearms Dealer (FFL) specializing in premium firearms, professional gunsmithing, training services, and law enforcement equipment since 2003.",
     contactInfo: {
       email: "info@gun-k.com",
       phone: "(555) 123-4567",
-      address: "123 Main Street, Gunsmith City, GC 12345",
+      address: "1247 Professional Plaza, Firearms District, TX 75201",
     },
     bankDetails: {
       bankName: "First National Bank",
@@ -65,6 +65,16 @@ function appReducer(state, action) {
       return {
         ...state,
         cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }],
+      };
+
+    case "UPDATE_CART_QUANTITY":
+      return {
+        ...state,
+        cartItems: state.cartItems.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: action.payload.quantity }
+            : item
+        ),
       };
 
     case "REMOVE_FROM_CART":

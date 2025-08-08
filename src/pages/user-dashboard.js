@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { AppProvider, useApp } from "../context/AppContext.optimized";
 import Layout from "../components/Layout";
 import KYCVerification from "../components/KYCVerification";
 import PaymentProcessing from "../components/PaymentProcessing";
+import ShoppingCart from "../components/ShoppingCart";
 
 const fadeIn = keyframes`
   from { opacity: 0; transform: translateY(20px); }
@@ -179,6 +180,7 @@ const NavItem = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  position: relative;
 
   &:hover {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -196,6 +198,21 @@ const NavItem = styled.div`
 
   .icon {
     font-size: 18px;
+  }
+
+  .badge {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: auto;
+    min-width: 20px;
   }
 `;
 
@@ -466,6 +483,7 @@ const StatusTag = styled.span`
 function UserDashboardContent() {
   const { state } = useApp();
   const [activeTab, setActiveTab] = useState("dashboard");
+
   const [profileData, setProfileData] = useState({
     firstName: "John",
     lastName: "Doe",
@@ -488,8 +506,11 @@ function UserDashboardContent() {
     backgroundCheck: "pending",
   });
 
+  const cartItemsCount = state.cartItems?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+
   const menuItems = [
     { id: "dashboard", icon: "📊", label: "Dashboard" },
+    { id: "cart", icon: "🛒", label: "Shopping Cart", badge: cartItemsCount > 0 ? cartItemsCount : null },
     { id: "profile", icon: "👤", label: "Profile Settings" },
     { id: "kyc", icon: "🔐", label: "Identity Verification" },
     { id: "payments", icon: "💳", label: "Payment Methods" },
@@ -497,6 +518,18 @@ function UserDashboardContent() {
     { id: "favorites", icon: "❤️", label: "Favorites" },
     { id: "settings", icon: "⚙️", label: "Account Settings" },
   ];
+
+  // Check URL parameters on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      const tab = urlParams.get('tab');
+      const validTabs = ["dashboard", "cart", "profile", "kyc", "payments", "orders", "favorites", "settings"];
+      if (tab && validTabs.includes(tab)) {
+        setActiveTab(tab);
+      }
+    }
+  }, []);
 
   const purchaseHistory = [
     {
@@ -731,10 +764,24 @@ function UserDashboardContent() {
     </>
   );
 
+  const renderCart = () => (
+    <>
+      <PageHeader>
+        <PageTitle>🛒 Shopping Cart</PageTitle>
+        <PageSubtitle>
+          Review your selected items and proceed to checkout.
+        </PageSubtitle>
+      </PageHeader>
+      <ShoppingCart />
+    </>
+  );
+
   const renderContent = () => {
     switch (activeTab) {
       case "dashboard":
         return renderDashboard();
+      case "cart":
+        return renderCart();
       case "profile":
         return renderProfile();
       case "kyc":
@@ -777,6 +824,9 @@ function UserDashboardContent() {
               >
                 <span className="icon">{item.icon}</span>
                 {item.label}
+                {item.badge && (
+                  <span className="badge">{item.badge}</span>
+                )}
               </NavItem>
             ))}
           </NavMenu>
